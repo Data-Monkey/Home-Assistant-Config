@@ -25,7 +25,7 @@ I will try to list the components that I use in this file and please feel free t
 
 - Chromecast + Audio Cast
 
-- Efergy Energy Monitor
+- Efergy Energy Monitor (demo: https://engage.efergy.com/dashboard)
 
 - Roku2  
 
@@ -40,4 +40,7 @@ I will try to list the components that I use in this file and please feel free t
 - Zanzito on Nexus5 mobile (http://www.barbaro.it/cms/index.php/83-zanzito)
 
 - GPS Logger on Nexus5  (might ditch that for the Zanzito implementation)
+
+- wrote a little script to track Crashplan Backup progress
+
 
