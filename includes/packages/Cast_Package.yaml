@@ -1,0 +1,12 @@
+# All things Google Casts
+
+
+homeassistant:
+  customize:
+    media_player.chromecastaudio:
+       friendly_name: 'AudioCast'
+      
+      
+media_player:
+  - platform: cast
+

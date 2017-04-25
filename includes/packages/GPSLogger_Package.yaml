@@ -1,0 +1,23 @@
+# All things GPS Logger
+
+homeassistant:
+  customize:
+    device_tracker.logger_0726c43a00ccab73:
+      hidden: true
+      friendly_name: 'Nexus_GPSLogger'
+      icon: mdi:battery-charging
+    sensor.nexus_battery_status:
+      icon: mdi:battery-charging
+
+device_tracker:
+  - platform: gpslogger
+  
+sensor:  
+  platform: template
+  sensors:
+    nexus_battery_status:
+      friendly_name: 'Nexus Battery Status'
+      value_template: '{{states.device_tracker.logger_0726c43a00ccab73.attributes.battery|int}}'
+      unit_of_measurement: "%"
+      entity_id: 
+       - device_tracker.logger_0726c43a00ccab73

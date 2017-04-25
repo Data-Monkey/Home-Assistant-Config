@@ -1,0 +1,7 @@
+#Device Trackers
+  - platform: nmap_tracker
+    track_new_devices: yes
+    hosts: -Pn 192.168.2.1-255
+    home_interval: 60
+
+# Zanzito defied in the package

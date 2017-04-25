@@ -1,0 +1,120 @@
+# --------------
+# VIEWS
+# --------------
+
+Devices:
+  view: yes
+  entities:
+    - group.gadgets
+    - sensor.obelix
+  
+ 
+Harmony:
+  view: yes
+  entities:
+    - group.activity
+
+    
+# --------------
+# GROUPS
+# --------------
+Activity:
+  view: no
+  entities:
+    - sensor.harmony_current_activity
+    - input_select.harmony_control
+    - remote.livingroom
+
+Family:
+  view: no
+  entities:
+    - device_tracker.rolands_nexus
+    - device_tracker.helens_iphone
+Phones:
+  view: no
+  entities:  
+    - sensor.helens_iphone
+    - sensor.helens_winphone
+    - sensor.rolands_iphone
+    - sensor.rolands_nexus
+    
+    
+Gadgets:
+  view: no
+  entities:
+    - sensor.modem_router
+    - sensor.repeater
+    - sensor.obelix
+    - sensor.blue_laptop
+    - sensor.purple_laptop
+    - sensor.galaxy_tab
+    - sensor.efergy_hub
+    - sensor.chromecast
+    - sensor.fetch
+    - sensor.roku
+    - sensor.sonos_playbar
+    - sensor.xiaomi_gateway
+    - sensor.xiaomi_gateway2
+    - sensor.raspberry_pi
+    - sensor.hp_printer
+    - sensor.nexus_logger
+    - sensor.audiocast
+    - sensor.hp_tablet
+    - sensor.iconia_tab 
+    
+Monitoring:
+  view: no
+  entities:
+    - sensor.crashplan_status
+    - sensor.nexus_battery_status
+    - sensor.energy_usage
+
+Environment:
+  view: no
+  entities: 
+    - sensor.humidity_158d0001576d20
+    - sensor.temperature_158d0001576d20
+    - sensor.hallway
+    - sensor.balcony
+    - sensor.laundry
+        
+Weather:
+  view: no
+  entities:
+    - sensor.bom_sydney_air_temp_c
+    - sensor.bom_sydney_weather
+    - sensor.bom_sydney_wind_direction
+    - sensor.bom_sydney_wind_direction_kt
+    - sensor.bom_sydney_wind_speed_kmh    
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_temperature
+    - sun.sun
+    - sensor.yr_symbol
+    
+   
+Xiaomi:
+  view: no
+  entities:
+    - sensor.xiaomi_gateway
+    - sensor.xiaomi_gateway2
+    - light.gateway_light_286c0785b6f3
+    - sensor.illumination_286c0785b6f3
+    - light.gateway_light_f0b429cfbc12
+    - sensor.illumination_f0b429cfbc12
+    - binary_sensor.switch_158d00015681b8
+    - binary_sensor.motion_sensor_158d00012dc3de
+    - switch.plug_158d00013e8964
+    - switch.plug_158d00013f9d2a
+    - binary_sensor.door_window_sensor_158d00012a885f 
+    - sensor.humidity_158d0001576d20
+    - sensor.temperature_158d0001576d20    
+    - sensor.humidity_158d00015763d7
+    - sensor.temperature_158d00015763d7 
+    - sensor.humidity_158d0001573b30
+    - sensor.temperature_158d0001573b30     
+    
+Xioami_View:
+  view: yes
+  name: Xiaomi
+  entities:
+    - group.xiaomi

@@ -1,0 +1,13 @@
+# All things Sonos
+
+
+homeassistant:
+  customize:
+    media_player.living_room:
+       friendly_name: 'Sonos Playbar'
+       name: sonos_playbar
+       icon: mdi:speaker-wireless
+       
+       
+media_player:
+  - platform: sonos       

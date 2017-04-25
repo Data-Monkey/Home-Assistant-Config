@@ -1,0 +1,110 @@
+# All things XIAOMI
+
+xiaomi:
+ gateways:
+ # hallway gateway
+   - sid: !secret XIAOMI_SID_1 
+     key: !secret XIAOMI_KEY_1  
+ # bedroom gateway
+   - sid: !secret XIAOMI_SID_2 
+     key: !secret XIAOMI_KEY_2  
+
+homeassistant:
+  customize:
+    light.gateway_light_286c0785b6f3:
+       friendly_name: 'Xiaomi Gateway Light'
+    sensor.illumination_286c0785b6f3:
+       friendly_name: 'Xiaomi Gateway Light Sensor'       
+    binary_sensor.switch_158d00015681b8:
+      icon: mdi:checkbox-multiple-blank-circle-outline
+      friendly_name: 'Xiaomi Button'
+    binary_sensor.motion_sensor_158d00012dc3de:
+      friendly_name: 'Hallway Motion'
+    switch.plug_158d00013e8964:
+      friendly_name: 'Xiaomi Plug'
+    switch.plug_158d00013f9d2a:
+      friendly_name: 'Xiaomi Light Plug'
+    binary_sensor.door_window_sensor_158d00012a885f:
+      friendly_name: 'Xiaomi Door Sensor'
+
+    sensor.illumination_f0b429cfbc12:
+       friendly_name: 'Xiaomi Gateway 2 Light Sensor' 
+    light.gateway_light_f0b429cfbc12:    
+       friendly_name: 'Xiaomi Gateway 2 Light'      
+      
+# Hallway Temperature and Humidity      
+    sensor.temperature_158d0001576d20:
+      friendly_name: 'Hallway Temperature'
+    sensor.humidity_158d0001576d20:
+      friendly_name: 'Hallway Humidity'
+    sensor.hallway:
+      friendly_name: 'Hallway'
+      icon: mdi:oil-temperature    
+
+# Balcony Temperature and Humidity
+    sensor.temperature_158d00015763d7:
+      friendly_name: 'Balcony Temperature'
+    sensor.humidity_158d00015763d7:
+      friendly_name: 'Balcony Humidity'
+    sensor.balcony:
+      friendly_name: 'Balcony'
+      icon: mdi:oil-temperature    
+      
+# Laundry Temperature and Humidity      
+    sensor.temperature_158d0001573b30:
+      friendly_name: 'Laundry Temperature'
+    sensor.humidity_158d0001573b30:
+      friendly_name: 'Laundry Humidity'
+    sensor.laundry:
+      friendly_name: 'Laundry'
+      icon: mdi:oil-temperature  
+
+     
+
+sensor:
+  - platform: template
+    sensors: 
+      hallway:
+        value_template: '{{ states("sensor.temperature_158d0001576d20")|int}}C at {{states("sensor.humidity_158d0001576d20")|int}}% Humidity'
+      balcony:
+        value_template: '{{ states("sensor.temperature_158d00015763d7")|int}}C at {{states("sensor.humidity_158d00015763d7")|int}}% Humidity'
+      laundry:
+        value_template: '{{ states("sensor.temperature_158d0001573b30")|int}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
+        
+automation:
+- alias: Hallway Lights by motion at night ON
+ # hidden: True
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00012dc3de
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.gateway_light_286c0785b6f3
+      rgb_color: [25,0,150]
+      brightness: 75
+
+- alias: Hallway Lights by motion at night OFF
+#  hidden: True
+#  condition:
+#    - condition: state
+#      entity_id: sun.sun
+#      state: 'below_horizon'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00012dc3de
+      to: 'off'
+      for:
+        minutes: 0
+        seconds: 30
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.gateway_light_286c0785b6f3
+
+      

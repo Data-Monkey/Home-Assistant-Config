@@ -1,0 +1,212 @@
+
+homeassistant:
+  customize:
+    device_tracker.roku:
+      hidden: true
+    sensor.roku:
+      icon: mdi:camcorder-box
+      friendly_name: Roku
+
+    device_tracker.obelix:
+      hidden: true
+    sensor.obelix:
+      icon: mdi:laptop
+      friendly_name: Laptop Obelix   
+
+    device_tracker.sonos_playbar:
+      hidden: true
+    sensor.sonos_playbar:
+      icon: mdi:surround-sound
+      friendly_name: Sonos Playbar  
+ 
+    device_tracker.repeater:
+      hidden: true
+    sensor.repeater:
+      icon: mdi:access-point-network
+      friendly_name: Repeater  
+
+    device_tracker.chromecast:
+      hidden: true
+    sensor.chromecast:
+      icon: mdi:cast
+      friendly_name: Chromecast 
+      
+    device_tracker.xiaomi_gateway:
+      hidden: true
+    sensor.xiaomi_gateway:
+      icon: mdi:image-filter-tilt-shift
+      friendly_name: Xiaomi Gateway  
+
+    device_tracker.xiaomi_gateway2:
+      hidden: true
+    sensor.xiaomi_gateway2:
+      icon: mdi:image-filter-tilt-shift
+      friendly_name: Xiaomi Gateway 2
+
+  
+      
+    device_tracker.raspberry_pi:
+      hidden: true
+    sensor.raspberry_pi:
+      icon: mdi:raspberrypi
+      friendly_name: Raspberry Pi  
+
+    device_tracker.hp_tablet:
+      hidden: true
+    sensor.hp_tablet:
+      icon: mdi:tablet
+      friendly_name: HP Tablet  
+
+    device_tracker.efergy_hub:
+      hidden: true
+    sensor.efergy_hub:
+      icon: mdi:gauge
+      friendly_name: Efergy Hub  
+
+    device_tracker.modem_router:
+      hidden: true
+    sensor.modem_router:
+      icon: mdi:router-wireless
+      friendly_name: Modem/Router  
+
+    device_tracker.fetch:
+      hidden: true
+    sensor.fetch:
+      icon: mdi:camcorder-box
+      friendly_name: FetchTV Box
+
+    device_tracker.helens_iphone:
+      hidden: false
+    sensor.helens_iphone:
+      icon: mdi:cellphone-iphone
+      friendly_name: Helen's iPhone
+
+    device_tracker.helens_winphone:
+      hidden: true
+    sensor.helens_winphone:
+      icon: mdi:cellphone
+      friendly_name: Helen's WinPhone
+      
+    device_tracker.rolands_iphone:
+      hidden: true
+    sensor.rolands_iphone:
+      icon: mdi:cellphone-iphone
+      friendly_name: Roland's iPhone
+      
+    device_tracker.rolands_nexus:
+      hidden: false
+    sensor.rolands_nexus:
+      icon: mdi:cellphone-android
+      friendly_name: Roland's Nexus
+
+    device_tracker.logger_0726c43a00ccab73:
+      hidden: true
+    sensor.nexus_logger:
+      icon: mdi:map-marker-circle
+      friendly_name: Nexus Logger      
+
+    device_tracker.audiocast:
+      hidden: true
+    sensor.audiocast:
+      icon: mdi:music-box-outline
+      friendly_name: Audio Cast      
+
+    device_tracker.hp_printer:
+      hidden: true
+    sensor.hp_printer:
+      icon: mdi:printer
+      friendly_name: HP Printer    
+
+    device_tracker.blue_laptop:
+      hidden: true
+    sensor.blue_laptop:
+      icon: mdi:laptop
+      friendly_name: 'Blue Laptop'    
+
+    device_tracker.purple_laptop:
+      hidden: true
+    sensor.purple_laptop:
+      icon: mdi:laptop
+      friendly_name: 'Purple Laptop'   
+
+    device_tracker.galaxy_tab:
+      hidden: true
+    sensor.galaxy_tab:
+      icon: mdi:tablet
+      friendly_name: 'Galaxy Tablet' 
+      
+    device_tracker.iconia_tab:
+      hidden: true
+    sensor.iconia_tab:
+      icon: mdi:tablet
+      friendly_name: 'Iconia Tablet' 
+      
+sensor:
+  - platform: template
+    sensors: 
+      roku:
+        value_template: '{% if is_state("device_tracker.roku", "home") %}Online{% else %}Offline{% endif %}'
+      obelix:
+        value_template: '{% if is_state("device_tracker.obelix", "home") %}Online{% else %}Offline{% endif %}'
+      repeater:
+        value_template: '{% if is_state("device_tracker.repeater", "home") %}Online{% else %}Offline{% endif %}'
+      sonos_playbar:
+        value_template: '{% if is_state("device_tracker.sonos_playbar", "home") %}Online{% else %}Offline{% endif %}'
+      chromecast:
+        value_template: '{% if is_state("device_tracker.chromecast", "home") %}Online{% else %}Offline{% endif %}'
+      xiaomi_gateway:
+        value_template: '{% if is_state("device_tracker.xiaomi_gateway", "home") %}Online{% else %}Offline{% endif %}'
+      xiaomi_gateway2:
+        value_template: '{% if is_state("device_tracker.xiaomi_gateway2", "home") %}Online{% else %}Offline{% endif %}'
+      raspberry_pi:
+        value_template: '{% if is_state("device_tracker.raspberry_pi", "home") %}Online{% else %}Offline{% endif %}'
+      galaxy_tab:
+        value_template: '{% if is_state("device_tracker.galaxy_tab", "home") %}Online{% else %}Offline{% endif %}'
+      hp_tablet:
+        value_template: '{% if is_state("device_tracker.hp_tablet", "home") %}Online{% else %}Offline{% endif %}'
+      efergy_hub:
+        value_template: '{% if is_state("device_tracker.efergy_hub", "home") %}Online{% else %}Offline{% endif %}'
+      modem_router:
+        value_template: '{% if is_state("device_tracker.modem_router", "home") %}Online{% else %}Offline{% endif %}'
+      fetch:
+        value_template: '{% if is_state("device_tracker.fetch", "home") %}Online{% else %}Offline{% endif %}'
+      helens_iphone:
+        value_template: '{% if is_state("device_tracker.helens_iphone", "home") %}Online{% else %}Offline{% endif %}'
+      rolands_iphone:
+        value_template: '{% if is_state("device_tracker.rolands_iphone", "home") %}Online{% else %}Offline{% endif %}'
+      rolands_nexus:
+        value_template: '{% if is_state("device_tracker.rolands_nexus", "home") %}Online{% else %}Offline{% endif %}'
+      nexus_logger:
+        value_template: '{% if is_state("device_tracker.logger_0726c43a00ccab73", "home") %}Online{% else %}Offline{% endif %}'
+      helens_winphone:
+        value_template: '{% if is_state("device_tracker.helens_winphone", "home") %}Online{% else %}Offline{% endif %}'
+      audiocast:
+        value_template: '{% if is_state("device_tracker.audiocast", "home") %}Online{% else %}Offline{% endif %}'
+      hp_printer:
+        value_template: '{% if is_state("device_tracker.hp_printer", "home") %}Online{% else %}Offline{% endif %}'
+      blue_laptop:
+        value_template: '{% if is_state("device_tracker.blue_laptop", "home") %}Online{% else %}Offline{% endif %}'
+      purple_laptop:
+        value_template: '{% if is_state("device_tracker.purple_laptop", "home") %}Online{% else %}Offline{% endif %}'
+      iconia_tab:
+        value_template: '{% if is_state("device_tracker.iconia_tab", "home") %}Online{% else %}Offline{% endif %}'
+
+
+
+
+        
+        
+automation:
+  - alias: Notify for new devices
+    trigger:
+      platform: event
+      event_type: device_tracker_new_device
+    action:
+      - service: notify.pushover
+        data_template:
+          message: >
+            New device:
+            {{trigger.event.data.host_name}}
+            ({{trigger.event.data.entity_id}})
+          title: New device
+          
