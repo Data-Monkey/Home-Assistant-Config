@@ -3,8 +3,8 @@
 xiaomi:
  gateways:
  # hallway gateway
-   - sid: !secret XIAOMI_SID_1 
-     key: !secret XIAOMI_KEY_1  
+ #  - sid: !secret XIAOMI_SID_1 
+ #    key: !secret XIAOMI_KEY_1  
  # bedroom gateway
    - sid: !secret XIAOMI_SID_2 
      key: !secret XIAOMI_KEY_2  

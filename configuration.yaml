@@ -50,14 +50,14 @@ history:
 logbook:
 
 
-#logger:
-#  default: warning
-#  logs:
-#    custom_components.xiaomi: debug
-#    custom_components.sensor.xiaomi: debug
-#    custom_components.switch.xiaomi: debug
-#    custom_components.binary_sensor: debug
-#    custom_components.light.xiaomi: debug
+logger:
+  default: warning
+  logs:
+    custom_components.xiaomi: debug
+    custom_components.sensor.xiaomi: debug
+    custom_components.switch.xiaomi: debug
+    custom_components.binary_sensor: debug
+    custom_components.light.xiaomi: debug
 
 
   
