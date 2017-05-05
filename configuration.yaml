@@ -58,7 +58,7 @@ logbook:
 #    custom_components.switch.xiaomi: debug
 #    custom_components.binary_sensor: debug
 #    custom_components.light.xiaomi: debug
-
+#
 
   
 influxdb:

@@ -105,7 +105,8 @@ Xiaomi:
     - binary_sensor.motion_sensor_158d00012dc3de
     - switch.plug_158d00013e8964
     - switch.plug_158d00013f9d2a
-    - binary_sensor.door_window_sensor_158d00012a885f 
+    - binary_sensor.door_window_sensor_158d00012a885f
+    - sensor.front_door    
     - sensor.humidity_158d0001576d20
     - sensor.temperature_158d0001576d20    
     - sensor.humidity_158d00015763d7

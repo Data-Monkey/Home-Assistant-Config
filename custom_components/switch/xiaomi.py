@@ -4,7 +4,6 @@ Support for Xiaomi binary sensors.
 Developed by Rave from Lazcad.com
 """
 import logging
-import time
 
 from homeassistant.components.switch import SwitchDevice
 try:
@@ -77,7 +76,6 @@ class XiaomiGenericSwitch(XiaomiDevice, SwitchDevice):
         if self.xiaomi_hub.write_to_hub(self._sid, **{self._data_key: 'on'}):
             self._state = True	    
             self.schedule_update_ha_state()
-            time.sleep(5)
             self.xiaomi_hub.get_from_hub(self._sid)
 
     def turn_off(self):
@@ -93,9 +91,9 @@ class XiaomiGenericSwitch(XiaomiDevice, SwitchDevice):
         
         if IN_USE in data:
             if int(data[IN_USE]) == 1:
-                self._in_use = True
+               self._in_use = True
             else:
-                self._in_use = False
+               self._in_use = False
             if not self._in_use:
                 self._load_power = 0
         

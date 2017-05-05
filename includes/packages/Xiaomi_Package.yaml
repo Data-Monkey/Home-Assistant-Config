@@ -69,7 +69,18 @@ sensor:
       balcony:
         value_template: '{{ states("sensor.temperature_158d00015763d7")|int}}C at {{states("sensor.humidity_158d00015763d7")|int}}% Humidity'
       laundry:
-        value_template: '{{ states("sensor.temperature_158d0001573b30")|int}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
+        value_template: '{{ states("binary_sensor.door_window_sensor_158d00012a885f")}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
+
+      front_door:
+        value_template: >-
+          {% if states.binary_sensor.door_window_sensor_158d00012a885f.state == 'on' %}
+            Open
+          {% elif states.binary_sensor.door_window_sensor_158d00012a885f.state == 'off' %}
+            Closed
+          {% else %}
+            n/a
+          {% endif %}
+        friendly_name: Front Door      
         
 automation:
 - alias: Hallway Lights by motion at night ON
@@ -108,3 +119,14 @@ automation:
       entity_id: light.gateway_light_286c0785b6f3
 
       
+- alias: Toggle Light Plug
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.switch_158d00015681b8
+      to: 'on'
+  action:
+    service: homeassistant.toggle
+    data:
+      entity_id: switch.plug_158d00013f9d2a
+
