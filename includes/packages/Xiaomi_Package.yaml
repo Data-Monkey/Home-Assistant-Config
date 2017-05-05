@@ -69,7 +69,7 @@ sensor:
       balcony:
         value_template: '{{ states("sensor.temperature_158d00015763d7")|int}}C at {{states("sensor.humidity_158d00015763d7")|int}}% Humidity'
       laundry:
-        value_template: '{{ states("binary_sensor.door_window_sensor_158d00012a885f")}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
+        value_template: '{{ states("sensor.humidity_158d0001573b30")}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
 
       front_door:
         value_template: >-
