@@ -1,22 +1,32 @@
 # All things Wall Panel
       
+homeassistant:
+  customize:
+    sensor.zan_nexus_battery:
+      hidden: false
+      friendly_name: "Nexus5 Battery"
+      icon: mdi:battery-unknown
       
+    binary_sensor.zan_nexus_status:
+      hidden: false
+      friendly_name: "Zanzito Connectivity"
+   
 device_tracker:
   - platform: mqtt_json
+    entity_namespace: 'zan'
     devices:
-      Nexus5Z: zanzito/Nexus5/location
-
+      zan_rolands_nexus: zanzito/Nexus5/location
 
 sensor:
   - platform: mqtt
-    name: "Nexus5Z Battery"
+    name: zan_nexus_battery
     state_topic: "zanzito/Nexus5/battery_level"
     qos: 0
     unit_of_measurement: "%"
 
 binary_sensor:
   - platform: mqtt
-    name: "Zanzito status"
+    name: zan_nexus_status
     state_topic: "zanzito/Nexus5/status"
     payload_on: "1"
     payload_off: "0"

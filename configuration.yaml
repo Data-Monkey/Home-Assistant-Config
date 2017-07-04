@@ -11,14 +11,15 @@ homeassistant:
   customize: !include_dir_merge_named includes/customisations
   
   packages:
-    gpsloggerpack:  !include includes/packages/GPSLogger_Package.yaml
+#    gpsloggerpack:  !include includes/packages/GPSLogger_Package.yaml
     castpack:       !include includes/packages/Cast_Package.yaml
     devicepack:     !include includes/packages/Devices_Package.yaml   
 #    harmonypack:    !include includes/packages/Harmony_Package.yaml    
     xiaomipack:     !include includes/packages/Xiaomi_Package.yaml 
     sonospack:      !include includes/packages/Sonos_Package.yaml 
-    zanzitopack:  !include includes/packages/Zanzito_Package.yaml 
-    
+    zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
+#    presencepack:   !include includes/packages/Presence_Package.yaml 
+    piholepack:     !include includes/packages/PiHole_Package.yaml     
   
   
 # Enables configuration UI
@@ -60,6 +61,7 @@ logbook:
 #    custom_components.light.xiaomi: debug
 #
 
+ios:
   
 influxdb:
   host: !secret INFLUX_HOST_IP
@@ -108,8 +110,23 @@ device_tracker: !include includes/device_trackers.yaml
 # testing stuff 
 
 
-camera:
-  name: Roland
-  platform: generic
-  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.rolands_nexus.attributes.latitude }},{{ states.device_tracker.rolands_nexus.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:R%7C{{ states.device_tracker.rolands_nexus.attributes.latitude }},{{ states.device_tracker.rolands_nexus.attributes.longitude }}
-  limit_refetch_to_url_change: true
+#person:
+#  - firstname: Roland
+#    lastname: Beck
+#    gender: male
+#    relationships:
+#      - person: person.helen_beck
+#        relation: WIFE
+#    device_trackers:
+#      - device_tracker.nmap_rolands_nexus
+#
+#  - firstname: Helen
+#    lastname: Beck
+
+
+
+#camera:
+#  name: Roland
+#  platform: generic
+#  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.zan_rolands_nexus.attributes.latitude }},{{ states.device_tracker.zan_rolands_nexus.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:R%7C{{ states.device_tracker.zan_rolands_nexus.attributes.latitude }},{{ states.device_tracker.zan_rolands_nexus.attributes.longitude }}
+#  limit_refetch_to_url_change: true

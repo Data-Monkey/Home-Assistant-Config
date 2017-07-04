@@ -5,8 +5,10 @@
 Devices:
   view: yes
   entities:
-    - group.gadgets
-    - sensor.obelix
+    - group.devices_network
+    - group.devices_computer
+    - group.devices_mediaplayer
+    - group.devices_gadgets
   
  
 Harmony:
@@ -14,10 +16,35 @@ Harmony:
   entities:
     - group.activity
 
+        
+Xioami_View:
+  view: yes
+  name: Xiaomi
+  entities:
+    - group.xiaomi
+
+
+Test_View:
+  view: yes
+  name: test
+  entities:
+    - group.occupancy
+    
     
 # --------------
 # GROUPS
 # --------------
+
+Occupancy:
+  name: Occupancy
+  view: no
+  entities:
+    - group.where_is_roland
+    - group.where_is_helen 
+    - sensor.temperature_158d0001576d20
+    - sensor.energy_usage
+    
+
 Activity:
   view: no
   entities:
@@ -28,45 +55,78 @@ Activity:
 Family:
   view: no
   entities:
-    - device_tracker.rolands_nexus
-    - device_tracker.helens_iphone
-Phones:
-  view: no
-  entities:  
-    - sensor.helens_iphone
-    - sensor.helens_winphone
-    - sensor.rolands_iphone
-    - sensor.rolands_nexus
+    - group.where_is_roland
+    - group.where_is_helen
+
     
+Where_Is_Roland:
+  name: Roland
+  view: no 
+  entities:
+    - device_tracker.nmap_rolands_iphone
+    - device_tracker.nmap_rolands_iphone_ext
+    - device_tracker.nmap_rolands_nexus 
+
+Where_Is_Helen:
+  name: Helen
+  view: no 
+  entities:
+    - device_tracker.nmap_helens_iphone
+    - device_tracker.nmap_helens_winphone 
     
-Gadgets:
+Devices_Gadgets:
+  name: Gadgets
   view: no
   entities:
-    - sensor.modem_router
-    - sensor.repeater
-    - sensor.obelix
-    - sensor.blue_laptop
-    - sensor.purple_laptop
-    - sensor.galaxy_tab
-    - sensor.efergy_hub
-    - sensor.chromecast
-    - sensor.fetch
-    - sensor.roku
-    - sensor.sonos_playbar
-    - sensor.xiaomi_gateway
-    - sensor.xiaomi_gateway2
-    - sensor.raspberry_pi
-    - sensor.hp_printer
-    - sensor.nexus_logger
-    - sensor.audiocast
-    - sensor.hp_tablet
-    - sensor.iconia_tab 
+    - sensor.device_efergy_hub
+    - sensor.device_xiaomi_gateway
+    - sensor.device_xiaomi_gateway2
+    - sensor.device_iconia_tab 
+    
+Devices_Phones:
+  name: Mobiles
+  view: no
+  entities:  
+    - sensor.device_nmap_helens_iphone
+    - sensor.device_nmap_helens_winphone
+    - sensor.device_nmap_rolands_iphone
+    - sensor.device_nmap_rolands_nexus
+    - sensor.device_galaxy_tab
+    
+Devices_Network:
+  name: Network
+  view: no
+  entities:
+    - sensor.device_modem_router
+    - sensor.device_repeater
+    - sensor.device_gate_pi  
+    - sensor.device_hp_printer
+
+Devices_Computer:
+  name: Computer
+  view: no
+  entities:
+    - sensor.device_obelix
+    - sensor.device_blue_laptop
+    - sensor.device_purple_laptop
+    - sensor.device_hp_tablet
+    
+Devices_MediaPlayer:
+  name: Media Player
+  view: no
+  entities:
+    - sensor.device_chromecast
+    - sensor.device_audiocast
+    - sensor.device_fetch
+    - sensor.device_roku
+    - sensor.device_sonos_playbar
     
 Monitoring:
   view: no
   entities:
     - sensor.crashplan_status
-    - sensor.nexus_battery_status
+    - binary_sensor.zan_nexus_status
+    - sensor.zan_nexus_battery
     - sensor.energy_usage
 
 Environment:
@@ -112,10 +172,5 @@ Xiaomi:
     - sensor.humidity_158d00015763d7
     - sensor.temperature_158d00015763d7 
     - sensor.humidity_158d0001573b30
-    - sensor.temperature_158d0001573b30     
+    - sensor.temperature_158d0001573b30
     
-Xioami_View:
-  view: yes
-  name: Xiaomi
-  entities:
-    - group.xiaomi

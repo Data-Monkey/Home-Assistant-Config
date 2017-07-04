@@ -1,0 +1,5 @@
+
+
+#sensor:
+#  - platform: pi_hole
+#    host: !secret PIHOLE_IP

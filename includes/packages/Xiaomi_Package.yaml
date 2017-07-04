@@ -59,7 +59,11 @@ homeassistant:
       friendly_name: 'Laundry'
       icon: mdi:oil-temperature  
 
-     
+# sensors just for graphs
+    sensor.graph_front_door:
+      hidden: true    
+    sensor.graph_hallway_motion:
+      hidden: true
 
 sensor:
   - platform: template
@@ -69,9 +73,10 @@ sensor:
       balcony:
         value_template: '{{ states("sensor.temperature_158d00015763d7")|int}}C at {{states("sensor.humidity_158d00015763d7")|int}}% Humidity'
       laundry:
-        value_template: '{{ states("sensor.humidity_158d0001573b30")}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
+        value_template: '{{ states("sensor.temperature_158d0001573b30")|int}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
 
       front_door:
+        friendly_name: Front Door   
         value_template: >-
           {% if states.binary_sensor.door_window_sensor_158d00012a885f.state == 'on' %}
             Open
@@ -80,8 +85,33 @@ sensor:
           {% else %}
             n/a
           {% endif %}
-        friendly_name: Front Door      
-        
+          
+   
+      
+      graph_front_door:
+        unit_of_measurement: 'graph'      
+        value_template: >-
+          {% if states.binary_sensor.door_window_sensor_158d00012a885f.state == 'on' %}
+            1
+          {% elif states.binary_sensor.door_window_sensor_158d00012a885f.state == 'off' %}
+            0
+          {% else %}
+            -1
+          {% endif %}
+
+      graph_hallway_motion:
+        unit_of_measurement: 'graph'
+        value_template: >-
+          {% if states.binary_sensor.motion_sensor_158d00012dc3de.state == 'on' %}
+            1
+          {% elif states.binary_sensor.motion_sensor_158d00012dc3de.state == 'off' %}
+            0
+          {% else %}
+            -1
+          {% endif %}
+          
+          
+          
 automation:
 - alias: Hallway Lights by motion at night ON
  # hidden: True

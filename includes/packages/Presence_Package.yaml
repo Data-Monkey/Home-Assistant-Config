@@ -1,0 +1,29 @@
+# Work out presence
+#
+# Inspired here: https://community.home-assistant.io/t/presence-detection-with-multiple-devices-multiple-trackers/4335/28
+
+
+# Roland:
+#  Nexus Phone
+#  Nexus Zanzito Service
+#  iPhone
+
+# Helen:
+#  iPhone
+
+homeassistant:
+  customize:
+    sensor.where_is_roland:
+      hidden: false
+      friendly_name: Roland
+      
+      
+      
+sensor:
+  - platform: template
+    sensors: 
+      rolands_iphone_home:
+        value_template: '{% if is_state("device_tracker.nmap_rolands_iphone", "home") or is_state("device_tracker.nmap_rolands_iphone_ext", "home") %} home {% else %} not_home {% endif %}'
+        
+      where_is_roland:
+        value_template: '{% if is_state("sensor.rolands_iphone_home", "home") or is_state("device_tracker.nmap_rolands_nexus", "home") %} Home {% else %} Not Home {% endif %}'

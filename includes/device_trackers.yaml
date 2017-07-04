@@ -1,7 +1,8 @@
 #Device Trackers
   - platform: nmap_tracker
     track_new_devices: yes
-    hosts: -Pn 192.168.2.1-255
-    home_interval: 60
+    hosts: -Pn 192.168.2.1-180
+    home_interval: 30
+    entity_namespace: 'nmap'
 
 # Zanzito defied in the package
