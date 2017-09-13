@@ -10,7 +10,7 @@
 
 remote:
   - platform: harmony
-    name: Livingroom
+    name: HarmonyHub
     username: !secret HARMONY_USER
     password: !secret HARMONY_PWD
     host: !secret HARMONY_IP
@@ -22,7 +22,7 @@ sensor:
   sensors:
     harmony_current_activity:
       friendly_name: 'Harmony Current Activity'
-      value_template: '{% if states.remote.livingroom.state %}{{ states.remote.livingroom.attributes.current_activity }}{% endif %}'
+      value_template: '{% if states.remote.harmonyhub.state %}{{ states.remote.harmonyhub.attributes.current_activity }}{% endif %}'
 
       
 input_select:
@@ -45,7 +45,7 @@ automation:
       from: 'Select Input'
     action:
       - service: remote.turn_on
-        entity_id: remote.livingroom
+        entity_id: remote.harmonyhub
         data_template:
           activity: >
             {% if is_state("input_select.harmony_control", "Watch TV") %}
@@ -68,7 +68,7 @@ automation:
       to: 'PowerOff'
     action:
       - service: remote.turn_off
-        entity_id: remote.livingroom
+        entity_id: remote.harmonyhub
       - service: input_select.select_option
         entity_id: input_select.harmony_control
         data_template:

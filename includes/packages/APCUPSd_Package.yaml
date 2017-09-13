@@ -1,0 +1,17 @@
+# All things UPS
+
+apcupsd:
+  host: !secret TOWER_IP
+  
+sensor:
+  - platform: apcupsd
+    resources:
+      - bcharge
+      - linev
+      - loadpct
+      - numxfers
+      - outputv
+      - status
+      - timeleft
+      - tonbatt
+      

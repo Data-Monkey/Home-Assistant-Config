@@ -3,10 +3,10 @@
 xiaomi:
  gateways:
  # hallway gateway
-   - sid: !secret XIAOMI_SID_1 
+   - mac: !secret XIAOMI_MAC_1 
      key: !secret XIAOMI_KEY_1  
  # bedroom gateway
-   - sid: !secret XIAOMI_SID_2 
+   - mac: !secret XIAOMI_MAC_2 
      key: !secret XIAOMI_KEY_2  
 
 homeassistant:
@@ -17,16 +17,34 @@ homeassistant:
        friendly_name: 'Xiaomi Gateway Light Sensor'       
     binary_sensor.switch_158d00015681b8:
       icon: mdi:checkbox-multiple-blank-circle-outline
-      friendly_name: 'Xiaomi Button'
+      friendly_name: 'Xiaomi Button L'
     binary_sensor.motion_sensor_158d00012dc3de:
       friendly_name: 'Hallway Motion'
-    switch.plug_158d00013e8964:
-      friendly_name: 'Xiaomi Plug'
+    binary_sensor.motion_sensor_158d00014dd669:
+      friendly_name: 'Livingroom Motion' 
+    binary_sensor.motion_sensor_158d00014dd511:
+      friendly_name: 'Kitchen Motion'      
+    
+
     switch.plug_158d00013f9d2a:
-      friendly_name: 'Xiaomi Light Plug'
+      friendly_name: 'Office Light Plug'
     binary_sensor.door_window_sensor_158d00012a885f:
       friendly_name: 'Xiaomi Door Sensor'
 
+    
+    binary_sensor.switch_158d0001870e25:
+      icon: mdi:checkbox-multiple-blank-circle-outline
+      friendly_name: 'Xiaomi Button R'
+    switch.plug_158d00013e8964_2:
+      friendly_name: 'Rolands Light Plug'
+
+    switch.plug_158d0001288e14:
+      friendly_name: 'Helens Light Plug'      
+    binary_sensor.switch_158d000186dfe4:
+      icon: mdi:checkbox-multiple-blank-circle-outline
+      friendly_name: 'Xiaomi Button H'
+
+      
     sensor.illumination_f0b429cfbc12:
        friendly_name: 'Xiaomi Gateway 2 Light Sensor' 
     light.gateway_light_f0b429cfbc12:    
@@ -114,6 +132,7 @@ sensor:
           
 automation:
 - alias: Hallway Lights by motion at night ON
+  initial_state: 'on'
  # hidden: True
   condition:
     - condition: state
@@ -131,6 +150,7 @@ automation:
       brightness: 75
 
 - alias: Hallway Lights by motion at night OFF
+  initial_state: 'on'
 #  hidden: True
 #  condition:
 #    - condition: state
@@ -148,15 +168,83 @@ automation:
     data:
       entity_id: light.gateway_light_286c0785b6f3
 
-      
+
+# Bedroom Desk/Office Lamp
+# -----------------------     
 - alias: Toggle Light Plug
+  initial_state: 'on'
  # hidden: True
   trigger:
-    - platform: state
+    platform: event
+    event_type: click
+    event_data:
+      # Switch L
       entity_id: binary_sensor.switch_158d00015681b8
-      to: 'on'
+      click_type: single
   action:
     service: homeassistant.toggle
     data:
       entity_id: switch.plug_158d00013f9d2a
 
+      
+# Bedside Table Lamps
+# -----------------------
+
+# Roland's Light
+- alias: Toggle Rolands Light
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      # Switch R
+      entity_id: binary_sensor.switch_158d0001870e25
+      click_type: single
+  action:
+    service: homeassistant.toggle
+    data:
+      entity_id: switch.plug_158d00013e8964_2
+
+
+# Helen's Light      
+- alias: Toggle Helens Light
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      # Switch H
+      entity_id: binary_sensor.switch_158d000186dfe4
+      click_type: single
+  action:
+    service: homeassistant.toggle
+    data:
+      entity_id: switch.plug_158d0001288e14   
+
+      
+- alias: All Bedroom Lights OFF
+  initial_state: 'on'
+  trigger:
+    # Switch L
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d00015681b8
+        click_type: double
+    # Switch R    
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001870e25
+        click_type: double
+    # Switch H
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d000186dfe4
+        click_type: double        
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.BedroomLights
+
+      

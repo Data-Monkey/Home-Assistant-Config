@@ -1,0 +1,27 @@
+# defining what to log and where to log it too
+homeassistant: 
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+
+#logger:
+#  default: warning
+#  logs:
+#    custom_components.xiaomi: debug
+#    custom_components.sensor.xiaomi: debug
+#    custom_components.switch.xiaomi: debug
+#    custom_components.binary_sensor: debug
+#    custom_components.light.xiaomi: debug
+#
+
+#ios:
+  
+influxdb:
+  host: !secret INFLUX_HOST_IP
+  username: !secret INFLUX_USER
+  password: !secret INFLUX_PWD
+
+

@@ -1,0 +1,20 @@
+# All things Floorplan
+
+# I am tinking to keep this a an abstruction between the floorplan IDs and the real sensors.
+# Well, I am an architect after all, more layer, more better :)
+
+
+
+sensor:
+  - platform: template
+    sensors: 
+      fp_hallway:
+        value_template: >-
+          {% if states.binary_sensor.motion_sensor_158d00012dc3de.state == 'on' %}
+            1
+          {% elif states.binary_sensor.motion_sensor_158d00012dc3de.state == 'off' %}
+            0
+          {% else %}
+            -1
+          {% endif %}
+

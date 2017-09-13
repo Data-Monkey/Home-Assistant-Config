@@ -123,13 +123,22 @@ sensor:
         icon_template: mdi:image-filter-tilt-shift
         friendly_name: Xiaomi Gateway  
 
+      device_google_home:
+        value_template: '{% if is_state("device_tracker.nmap_google_home", "home") %}Online{% else %}Offline{% endif %}'
+        icon_template: mdi:home-circle
+        friendly_name: Google Home  
+        
+
 # SENSOR
       device_efergy_hub:
         value_template: '{% if is_state("device_tracker.efergy_hub", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:gauge
         friendly_name: Efergy Hub  
  
-        
+      device_nest_protect:
+        value_template: '{% if is_state("device_tracker.nmap_nest_protect", "home") %}Online{% else %}Offline{% endif %}'
+        icon_template: mdi:nest-protect
+        friendly_name: Nest Protect         
         
 automation:
   - alias: Notify for new devices

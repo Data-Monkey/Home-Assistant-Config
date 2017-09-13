@@ -21,7 +21,8 @@ Xioami_View:
   view: yes
   name: Xiaomi
   entities:
-    - group.xiaomi
+    - group.xiaomi1
+    - group.xiaomi2
 
 
 Test_View:
@@ -50,7 +51,7 @@ Activity:
   entities:
     - sensor.harmony_current_activity
     - input_select.harmony_control
-    - remote.livingroom
+    - remote.harmonyhub
 
 Family:
   view: no
@@ -82,6 +83,8 @@ Devices_Gadgets:
     - sensor.device_xiaomi_gateway
     - sensor.device_xiaomi_gateway2
     - sensor.device_iconia_tab 
+    - sensor.device_nest_protect
+    - sensor.device_google_home
     
 Devices_Phones:
   name: Mobiles
@@ -129,6 +132,7 @@ Monitoring:
     - sensor.zan_nexus_battery
     - sensor.energy_usage
 
+
 Environment:
   view: no
   entities: 
@@ -152,19 +156,15 @@ Weather:
     - sensor.yr_symbol
     
    
-Xiaomi:
+Xiaomi1:
+  name: Gateway 1
   view: no
   entities:
     - sensor.xiaomi_gateway
-    - sensor.xiaomi_gateway2
     - light.gateway_light_286c0785b6f3
     - sensor.illumination_286c0785b6f3
-    - light.gateway_light_f0b429cfbc12
-    - sensor.illumination_f0b429cfbc12
-    - binary_sensor.switch_158d00015681b8
     - binary_sensor.motion_sensor_158d00012dc3de
-    - switch.plug_158d00013e8964
-    - switch.plug_158d00013f9d2a
+
     - binary_sensor.door_window_sensor_158d00012a885f
     - sensor.front_door    
     - sensor.humidity_158d0001576d20
@@ -173,4 +173,56 @@ Xiaomi:
     - sensor.temperature_158d00015763d7 
     - sensor.humidity_158d0001573b30
     - sensor.temperature_158d0001573b30
+    - binary_sensor.motion_sensor_158d00014dd511
+    - binary_sensor.motion_sensor_158d00014dd669
+
+Xiaomi2:
+  name: Gateway 2
+  view: no
+  entities:
+    - sensor.xiaomi_gateway2
+    - light.gateway_light_f0b429cfbc12
+    - sensor.illumination_f0b429cfbc12
+    # Office Light
+    - binary_sensor.switch_158d00015681b8
+    - switch.plug_158d00013f9d2a
+    # Rolands Light
+    - binary_sensor.switch_158d0001870e25
+    - switch.plug_158d00013e8964_2
+    - switch.plug_158d00013e8964
+    # Helens Light    
+    - binary_sensor.switch_158d000186dfe4
+    - switch.plug_158d0001288e14
+
+BedroomLights:
+  name: Bedroom Lights
+  view: no
+  entities:
+    # Office Light
+    - switch.plug_158d00013f9d2a
+    # Rolands Light
+    - switch.plug_158d00013e8964_2 
+    # Helens Light    
+    - switch.plug_158d0001288e14
+
+Nest:
+  name: Nest Protect
+  view: no
+  entities:
+    - binary_sensor.hallway_nest_protect_online
+    - sensor.hallway_nest_protect_battery_health
+    - sensor.hallway_nest_protect_co_status
+    - sensor.hallway_nest_protect_smoke_status
     
+UPS:
+  name: UPS
+  view: no
+  entities: 
+    - sensor.ups_battery
+    - sensor.ups_input_voltage
+    - sensor.ups_load
+    - sensor.ups_output_voltage
+    - sensor.ups_status
+    - sensor.ups_time_left
+    - sensor.ups_time_on_battery
+    - sensor.ups_transfer_count        

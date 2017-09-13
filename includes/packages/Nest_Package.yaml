@@ -1,0 +1,9 @@
+# All things NEST
+
+
+nest:
+  client_id:     !secret NEST_CLIENT_ID
+  client_secret: !secret NEST_CLIENT_SECRET
+
+
+
