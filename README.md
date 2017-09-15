@@ -13,9 +13,9 @@ I will try to list the components that I use in this file and please feel free t
 
 - HA is installed in a docker hosted on an unRAID box
 
-- Xiaomi Gateway (x2)             (https://www.gearbest.com/living-appliances/pp_344667.html?wid=21)
+- Xiaomi Gateway (x2)             [link](https://www.gearbest.com/living-appliances/pp_344667.html?wid=21)
   with a few
-  - Temperature Sensors           (https://www.gearbest.com/living-appliances/pp_344665.html?wid=21)
+  - Temperature Sensors           [link](https://www.gearbest.com/living-appliances/pp_344665.html?wid=21)
   - Body Sensors                  (https://www.gearbest.com/smart-light-bulb/pp_257678.html?wid=21)
   - Door Sensors                  (https://www.gearbest.com/smart-light-bulb/pp_257677.html?wid=21)
   - Power Plugs                   (https://www.gearbest.com/living-appliances/pp_344666.html)
