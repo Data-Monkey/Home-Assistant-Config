@@ -13,21 +13,26 @@ I will try to list the components that I use in this file and please feel free t
 
 - HA is installed in a docker hosted on an unRAID box
 
-- Xiaomi Gateway (x2) with a few
-  - Temperature Sensors
-  - Door Sensor
-  - Power Plugs
-  - Buttons
+- Xiaomi Gateway (x2)             (https://www.gearbest.com/living-appliances/pp_344667.html?wid=21)
+  with a few
+  - Temperature Sensors           (https://www.gearbest.com/living-appliances/pp_344665.html?wid=21)
+  - Body Sensors                  (https://www.gearbest.com/smart-light-bulb/pp_257678.html?wid=21)
+  - Door Sensors                  (https://www.gearbest.com/smart-light-bulb/pp_257677.html?wid=21)
+  - Power Plugs                   (https://www.gearbest.com/living-appliances/pp_344666.html)
+  - Buttons                       (https://www.gearbest.com/smart-light-bulb/pp_257679.html)
+  - Water Sensor                  (https://www.gearbest.com/home-smart-improvements/pp_668897.html)
 
-- Logitech Harmony Hub (not integratedi yet)
+- Logitech Harmony Hub (not integrated yet)
 
 - Sonos Playbar + Sub
 
 - Chromecast + Audio Cast
 
-- Efergy Energy Monitor (demo: https://engage.efergy.com/dashboard)
+- Efergy Energy Monitor           (demo: https://engage.efergy.com/dashboard)
 
 - Roku2  
+
+- Google Home (x2) 
 
 <h2> Software </h2>
 
