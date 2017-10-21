@@ -1,0 +1,12 @@
+google_assistant:
+  project_id: !secret GOOGLE_ASSISTANT_PROJECT_ID
+  client_id: !secret GOOGLE_ASSISTANT_CLIENT_ID
+  access_token: !secret GOOGLE_ASSISTANT_TOKEN
+  expose_by_default: false
+
+#homeassistant:
+#  customize:
+
+# this is just for the entities that don't have a customize yet
+  
+ 

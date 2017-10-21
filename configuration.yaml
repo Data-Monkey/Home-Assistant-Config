@@ -24,7 +24,7 @@ homeassistant:
     nestpack:       !include includes/packages/Nest_Package.yaml     
 #    floorplanpack:  !include includes/packages/Floorplan_Package.yaml     
 #    loggingpack:    !include includes/packages/Logging_Package.yaml      
- 
+    ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
 
   
 # Enables configuration UI
@@ -40,26 +40,33 @@ history:
 logbook:
 
 
-#logger:
-#  default: warning
-#  logs:
-#    custom_components.xiaomi: debug
-#    custom_components.sensor.xiaomi: debug
-#    custom_components.switch.xiaomi: debug
-#    custom_components.binary_sensor: debug
-#    custom_components.light.xiaomi: debug
-#
+logger:
+  default: warn
 
-#ios:
+  logs:
+    homeassistant.custom_components.google_assistant: debug  
+#    homeassistant.components.xiaomi_aqara: debug
+#    homeassistant.components.sensor.xiaomi_aqara: debug
+#    homeassistant.components.binary_sensor.xiaomi_aqara: debug
+#    homeassistant.components.light.xiaomi_aqara: debug
+#    homeassistant.components.switch.xiaomi_aqara: debug
+
+ios:
   
 influxdb:
   host: !secret INFLUX_HOST_IP
   username: !secret INFLUX_USER
   password: !secret INFLUX_PWD
-
+  include:
+    domains:
+       - binary_sensor
+       - sensor
+       - switch
+       
  
 http:
   base_url: !secret HA_BASE_URL
+  api_password: !secret HA_PASSWORD
   use_x_forwarded_for: True
   ip_ban_enabled: True
   login_attempts_threshold: 5
@@ -119,7 +126,13 @@ panel_custom:
     url_path: floorplan
     config: !include floorplan.yaml
 
+#emulated_hue:
+#  listen_port: 80
 
+
+
+
+  
 #person:
 #  - firstname: Roland
 #    lastname: Beck

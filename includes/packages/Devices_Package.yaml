@@ -25,6 +25,10 @@ sensor:
         icon_template: mdi:wall
         friendly_name: Gate Pi  
 
+      device_access_point:
+        value_template: '{% if is_state("device_tracker.nmap_tp_access_point", "home") %}Online{% else %}Offline{% endif %}'
+        icon_template: mdi:access-point
+        friendly_name: Access Point 
         
 # MEDIA PLAYER
       device_fetch:
@@ -91,10 +95,10 @@ sensor:
         friendly_name: 'Galaxy Tablet'
 
 # -- Helen        
-      device_nmap_helens_winphone:
-        value_template: '{% if is_state("device_tracker.nmap_helens_winphone", "home") %}Online{% else %}Offline{% endif %}'
+      device_nmap_helens_workphone:
+        value_template: '{% if is_state("device_tracker.nmap_helens_workphone", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:cellphone
-        friendly_name: Helen's WinPhone
+        friendly_name: Helen's WorkPhone
 
       device_nmap_helens_iphone:
         value_template: '{% if is_state("device_tracker.nmap_helens_iphone", "home") or is_state("device_tracker.nmap_helens_iphone_ext", "home") %} Online {% else %} Offline {% endif %}'
@@ -127,7 +131,11 @@ sensor:
         value_template: '{% if is_state("device_tracker.nmap_google_home", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:home-circle
         friendly_name: Google Home  
-        
+
+      device_google_home_bedroom:
+        value_template: '{% if is_state("device_tracker.nmap_google_home_bedroom", "home") %}Online{% else %}Offline{% endif %}'
+        icon_template: mdi:home-circle
+        friendly_name: Google Home Bedroom         
 
 # SENSOR
       device_efergy_hub:

@@ -53,28 +53,28 @@ Activity:
     - input_select.harmony_control
     - remote.harmonyhub
 
-Family:
-  view: no
-  entities:
-    - group.where_is_roland
-    - group.where_is_helen
-
-    
-Where_Is_Roland:
-  name: Roland
-  view: no 
-  entities:
-    - device_tracker.nmap_rolands_iphone
-    - device_tracker.nmap_rolands_iphone_ext
-    - device_tracker.nmap_rolands_nexus 
-
-Where_Is_Helen:
-  name: Helen
-  view: no 
-  entities:
-    - device_tracker.nmap_helens_iphone
-    - device_tracker.nmap_helens_winphone 
-    
+#Family:
+#  view: no
+#  entities:
+#    - group.where_is_roland
+#    - group.where_is_helen
+#
+#    
+#Where_Is_Roland:
+#  name: Roland
+#  view: no 
+#  entities:
+#    - device_tracker.nmap_rolands_iphone
+#    - device_tracker.nmap_rolands_iphone_ext
+#    - device_tracker.nmap_rolands_nexus 
+#
+#Where_Is_Helen:
+#  name: Helen
+#  view: no 
+#  entities:
+#    - device_tracker.nmap_helens_iphone
+#    - device_tracker.nmap_helens_winphone 
+#    
 Devices_Gadgets:
   name: Gadgets
   view: no
@@ -85,15 +85,19 @@ Devices_Gadgets:
     - sensor.device_iconia_tab 
     - sensor.device_nest_protect
     - sensor.device_google_home
+    - sensor.device_google_home_bedroom
     
 Devices_Phones:
   name: Mobiles
   view: no
   entities:  
     - sensor.device_nmap_helens_iphone
-    - sensor.device_nmap_helens_winphone
+    - sensor.device_nmap_helens_workphone
     - sensor.device_nmap_rolands_iphone
+    - sensor.rolands_work_phone_battery_state
+    - sensor.rolands_work_phone_battery_level
     - sensor.device_nmap_rolands_nexus
+    - sensor.zan_nexus_battery
     - sensor.device_galaxy_tab
     
 Devices_Network:
@@ -102,6 +106,7 @@ Devices_Network:
   entities:
     - sensor.device_modem_router
     - sensor.device_repeater
+    - sensor.device_access_point
     - sensor.device_gate_pi  
     - sensor.device_hp_printer
 
@@ -188,7 +193,6 @@ Xiaomi2:
     - switch.plug_158d00013f9d2a
     # Rolands Light
     - binary_sensor.switch_158d0001870e25
-    - switch.plug_158d00013e8964_2
     - switch.plug_158d00013e8964
     # Helens Light    
     - binary_sensor.switch_158d000186dfe4
@@ -201,7 +205,7 @@ BedroomLights:
     # Office Light
     - switch.plug_158d00013f9d2a
     # Rolands Light
-    - switch.plug_158d00013e8964_2 
+    - switch.plug_158d00013e8964
     # Helens Light    
     - switch.plug_158d0001288e14
 
