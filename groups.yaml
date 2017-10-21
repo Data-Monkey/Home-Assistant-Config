@@ -75,6 +75,7 @@ Activity:
 #    - device_tracker.nmap_helens_iphone
 #    - device_tracker.nmap_helens_winphone 
 #    
+
 Devices_Gadgets:
   name: Gadgets
   view: no

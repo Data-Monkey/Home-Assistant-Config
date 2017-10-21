@@ -23,7 +23,7 @@ homeassistant:
     apcupsdpack:    !include includes/packages/APCUPSd_Package.yaml     
     nestpack:       !include includes/packages/Nest_Package.yaml     
 #    floorplanpack:  !include includes/packages/Floorplan_Package.yaml     
-#    loggingpack:    !include includes/packages/Logging_Package.yaml      
+    loggingpack:    !include includes/packages/Logging_Package.yaml      
     ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
 
   
@@ -43,25 +43,19 @@ logbook:
 logger:
   default: warn
 
-  logs:
-    homeassistant.custom_components.google_assistant: debug  
+#  logs:
+#    homeassistant.custom_components.google_assistant: debug  
 #    homeassistant.components.xiaomi_aqara: debug
 #    homeassistant.components.sensor.xiaomi_aqara: debug
 #    homeassistant.components.binary_sensor.xiaomi_aqara: debug
 #    homeassistant.components.light.xiaomi_aqara: debug
 #    homeassistant.components.switch.xiaomi_aqara: debug
 
+
+
 ios:
   
-influxdb:
-  host: !secret INFLUX_HOST_IP
-  username: !secret INFLUX_USER
-  password: !secret INFLUX_PWD
-  include:
-    domains:
-       - binary_sensor
-       - sensor
-       - switch
+
        
  
 http:
@@ -115,24 +109,9 @@ device_tracker: !include includes/device_trackers.yaml
 
 
 
-
-
 # testing stuff 
 
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
 
-#emulated_hue:
-#  listen_port: 80
-
-
-
-
-  
 #person:
 #  - firstname: Roland
 #    lastname: Beck
