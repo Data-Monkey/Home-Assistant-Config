@@ -112,6 +112,8 @@ device_tracker: !include includes/device_trackers.yaml
 # testing stuff 
 
 
+
+
 #person:
 #  - firstname: Roland
 #    lastname: Beck

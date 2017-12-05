@@ -9,7 +9,18 @@ xiaomi_aqara:
    - mac: !secret XIAOMI_MAC_2
      key: !secret XIAOMI_KEY_2
 
-
+     
+light:
+  - platform: yeelight
+    devices:
+      192.168.2.80:
+        #34:CE:00:87:F7:93
+        name: Bedroom Light
+        transition: 1000     
+      192.168.2.81: 
+        name: Wardrobe Light
+        transition: 1000
+        
 homeassistant:
   customize:
 # ------------------------
@@ -38,7 +49,22 @@ homeassistant:
 #   Devices - Bedroom
 # ------------------------
 
+    # Ceiling Light
+    light.bedroom_light:
+      friendly_name: 'Bedroom Light'
+      google_assistant: true
+      google_assistant_name: 'Bedroom Light'      
 
+    # Wardrobe Light
+    light.wardrobe_light:
+      friendly_name: 'Wardrobe Light'
+      google_assistant: true
+      google_assistant_name: 'Wardrobe Light'           
+
+    # Wardrobe Motion
+    binary_sensor.motion_sensor_158d00016db2bd:
+        friendly_name: 'Wardrobe Motion'
+      
     # Desk Light
     binary_sensor.switch_158d00015681b8:
       icon: mdi:checkbox-multiple-blank-circle-outline
@@ -217,6 +243,40 @@ automation:
     data:
       entity_id: light.gateway_light_286c0785b6f3
 
+      
+      
+      
+#  Wardrobe Light by Motion
+# =================================================
+- alias: Wardrobe Light by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00016db2bd
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.wardrobe_light
+      #rgb_color: [25,0,150]
+      brightness: 100
+
+- alias: Wardrobe Light by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00016db2bd
+      to: 'off'
+      for:
+        minutes: 0
+        seconds: 30
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.wardrobe_light
+      
+      
 
 # Bedroom Desk/Office Lamp
 # -----------------------
@@ -300,3 +360,27 @@ automation:
     service: homeassistant.turn_off
     entity_id: group.BedroomLights
 
+- alias: Bedroom Ceiling Light ON
+  initial_state: 'on'
+  trigger:
+    # Switch L
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d00015681b8
+        click_type: long_click_press
+    # Switch R
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001870e25
+        click_type: long_click_press
+    # Switch H
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d000186dfe4
+        click_type: long_click_press
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.bedroom_light
