@@ -20,6 +20,9 @@ light:
       192.168.2.81: 
         name: Wardrobe Light
         transition: 1000
+      192.168.2.10: 
+        name: Bathroom Light
+        transition: 1000       
         
 homeassistant:
   customize:
@@ -53,7 +56,7 @@ homeassistant:
     light.bedroom_light:
       friendly_name: 'Bedroom Light'
       google_assistant: true
-      google_assistant_name: 'Bedroom Light'      
+      google_assistant_name: 'Ceiling Light'      
 
     # Wardrobe Light
     light.wardrobe_light:
@@ -92,6 +95,11 @@ homeassistant:
       friendly_name: 'Helen''s Light Plug'
       google_assistant: true
       google_assistant_name: 'Helen''s Light'
+      
+    # Wardrobe illumination
+    sensor.illumination_158d00016db2bd:
+      friendly_name: 'Wardrobe Brightness'
+      unit_of_measurement: lx
 
 # ------------------------
 #   Devices - Hallway
@@ -117,12 +125,17 @@ homeassistant:
 
     binary_sensor.motion_sensor_158d00014dd669:
       friendly_name: 'Livingroom Motion'
-
+    switch.plug_158d0001debec9:
+      friendly_name: 'XMas Tree Plug'    
+      google_assistant: true
+      google_assistant_name: 'Christmas Tree'
+      google_assistant_type: switch
 # ------------------------
 #   Devices - Kitchen
 # ------------------------
     binary_sensor.motion_sensor_158d00014dd511:
       friendly_name: 'Kitchen Motion'
+
 
 
 # ------------------------
@@ -148,9 +161,24 @@ homeassistant:
     sensor.laundry:
       friendly_name: 'Laundry'
       icon: mdi:oil-temperature
-
-
-
+    binary_sensor.water_leak_sensor_158d0001d593cc:
+      friendly_name: 'Water Leak Sensor'
+      
+# ------------------------
+#   Devices - Bathroom
+# ------------------------
+    # Bathroom Light
+    light.bathroom_light:
+      friendly_name: 'Bathroom Light'
+      google_assistant: true
+      google_assistant_name: 'Bathroom Light'   
+    # Motion
+    binary_sensor.motion_sensor_158d00016db261:
+      friendly_name: 'Bathroom Motion'
+      
+    # Illumination
+    sensor.illumination_158d00016db261:
+      friendly_name: 'Bathroom Brightness'
 
 # sensors just for graphs
     sensor.graph_front_door:
@@ -271,11 +299,58 @@ automation:
       for:
         minutes: 0
         seconds: 30
+    - platform: state
+      entity_id: light.wardrobe_light
+      from: 'unavailable'
+      to: 'on'
+      for:
+        minutes: 0
+        seconds: 10
   action:
     service: homeassistant.turn_off
     data:
       entity_id: light.wardrobe_light
       
+
+#  BATHROOM Light by Motion 
+# =================================================
+- alias: Bathroom Light by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00016db261
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.bathroom_light
+      #rgb_color: [25,0,150]
+      brightness: 100
+
+- alias: Wardrobe Light by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00016db261
+      to: 'off'
+      for:
+        minutes: 0
+        seconds: 30
+        
+    - platform: state
+      entity_id: light.bathroom_light
+      from: 'unavailable'
+      to: 'on'
+      for:
+        minutes: 0
+        seconds: 10
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.bathroom_light
+      
+
       
 
 # Bedroom Desk/Office Lamp

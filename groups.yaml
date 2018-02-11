@@ -14,7 +14,10 @@ Rooms:
   view: yes
   name: Rooms
   entities:
-    - group.BedroomLights
+    #- group.BedroomLights
+    - group.RoomsBedroom
+    - group.RoomsBathroom
+    - group.RoomsLaundry
     
 Harmony:
   view: yes
@@ -186,6 +189,7 @@ Xiaomi1:
     - sensor.temperature_158d0001573b30
     - binary_sensor.motion_sensor_158d00014dd511
     - binary_sensor.motion_sensor_158d00014dd669
+    - binary_sensor.motion_sensor_158d00016db261
 
 Xiaomi2:
   name: Gateway 2
@@ -221,8 +225,43 @@ BedroomLights:
     - switch.plug_158d0001288e14
     # Ceiling Light
     - light.bedroom_light
+    # Wardrobe Light
     - light.wardrobe_light
 
+
+RoomsBathroom:
+  name: Bathroom
+  view: no
+  entities:
+    - light.bathroom_light
+    - binary_sensor.motion_sensor_158d00016db261
+    - sensor.illumination_158d00016db261
+    
+RoomsBedroom:
+  name: Bedroom
+  view: no
+  entities:
+    # Office Light
+    - switch.plug_158d00013f9d2a
+    # Rolands Light
+    - switch.plug_158d00013e8964
+    # Helens Light    
+    - switch.plug_158d0001288e14
+    # Ceiling Light
+    - light.bedroom_light
+    # Wardrobe Light
+    - light.wardrobe_light
+    - binary_sensor.motion_sensor_158d00016db2bd
+    - sensor.illumination_158d00016db2bd
+
+
+RoomsLaundry:
+    name: Laundry
+    view: no
+    entities:
+      - binary_sensor.water_leak_sensor_158d0001d593cc
+      - sensor.laundry
+    
 Nest:
   name: Nest Protect
   view: no
