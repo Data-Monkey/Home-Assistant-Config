@@ -25,6 +25,7 @@ homeassistant:
 #    floorplanpack:  !include includes/packages/Floorplan_Package.yaml     
     loggingpack:    !include includes/packages/Logging_Package.yaml      
     ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
+    battery_alert:  !include includes/packages/battery_alert.yaml
 
   
 # Enables configuration UI
@@ -95,6 +96,8 @@ mqtt:
   keepalive: 60
   username:  !secret MQTT_USER
   password:  !secret MQTT_PWD
+  discovery: true
+  discovery_prefix: homeassistant  
 
 
 
@@ -112,6 +115,12 @@ device_tracker: !include includes/device_trackers.yaml
 # testing stuff 
 
 
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
 
 
 #person:

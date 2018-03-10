@@ -80,6 +80,8 @@
             - binary_sensor.motion_sensor_158d00012dc3de # Hallway
             - binary_sensor.motion_sensor_158d00014dd669 # LivingRoom
             - binary_sensor.motion_sensor_158d00014dd511 # Kitchen
+            - binary_sensor.motion_sensor_158d00016db261 # Bathroom
+            - binary_sensor.motion_sensor_158d00016db2bd # Wardrobe
 
           states:
             - state: 'off'

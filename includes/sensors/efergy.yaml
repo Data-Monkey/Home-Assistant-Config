@@ -2,4 +2,5 @@
     app_token: !secret EFERGY_TOKEN
     utc_offset: 600
     monitored_variables:
-        - type: instant_readings
+#       - type: instant_readings
+        - type: current_values

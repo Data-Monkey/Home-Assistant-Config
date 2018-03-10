@@ -15,6 +15,7 @@ remote:
     password: !secret HARMONY_PWD
     host: !secret HARMONY_IP
     port: 5222
+    activity: Watch Plex
 
 
 sensor:
@@ -31,7 +32,7 @@ input_select:
     options:
       - Select Input
       - Watch TV
-      - Watch Roku
+      - Watch Plex
       - PowerOff
     icon: mdi:settings_remote
 
@@ -50,8 +51,8 @@ automation:
           activity: >
             {% if is_state("input_select.harmony_control", "Watch TV") %}
               23619023
-            {% elif is_state("input_select.harmony_control", "Watch Roku") %}
-              23616527
+            {% elif is_state("input_select.harmony_control", "Watch Plex") %}
+              29111371
             {% elif is_state("input_select.harmony_control", "PowerOff") %}
               -1
             {% endif %}
