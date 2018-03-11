@@ -321,6 +321,10 @@ automation:
     - platform: state
       entity_id: binary_sensor.motion_sensor_158d00016db261
       to: 'on'
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.light_of_day.state != "light" }}'    
+    # only switch on the light if it is not LIGHT outside now
   action:
     service: homeassistant.turn_on
     data:

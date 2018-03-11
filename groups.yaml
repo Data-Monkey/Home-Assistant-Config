@@ -61,6 +61,13 @@ Activity:
     - input_select.harmony_control
     - remote.harmonyhub
 
+Enviro:
+  view: no
+  entities:
+    - sensor.time_of_day
+    - sensor.light_of_day
+    
+    
 #Family:
 #  view: no
 #  entities:
@@ -144,7 +151,8 @@ Monitoring:
     - sensor.crashplan_status
     - binary_sensor.zan_nexus_status
     - sensor.zan_nexus_battery
-    - sensor.energy_usage
+#    - sensor.energy_usage
+    - sensor.efergy_591994
 
 
 Environment:

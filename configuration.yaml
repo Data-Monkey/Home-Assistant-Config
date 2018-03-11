@@ -26,7 +26,8 @@ homeassistant:
     loggingpack:    !include includes/packages/Logging_Package.yaml      
     ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
     battery_alert:  !include includes/packages/battery_alert.yaml
-
+    enviro_pack:    !include includes/packages/Environment_Package.yaml
+    efergy:         !include includes/packages/Efergy_Package.yaml
   
 # Enables configuration UI
 config:
@@ -113,6 +114,8 @@ device_tracker: !include includes/device_trackers.yaml
 
 
 # testing stuff 
+
+
 
 
 panel_custom:
