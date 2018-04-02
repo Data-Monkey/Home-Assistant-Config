@@ -23,8 +23,8 @@ sensor:
       value_template: >-
         {% if   now().strftime("%H:%M") < "06:00" %} dark
         {% elif now().strftime("%H:%M") < "07:00" %} twilight
-        {% elif now().strftime("%H:%M") < "18:00" %} light
-        {% elif now().strftime("%H:%M") < "20:30" %} twilight
+        {% elif now().strftime("%H:%M") < "17:00" %} light
+        {% elif now().strftime("%H:%M") < "18:30" %} twilight
         {% elif now().strftime("%H:%M") < "24:00" %} dark
         {% endif %}        
         

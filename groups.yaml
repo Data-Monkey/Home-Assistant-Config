@@ -18,6 +18,8 @@ Rooms:
     - group.RoomsBedroom
     - group.RoomsBathroom
     - group.RoomsLaundry
+    - group.RoomsHallway
+    - group.RoomsKitchen
     
 Harmony:
   view: yes
@@ -269,6 +271,24 @@ RoomsLaundry:
     entities:
       - binary_sensor.water_leak_sensor_158d0001d593cc
       - sensor.laundry
+      - light.laundry_light
+      - binary_sensor.motion_sensor_158d0001a33b4a
+      - sensor.illumination_158d0001a33b4a    
+
+
+RoomsKitchen:
+  name: Kitchen
+  view: no
+  entities:
+    - binary_sensor.motion_sensor_158d00014dd511
+
+RoomsHallway:
+  name: Hallway
+  view: no
+  entities:
+    - sensor.xiaomi_gateway
+    - light.gateway_light_286c0785b6f3
+    - sensor.illumination_286c0785b6f3
     
 Nest:
   name: Nest Protect

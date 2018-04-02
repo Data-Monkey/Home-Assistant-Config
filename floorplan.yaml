@@ -82,6 +82,7 @@
             - binary_sensor.motion_sensor_158d00014dd511 # Kitchen
             - binary_sensor.motion_sensor_158d00016db261 # Bathroom
             - binary_sensor.motion_sensor_158d00016db2bd # Wardrobe
+            - binary_sensor.motion_sensor_158d0001a33b4a # Laundry
 
           states:
             - state: 'off'

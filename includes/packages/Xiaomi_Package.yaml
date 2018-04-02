@@ -15,14 +15,17 @@ light:
     devices:
       192.168.2.80:
         #34:CE:00:87:F7:93
-        name: Bedroom Light
+        name: Laundry Light
         transition: 1000     
       192.168.2.81: 
         name: Wardrobe Light
         transition: 1000
-      192.168.2.10: 
+      192.168.2.82: 
         name: Bathroom Light
-        transition: 1000       
+        transition: 1000     
+      192.168.2.83:
+        name: Bedroom Light
+        transition: 1000          
         
 homeassistant:
   customize:
@@ -163,7 +166,14 @@ homeassistant:
       icon: mdi:oil-temperature
     binary_sensor.water_leak_sensor_158d0001d593cc:
       friendly_name: 'Water Leak Sensor'
-      
+    light.laundry_light:
+      friendly_name: 'Laundry Light'
+      google_assistant: true
+      google_assistant_name: 'Laundry Light'    
+    binary_sensor.motion_sensor_158d0001a33b4a:
+      friendly_name: Laundry Motion
+    sensor.illumination_158d0001a33b4a:
+      friendly_name: 'Laundry Brightness'      
 # ------------------------
 #   Devices - Bathroom
 # ------------------------
@@ -455,3 +465,35 @@ automation:
   action:
     service: homeassistant.turn_on
     entity_id: light.bedroom_light
+    
+    
+    
+    
+#  Laundry Light by Motion
+# =================================================
+- alias: Laundry Light by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001a33b4a
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.laundry_light
+      #rgb_color: [25,0,150]
+      brightness: 255
+
+- alias: Laundry Light by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001a33b4a
+      to: 'off'
+      for:
+        minutes: 3
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.laundry_light    

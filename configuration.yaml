@@ -11,18 +11,18 @@ homeassistant:
   customize: !include_dir_merge_named includes/customisations
   
   packages:
-#    gpsloggerpack:  !include includes/packages/GPSLogger_Package.yaml
+#    janetpack:      !include includes/packages/janet/janet.yaml
+#    janetautopack:  !include includes/packages/janet/janet_automations.yaml
+    
     castpack:       !include includes/packages/Cast_Package.yaml
     devicepack:     !include includes/packages/Devices_Package.yaml   
     harmonypack:    !include includes/packages/Harmony_Package.yaml    
     xiaomipack:     !include includes/packages/Xiaomi_Package.yaml 
     sonospack:      !include includes/packages/Sonos_Package.yaml 
     zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
-#    presencepack:   !include includes/packages/Presence_Package.yaml 
     piholepack:     !include includes/packages/PiHole_Package.yaml     
     apcupsdpack:    !include includes/packages/APCUPSd_Package.yaml     
     nestpack:       !include includes/packages/Nest_Package.yaml     
-#    floorplanpack:  !include includes/packages/Floorplan_Package.yaml     
     loggingpack:    !include includes/packages/Logging_Package.yaml      
     ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
     battery_alert:  !include includes/packages/battery_alert.yaml
@@ -88,6 +88,12 @@ notify:
     platform: pushover
     api_key:  !secret PUSHOVER_API_KEY
     user_key: !secret PUSHOVER_USER_KEY 
+    
+  # using pushover for Janet! text notification  
+  - name: janet
+    platform: pushover
+    api_key:  !secret PUSHOVER_API_KEY
+    user_key: !secret PUSHOVER_USER_KEY    
 
 
 mqtt:
