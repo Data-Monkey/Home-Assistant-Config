@@ -348,11 +348,19 @@ automation:
       to: 'on'
   action:
     service: homeassistant.turn_on
-    data:
-      entity_id: light.ensuite_light
-      #rgb_color: [25,0,150]
-      brightness: 255
-
+    entity_id: light.ensuite_light
+    data_template: 
+      brightness: >
+        {% if states.sensor.time_of_day.state == "night"  %} 80
+        {% elif states.sensor.time_of_day.state == "late evening" %} 150
+        {% else %} 255
+        {% endif %}
+      color_name: >
+        {% if states.sensor.time_of_day.state == "night"  %} green
+        {% elif states.sensor.time_of_day.state == "late evening" %} blue
+        {% else %} white
+        {% endif %}
+        
 - alias: Ensuite Light by motion OFF
   initial_state: 'on'
   trigger:
