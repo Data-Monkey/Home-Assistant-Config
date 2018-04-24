@@ -26,6 +26,9 @@ light:
       192.168.2.83:
         name: Bedroom Light
         transition: 1000          
+      192.168.2.84:
+        name: Ensuite Light
+        transition: 1000          
         
 homeassistant:
   customize:
@@ -66,10 +69,18 @@ homeassistant:
       friendly_name: 'Wardrobe Light'
       google_assistant: true
       google_assistant_name: 'Wardrobe Light'           
-
     # Wardrobe Motion
     binary_sensor.motion_sensor_158d00016db2bd:
         friendly_name: 'Wardrobe Motion'
+        
+    # Ensuite Light
+    light.ensuite_light:
+      friendly_name: 'Ensuite Light'
+      google_assistant: true
+      google_assistant_name: 'Ensuite Light'   
+    # Ensuite Motion
+    binary_sensor.motion_sensor_158d00016570dc:
+      friendly_name: 'Ensuite Motion'
       
     # Desk Light
     binary_sensor.switch_158d00015681b8:
@@ -102,6 +113,11 @@ homeassistant:
     # Wardrobe illumination
     sensor.illumination_158d00016db2bd:
       friendly_name: 'Wardrobe Brightness'
+      unit_of_measurement: lx
+      
+    # Ensuite illumination
+    sensor.illumination_158d00016570dc:
+      friendly_name: 'Ensuite Brightness'
       unit_of_measurement: lx
 
 # ------------------------
@@ -321,7 +337,44 @@ automation:
     data:
       entity_id: light.wardrobe_light
       
+#  Ensuite Light by Motion
+# =================================================
+- alias: Ensuite Light by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00016570dc
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.ensuite_light
+      #rgb_color: [25,0,150]
+      brightness: 255
 
+- alias: Ensuite Light by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00016570dc
+      to: 'off'
+      for:
+        minutes: 0
+        seconds: 30
+    - platform: state
+      entity_id: light.ensuite_light
+      from: 'unavailable'
+      to: 'on'
+      for:
+        minutes: 0
+        seconds: 10
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.ensuite_light
+      
+      
 #  BATHROOM Light by Motion 
 # =================================================
 - alias: Bathroom Light by motion ON
@@ -441,7 +494,7 @@ automation:
     service: homeassistant.turn_off
     entity_id: group.BedroomLights
 
-- alias: Bedroom Ceiling Light ON
+- alias: Bedroom Ceiling Light toggle
   initial_state: 'on'
   trigger:
     # Switch L
@@ -463,7 +516,7 @@ automation:
         entity_id: binary_sensor.switch_158d000186dfe4
         click_type: long_click_press
   action:
-    service: homeassistant.turn_on
+    service: homeassistant.toggle
     entity_id: light.bedroom_light
     
     

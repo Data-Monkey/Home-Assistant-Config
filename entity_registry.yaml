@@ -63,7 +63,7 @@ binary_sensor.switch_158d000186dfe4:
   platform: xiaomi_aqara
   unique_id: status158d000186dfe4
 binary_sensor.motion_sensor_158d00016db261:
-  name:
+  name: BathroomMotion
   platform: xiaomi_aqara
   unique_id: status158d00016db261
 binary_sensor.door_window_sensor_158d00012a885f:
@@ -151,10 +151,18 @@ media_player.nexus_5:
   platform: plex
   unique_id: 5f4b0e5a9e58d5e8-com-plexapp-android
 binary_sensor.motion_sensor_158d0001a33b4a:
-  name:
+  name: LaundryMotion
   platform: xiaomi_aqara
   unique_id: status158d0001a33b4a
 sensor.illumination_158d0001a33b4a:
   name:
   platform: xiaomi_aqara
   unique_id: lux158d0001a33b4a
+binary_sensor.motion_sensor_158d00016570dc:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d00016570dc
+sensor.illumination_158d00016570dc:
+  name:
+  platform: xiaomi_aqara
+  unique_id: lux158d00016570dc
