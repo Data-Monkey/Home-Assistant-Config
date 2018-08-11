@@ -269,6 +269,7 @@ RoomsBedroom:
     - light.ensuite_light
     - sensor.illumination_158d00016570dc
     - binary_sensor.motion_sensor_158d00016570dc
+    - switch.ensuite_fan
 
 RoomsLaundry:
     name: Laundry
