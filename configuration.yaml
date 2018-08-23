@@ -14,12 +14,12 @@ homeassistant:
 #    janetpack:      !include includes/packages/janet/janet.yaml
 #    janetautopack:  !include includes/packages/janet/janet_automations.yaml
     
-    castpack:       !include includes/packages/Cast_Package.yaml
+#    castpack:       !include includes/packages/Cast_Package.yaml
     devicepack:     !include includes/packages/Devices_Package.yaml   
     harmonypack:    !include includes/packages/Harmony_Package.yaml    
     xiaomipack:     !include includes/packages/Xiaomi_Package.yaml 
-    sonospack:      !include includes/packages/Sonos_Package.yaml 
-    zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
+    #sonospack:      !include includes/packages/Sonos_Package.yaml 
+ #   zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
     piholepack:     !include includes/packages/PiHole_Package.yaml     
     apcupsdpack:    !include includes/packages/APCUPSd_Package.yaml     
     nestpack:       !include includes/packages/Nest_Package.yaml     
@@ -66,12 +66,15 @@ http:
   use_x_forwarded_for: True
   ip_ban_enabled: True
   login_attempts_threshold: 5
+  trusted_proxies: !secret PROXY_IP
   trusted_networks:
     - 127.0.0.1
     - 192.168.2.0/24
     
 # Discover some devices automatically
 discovery:
+  ignore: 
+  - yeelight
 
 
   
@@ -124,12 +127,12 @@ device_tracker: !include includes/device_trackers.yaml
 
 
 
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
+#panel_custom:
+#  - name: floorplan
+#    sidebar_title: Floorplan
+#    sidebar_icon: mdi:home
+#    url_path: floorplan
+#    config: !include floorplan.yaml
 
 
     

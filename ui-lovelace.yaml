@@ -56,7 +56,7 @@ views:
               top: 55%
               left: 44%                 
           - type: state-icon
-            entity: switch.plug_158d00013e8964
+            entity: switch.plug_rolands_light
             style:
               top: 86%
               left: 48%                    
@@ -66,13 +66,13 @@ views:
               top: 72%
               left: 48%
           - type: state-icon
-            entity: switch.plug_158d00013f9d2a
+            entity: switch.plug_desk_light
             style:
               top: 88%
               left: 30%      
           - type: state-icon
             # motion laundry
-            entity: binary_sensor.motion_sensor_158d0001a33b4a
+            entity: binary_sensor.motion_laundry
             style:
               top: 18%
               left: 63%                   

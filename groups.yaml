@@ -20,6 +20,7 @@ Rooms:
     - group.RoomsLaundry
     - group.RoomsHallway
     - group.RoomsKitchen
+    - group.RoomsEnsuite
     
 Harmony:
   view: yes
@@ -52,7 +53,7 @@ Occupancy:
   entities:
     - group.where_is_roland
     - group.where_is_helen 
-    - sensor.temperature_158d0001576d20
+    - sensor.temperature_hallway
     - sensor.energy_usage
     
 
@@ -160,8 +161,8 @@ Monitoring:
 Environment:
   view: no
   entities: 
-    - sensor.humidity_158d0001576d20
-    - sensor.temperature_158d0001576d20
+    - sensor.humidity_hallway
+    - sensor.temperature_hallway
     - sensor.hallway
     - sensor.balcony
     - sensor.laundry
@@ -172,7 +173,7 @@ Weather:
     - sensor.bom_sydney_air_temp_c
     - sensor.bom_sydney_weather
     - sensor.bom_sydney_wind_direction
-    - sensor.bom_sydney_wind_direction_kt
+    - sensor.bom_sydney_wind_speed_kt
     - sensor.bom_sydney_wind_speed_kmh    
     - sensor.dark_sky_icon
     - sensor.dark_sky_temperature
@@ -185,21 +186,21 @@ Xiaomi1:
   view: no
   entities:
     - sensor.xiaomi_gateway
-    - light.gateway_light_286c0785b6f3
-    - sensor.illumination_286c0785b6f3
-    - binary_sensor.motion_sensor_158d00012dc3de
+    - light.gateway_light_hallway
+    - sensor.illumination_hallway
+    - binary_sensor.motion_hallway
 
-    - binary_sensor.door_window_sensor_158d00012a885f
+    - binary_sensor.door_appartment_door
     - sensor.front_door    
-    - sensor.humidity_158d0001576d20
-    - sensor.temperature_158d0001576d20    
-    - sensor.humidity_158d00015763d7
-    - sensor.temperature_158d00015763d7 
-    - sensor.humidity_158d0001573b30
-    - sensor.temperature_158d0001573b30
-    - binary_sensor.motion_sensor_158d00014dd511
-    - binary_sensor.motion_sensor_158d00014dd669
-    - binary_sensor.motion_sensor_158d00016db261
+    - sensor.humidity_hallway
+    - sensor.temperature_hallway    
+    - sensor.humidity_balcony
+    - sensor.temperature_balcony 
+    - sensor.humidity_ensuite
+    - sensor.temperature_ensuite
+    - binary_sensor.motion_kitchen
+    - binary_sensor.motion_livingroom
+    - binary_sensor.motion_bathroom
 
 Xiaomi2:
   name: Gateway 2
@@ -207,18 +208,18 @@ Xiaomi2:
   entities:
     - sensor.xiaomi_gateway2
     - light.gateway_light_f0b429cfbc12
-    - sensor.illumination_f0b429cfbc12
+    - sensor.illumination_gateway2
     # Office Light
-    - binary_sensor.switch_158d00015681b8
-    - switch.plug_158d00013f9d2a
+    - binary_sensor.switch_button_l
+    - switch.plug_desk_light
     # Rolands Light
-    - binary_sensor.switch_158d0001870e25
-    - switch.plug_158d00013e8964
+    - binary_sensor.switch_button_r
+    - switch.plug_rolands_light
     # Helens Light    
-    - binary_sensor.switch_158d000186dfe4
+    - binary_sensor.switch_button_h
     - switch.plug_158d0001288e14
     # bedroom
-    - binary_sensor.motion_sensor_158d00016db2bd
+    - binary_sensor.motion_wardrobe
     - light.bedroom_light
     - light.wardrobe_light
 
@@ -228,9 +229,9 @@ BedroomLights:
   view: no
   entities:
     # Office Light
-    - switch.plug_158d00013f9d2a
+    - switch.plug_desk_light
     # Rolands Light
-    - switch.plug_158d00013e8964
+    - switch.plug_rolands_light
     # Helens Light    
     - switch.plug_158d0001288e14
     # Ceiling Light
@@ -239,6 +240,7 @@ BedroomLights:
     - light.wardrobe_light
     # Ensuite Light
     - light.ensuite_light
+
 
 
 RoomsBathroom:
@@ -246,55 +248,64 @@ RoomsBathroom:
   view: no
   entities:
     - light.bathroom_light
-    - binary_sensor.motion_sensor_158d00016db261
-    - sensor.illumination_158d00016db261
+    - binary_sensor.motion_bathroom
+    - sensor.illumination_bathroom
     
 RoomsBedroom:
   name: Bedroom
   view: no
   entities:
     # Office Light
-    - switch.plug_158d00013f9d2a
+    - switch.plug_desk_light
     # Rolands Light
-    - switch.plug_158d00013e8964
+    - switch.plug_rolands_light
     # Helens Light    
     - switch.plug_158d0001288e14
     # Ceiling Light
     - light.bedroom_light
     # Wardrobe Light
     - light.wardrobe_light
-    - binary_sensor.motion_sensor_158d00016db2bd
-    - sensor.illumination_158d00016db2bd
-    # Ensuite Light
-    - light.ensuite_light
-    - sensor.illumination_158d00016570dc
-    - binary_sensor.motion_sensor_158d00016570dc
-    - switch.ensuite_fan
+    - binary_sensor.motion_wardrobe
+    - sensor.illumination_wardrobe
+    - group.RoomsEnsuite
 
+RoomsEnsuite:
+  name: Ensuite
+  view: no
+  entities:
+    - light.ensuite_light
+    - sensor.illumination_ensuite
+    - binary_sensor.motion_ensuite
+    - switch.ensuite_fan
+    - sensor.humidity_ensuite
+    - sensor.temperature_ensuite
+    - sensor.humidity_delta
+    
+    
 RoomsLaundry:
     name: Laundry
     view: no
     entities:
-      - binary_sensor.water_leak_sensor_158d0001d593cc
-      - sensor.laundry
+      - binary_sensor.water_leak_sensor_laundry
       - light.laundry_light
-      - binary_sensor.motion_sensor_158d0001a33b4a
-      - sensor.illumination_158d0001a33b4a    
+      - binary_sensor.motion_laundry
+      - sensor.illumination_laundry    
 
 
 RoomsKitchen:
   name: Kitchen
   view: no
   entities:
-    - binary_sensor.motion_sensor_158d00014dd511
+    - binary_sensor.motion_kitchen
 
 RoomsHallway:
   name: Hallway
   view: no
   entities:
     - sensor.xiaomi_gateway
-    - light.gateway_light_286c0785b6f3
-    - sensor.illumination_286c0785b6f3
+    - light.gateway_light_hallway
+    - sensor.illumination_hallway
+    - sensor.humidity_hallway
     
 Nest:
   name: Nest Protect
@@ -304,6 +315,7 @@ Nest:
     - sensor.hallway_nest_protect_battery_health
     - sensor.hallway_nest_protect_co_status
     - sensor.hallway_nest_protect_smoke_status
+    - sensor.hallway_nest_protect_color_status
     
 UPS:
   name: UPS

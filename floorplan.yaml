@@ -77,13 +77,13 @@
 #
         - name: Binary sensors
           entities:
-            - binary_sensor.motion_sensor_158d00012dc3de # Hallway
-            - binary_sensor.motion_sensor_158d00014dd669 # LivingRoom
-            - binary_sensor.motion_sensor_158d00014dd511 # Kitchen
-            - binary_sensor.motion_sensor_158d00016db261 # Bathroom
-            - binary_sensor.motion_sensor_158d00016db2bd # Wardrobe
-            - binary_sensor.motion_sensor_158d0001a33b4a # Laundry
-            - binary_sensor.motion_sensor_158d00016570dc # Ensuite
+            - binary_sensor.motion_hallway # Hallway
+            - binary_sensor.motion_livingroom # LivingRoom
+            - binary_sensor.motion_kitchen # Kitchen
+            - binary_sensor.motion_bathroom # Bathroom
+            - binary_sensor.motion_wardrobe # Wardrobe
+            - binary_sensor.motion_laundry # Laundry
+            - binary_sensor.motion_ensuite # Ensuite
 
           states:
             - state: 'off'

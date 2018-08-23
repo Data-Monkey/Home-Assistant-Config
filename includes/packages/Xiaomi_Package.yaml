@@ -34,20 +34,12 @@ homeassistant:
   customize:
 # ------------------------
 # GATEWAYS
-# ------------------------
-#   Gateway - Hallway
-# ------------------------
-    light.gateway_light_286c0785b6f3:
-       friendly_name: 'Xiaomi Gateway Light'
-    sensor.illumination_286c0785b6f3:
-       friendly_name: 'Xiaomi Gateway Light Sensor'
+
 
 
 # ------------------------
 #   Gateway - Bedroom
 # ------------------------
-    sensor.illumination_f0b429cfbc12:
-       friendly_name: 'Xiaomi Gateway 2 Light Sensor'
     light.gateway_light_f0b429cfbc12:
        friendly_name: 'Xiaomi Gateway 2 Light'
 
@@ -69,9 +61,7 @@ homeassistant:
       friendly_name: 'Wardrobe Light'
       google_assistant: true
       google_assistant_name: 'Wardrobe Light'           
-    # Wardrobe Motion
-    binary_sensor.motion_sensor_158d00016db2bd:
-        friendly_name: 'Wardrobe Motion'
+
         
     # Ensuite Light
     light.ensuite_light:
@@ -79,60 +69,44 @@ homeassistant:
       google_assistant: true
       google_assistant_name: 'Ensuite Light'   
     # Ensuite Motion
-    binary_sensor.motion_sensor_158d00016570dc:
-      friendly_name: 'Ensuite Motion'
+
       
     # Desk Light
-    binary_sensor.switch_158d00015681b8:
+    binary_sensor.switch_button_l:
       icon: mdi:checkbox-multiple-blank-circle-outline
-      friendly_name: 'Xiaomi Button L'
 
-    switch.plug_158d00013f9d2a:
+
+    switch.plug_desk_light:
       friendly_name: 'Desk Light Plug'
       google_assistant: true
       google_assistant_name: 'Desk Light'
 
     # Roland's Light
-    binary_sensor.switch_158d0001870e25:
+    binary_sensor.switch_button_r:
       icon: mdi:checkbox-multiple-blank-circle-outline
-      friendly_name: 'Xiaomi Button R'
-    switch.plug_158d00013e8964:
-      friendly_name: 'Roland''s Light Plug'
+
+    switch.plug_rolands_light:
       google_assistant_name: 'Roland''s Light'
       google_assistant: true
 
     # Helen's Light
-    binary_sensor.switch_158d000186dfe4:
+    binary_sensor.switch_button_h:
       icon: mdi:checkbox-multiple-blank-circle-outline
-      friendly_name: 'Xiaomi Button H'
+
     switch.plug_158d0001288e14:
       friendly_name: 'Helen''s Light Plug'
       google_assistant: true
       google_assistant_name: 'Helen''s Light'
       
-    # Wardrobe illumination
-    sensor.illumination_158d00016db2bd:
-      friendly_name: 'Wardrobe Brightness'
-      unit_of_measurement: lx
       
-    # Ensuite illumination
-    sensor.illumination_158d00016570dc:
-      friendly_name: 'Ensuite Brightness'
-      unit_of_measurement: lx
+    
 
 # ------------------------
 #   Devices - Hallway
 # ------------------------
-    binary_sensor.motion_sensor_158d00012dc3de:
-      friendly_name: 'Hallway Motion'
-    binary_sensor.door_window_sensor_158d00012a885f:
+    binary_sensor.door_appartment_door:
       friendly_name: 'Xiaomi Door Sensor'
 
-    # Hallway Temperature and Humidity
-    sensor.temperature_158d0001576d20:
-      friendly_name: 'Hallway Temperature'
-    sensor.humidity_158d0001576d20:
-      friendly_name: 'Hallway Humidity'
     sensor.hallway:
       friendly_name: 'Hallway'
       icon: mdi:oil-temperature
@@ -142,18 +116,12 @@ homeassistant:
 #   Devices - Livingroom
 # ------------------------
 
-    binary_sensor.motion_sensor_158d00014dd669:
-      friendly_name: 'Livingroom Motion'
-    switch.plug_158d0001debec9:
+    switch.plug_xmas_tree:
       friendly_name: 'XMas Tree Plug'    
       google_assistant: true
       google_assistant_name: 'Christmas Tree'
       google_assistant_type: switch
-# ------------------------
-#   Devices - Kitchen
-# ------------------------
-    binary_sensor.motion_sensor_158d00014dd511:
-      friendly_name: 'Kitchen Motion'
+
 
 
 
@@ -161,9 +129,8 @@ homeassistant:
 #   Devices - Balcony
 # ------------------------
     # Balcony Temperature and Humidity
-    sensor.temperature_158d00015763d7:
-      friendly_name: 'Balcony Temperature'
-    sensor.humidity_158d00015763d7:
+
+    sensor.humidity_balcony:
       friendly_name: 'Balcony Humidity'
     sensor.balcony:
       friendly_name: 'Balcony'
@@ -173,10 +140,8 @@ homeassistant:
 #   Devices - Laundry
 # ------------------------
    # Laundry Temperature and Humidity
-    sensor.temperature_158d0001573b30:
-      friendly_name: 'Laundry Temperature'
-    sensor.humidity_158d0001573b30:
-      friendly_name: 'Laundry Humidity'
+
+
     sensor.laundry:
       friendly_name: 'Laundry'
       icon: mdi:oil-temperature
@@ -186,10 +151,7 @@ homeassistant:
       friendly_name: 'Laundry Light'
       google_assistant: true
       google_assistant_name: 'Laundry Light'    
-    binary_sensor.motion_sensor_158d0001a33b4a:
-      friendly_name: Laundry Motion
-    sensor.illumination_158d0001a33b4a:
-      friendly_name: 'Laundry Brightness'      
+
 # ------------------------
 #   Devices - Bathroom
 # ------------------------
@@ -198,13 +160,7 @@ homeassistant:
       friendly_name: 'Bathroom Light'
       google_assistant: true
       google_assistant_name: 'Bathroom Light'   
-    # Motion
-    binary_sensor.motion_sensor_158d00016db261:
-      friendly_name: 'Bathroom Motion'
-      
-    # Illumination
-    sensor.illumination_158d00016db261:
-      friendly_name: 'Bathroom Brightness'
+
 
 # sensors just for graphs
     sensor.graph_front_door:
@@ -216,18 +172,22 @@ sensor:
   - platform: template
     sensors:
       hallway:
-        value_template: '{{ states("sensor.temperature_158d0001576d20")|int}}C at {{states("sensor.humidity_158d0001576d20")|int}}% Humidity'
+        value_template: '{{ states("sensor.temperature_hallway")|int}}C at {{states("sensor.humidity_hallway")|int}}% Humidity'
       balcony:
-        value_template: '{{ states("sensor.temperature_158d00015763d7")|int}}C at {{states("sensor.humidity_158d00015763d7")|int}}% Humidity'
+        value_template: '{{ states("sensor.temperature_balcony")|int}}C at {{states("sensor.humidity_balcony")|int}}% Humidity'
       laundry:
-        value_template: '{{ states("sensor.temperature_158d0001573b30")|int}}C at {{states("sensor.humidity_158d0001573b30")|int}}% Humidity'
-
+        value_template: '{{ states("sensor.temperature_ensuite")|int}}C at {{states("sensor.humidity_ensuite")|int}}% Humidity'
+      humidity_delta:
+        value_template: '{{ states("sensor.humidity_ensuite")|int - states("sensor.humidity_hallway")|int}}'
+        unit_of_measurement: '%'
+        friendly_name: Humidity compared to Hallway
+        
       front_door:
         friendly_name: Front Door
         value_template: >-
-          {% if states.binary_sensor.door_window_sensor_158d00012a885f.state == 'on' %}
+          {% if states.binary_sensor.door_appartment_door.state == 'on' %}
             Open
-          {% elif states.binary_sensor.door_window_sensor_158d00012a885f.state == 'off' %}
+          {% elif states.binary_sensor.door_appartment_door.state == 'off' %}
             Closed
           {% else %}
             n/a
@@ -238,9 +198,9 @@ sensor:
       graph_front_door:
         unit_of_measurement: 'graph'
         value_template: >-
-          {% if states.binary_sensor.door_window_sensor_158d00012a885f.state == 'on' %}
+          {% if states.binary_sensor.door_appartment_door.state == 'on' %}
             1
-          {% elif states.binary_sensor.door_window_sensor_158d00012a885f.state == 'off' %}
+          {% elif states.binary_sensor.door_appartment_door.state == 'off' %}
             0
           {% else %}
             -1
@@ -249,9 +209,9 @@ sensor:
       graph_hallway_motion:
         unit_of_measurement: 'graph'
         value_template: >-
-          {% if states.binary_sensor.motion_sensor_158d00012dc3de.state == 'on' %}
+          {% if states.binary_sensor.motion_hallway.state == 'on' %}
             1
-          {% elif states.binary_sensor.motion_sensor_158d00012dc3de.state == 'off' %}
+          {% elif states.binary_sensor.motion_hallway.state == 'off' %}
             0
           {% else %}
             -1
@@ -269,12 +229,12 @@ automation:
       state: 'below_horizon'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00012dc3de
+      entity_id: binary_sensor.motion_hallway
       to: 'on'
   action:
     service: homeassistant.turn_on
     data:
-      entity_id: light.gateway_light_286c0785b6f3
+      entity_id: light.gateway_light_hallway
       rgb_color: [25,0,150]
       brightness: 75
 
@@ -287,7 +247,7 @@ automation:
 #      state: 'below_horizon'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00012dc3de
+      entity_id: binary_sensor.motion_hallway
       to: 'off'
       for:
         minutes: 0
@@ -295,7 +255,7 @@ automation:
   action:
     service: homeassistant.turn_off
     data:
-      entity_id: light.gateway_light_286c0785b6f3
+      entity_id: light.gateway_light_hallway
 
       
       
@@ -307,7 +267,7 @@ automation:
  # hidden: True
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016db2bd
+      entity_id: binary_sensor.motion_wardrobe
       to: 'on'
   action:
     service: homeassistant.turn_on
@@ -320,7 +280,7 @@ automation:
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016db2bd
+      entity_id: binary_sensor.motion_wardrobe
       to: 'off'
       for:
         minutes: 0
@@ -344,7 +304,7 @@ automation:
  # hidden: True
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016570dc
+      entity_id: binary_sensor.motion_ensuite
       to: 'on'
   action:
     service: homeassistant.turn_on
@@ -363,7 +323,7 @@ automation:
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016570dc
+      entity_id: binary_sensor.motion_ensuite
       to: 'off'
       for:
         minutes: 0
@@ -390,7 +350,7 @@ automation:
  # hidden: True
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016570dc
+      entity_id: binary_sensor.motion_ensuite
       to: 'on'
       for:
         minutes: 1
@@ -406,7 +366,7 @@ automation:
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016570dc
+      entity_id: binary_sensor.motion_ensuite
       to: 'off'
       for:
         minutes: 5
@@ -424,7 +384,7 @@ automation:
  # hidden: True
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016db261
+      entity_id: binary_sensor.motion_bathroom
       to: 'on'
   condition:
     condition: template
@@ -441,7 +401,7 @@ automation:
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00016db261
+      entity_id: binary_sensor.motion_bathroom
       to: 'off'
       for:
         minutes: 3
@@ -464,12 +424,12 @@ automation:
     event_type: click
     event_data:
       # Switch L
-      entity_id: binary_sensor.switch_158d00015681b8
+      entity_id: binary_sensor.switch_button_l
       click_type: single
   action:
     service: homeassistant.toggle
     data:
-      entity_id: switch.plug_158d00013f9d2a
+      entity_id: switch.plug_desk_light
 
 
 # Bedside Table Lamps
@@ -483,15 +443,13 @@ automation:
     event_type: click
     event_data:
       # Switch R
-      entity_id: binary_sensor.switch_158d0001870e25
+      entity_id: binary_sensor.switch_button_r
       click_type: single
   action:
     - service: homeassistant.toggle
       data:
-        entity_id: switch.plug_158d00013e8964
-#    - service: homeassistant.toggle
-#      data:
-#        entity_id: switch.plug_158d00013e8964_2
+        entity_id: switch.plug_rolands_light
+
 
 
 
@@ -503,7 +461,7 @@ automation:
     event_type: click
     event_data:
       # Switch H
-      entity_id: binary_sensor.switch_158d000186dfe4
+      entity_id: binary_sensor.switch_button_h
       click_type: single
   action:
     service: homeassistant.toggle
@@ -518,19 +476,19 @@ automation:
     - platform: event
       event_type: click
       event_data:
-        entity_id: binary_sensor.switch_158d00015681b8
+        entity_id: binary_sensor.switch_button_l
         click_type: double
     # Switch R
     - platform: event
       event_type: click
       event_data:
-        entity_id: binary_sensor.switch_158d0001870e25
+        entity_id: binary_sensor.switch_button_r
         click_type: double
     # Switch H
     - platform: event
       event_type: click
       event_data:
-        entity_id: binary_sensor.switch_158d000186dfe4
+        entity_id: binary_sensor.switch_button_h
         click_type: double
   action:
     service: homeassistant.turn_off
@@ -543,19 +501,19 @@ automation:
     - platform: event
       event_type: click
       event_data:
-        entity_id: binary_sensor.switch_158d00015681b8
+        entity_id: binary_sensor.switch_button_l
         click_type: long_click_press
     # Switch R
     - platform: event
       event_type: click
       event_data:
-        entity_id: binary_sensor.switch_158d0001870e25
+        entity_id: binary_sensor.switch_button_r
         click_type: long_click_press
     # Switch H
     - platform: event
       event_type: click
       event_data:
-        entity_id: binary_sensor.switch_158d000186dfe4
+        entity_id: binary_sensor.switch_button_h
         click_type: long_click_press
   action:
     service: homeassistant.toggle
@@ -571,7 +529,7 @@ automation:
  # hidden: True
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001a33b4a
+      entity_id: binary_sensor.motion_laundry
       to: 'on'
   action:
     service: homeassistant.turn_on
@@ -584,7 +542,7 @@ automation:
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001a33b4a
+      entity_id: binary_sensor.motion_laundry
       to: 'off'
       for:
         minutes: 3
