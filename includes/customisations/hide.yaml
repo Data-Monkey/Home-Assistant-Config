@@ -1,0 +1,5 @@
+sensor.home_eta:
+  hidden: true
+  
+binary_sensor.home_away:
+  hidden: true

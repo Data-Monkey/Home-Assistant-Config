@@ -1,0 +1,117 @@
+
+input_boolean:
+  rgb_dim:
+    name: RGB traka Dim
+    initial: off
+
+automation:
+ - alias: xiaomi brighten on
+   initial_state: 'on'
+   trigger:
+     - platform: event
+       event_type: click
+       event_data:
+         entity_id: binary_sensor.switch_YOURSENSORID
+         click_type: long_click_press
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.rgb_dim
+       state: 'off'
+     - condition: state
+       entity_id: light.YOURLIGHT
+       state: 'on'
+   action:
+     - service: script.turn_on
+       entity_id: script.brighten_rgb_traka
+
+ - alias: xiaomi brighten off
+   initial_state: 'on'
+   trigger:
+     - platform: state
+       entity_id: binary_sensor.switch_YOURSENSORID
+       from: 'on'
+       to: 'off'
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.rgb_dim
+       state: 'off'
+     - condition: state
+       entity_id: light.YOURLIGHT
+       state: 'on'
+   action:
+     - service: input_boolean.turn_on
+       entity_id: input_boolean.rgb_dim
+      
+ - alias: xiaomi dim on
+   initial_state: 'on'
+   trigger:
+     - platform: event
+       event_type: click
+       event_data:
+         entity_id: binary_sensor.switch_YOURSENSORID
+         click_type: long_click_press
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.rgb_dim
+       state: 'on'
+     - condition: state
+       entity_id: light.YOURLIGHT
+       state: 'on'
+   action:
+     - service: script.turn_on
+       entity_id: script.dim_rgb_traka
+
+ - alias: xiaomi dim off
+   initial_state: 'on'
+   trigger:
+     - platform: state
+       entity_id: binary_sensor.switch_YOURSENSORID
+       from: 'on'
+       to: 'off'
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.rgb_dim
+       state: 'on'
+     - condition: state
+       entity_id: light.YOURLIGHT
+       state: 'on'
+   action:
+     - service: input_boolean.turn_off
+       entity_id: input_boolean.rgb_dim
+      
+script:
+  dim_rgb_traka:
+    sequence:
+      - condition: state
+        entity_id: input_boolean.rgb_dim
+        state: 'on'
+      - service: light.turn_on
+        entity_id: light.YOURLIGHT
+        data_template:
+          brightness: '{{states.light.YOURLIGHT.attributes.brightness - 10}}'
+      - service: script.turn_off
+        entity_id: script.dim_rgb_traka
+      - service: script.turn_on
+        entity_id: script.dim_rgb_traka
+  brighten_rgb_traka:
+    sequence:
+      - condition: state
+        entity_id: input_boolean.rgb_dim
+        state: 'off'
+      - service: light.turn_on
+        entity_id: light.YOURLIGHT
+        data_template:
+          brightness: '{{states.light.YOURLIGHT.attributes.brightness + 10}}'
+      - service: script.turn_off
+        entity_id: script.brighten_rgb_traka
+      - service: script.turn_on
+        entity_id: script.brighten_rgb_traka
+    

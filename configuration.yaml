@@ -119,7 +119,7 @@ group:          !include groups.yaml
 sensor:         !include_dir_merge_list includes/sensors
 zone:           !include includes/zones.yaml
 device_tracker: !include includes/device_trackers.yaml
-
+automation:     !include_dir_merge_list includes/automations
 
 
 # testing stuff 

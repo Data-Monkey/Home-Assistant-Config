@@ -21,6 +21,8 @@ Rooms:
     - group.RoomsHallway
     - group.RoomsKitchen
     - group.RoomsEnsuite
+    - group.RoomsLivingroom
+    - group.RoomsFelix
     
 Harmony:
   view: yes
@@ -217,7 +219,7 @@ Xiaomi2:
     - switch.plug_rolands_light
     # Helens Light    
     - binary_sensor.switch_button_h
-    - switch.plug_158d0001288e14
+    - switch.plug_helens_light
     # bedroom
     - binary_sensor.motion_wardrobe
     - light.bedroom_light
@@ -233,14 +235,13 @@ BedroomLights:
     # Rolands Light
     - switch.plug_rolands_light
     # Helens Light    
-    - switch.plug_158d0001288e14
+    - switch.plug_helens_light
     # Ceiling Light
     - light.bedroom_light
     # Wardrobe Light
     - light.wardrobe_light
     # Ensuite Light
     - light.ensuite_light
-
 
 
 RoomsBathroom:
@@ -250,6 +251,12 @@ RoomsBathroom:
     - light.bathroom_light
     - binary_sensor.motion_bathroom
     - sensor.illumination_bathroom
+
+RoomsFelix:
+  name: Felix's Room
+  view: no
+  entities:
+    - light.felix_light    
     
 RoomsBedroom:
   name: Bedroom
@@ -260,7 +267,7 @@ RoomsBedroom:
     # Rolands Light
     - switch.plug_rolands_light
     # Helens Light    
-    - switch.plug_158d0001288e14
+    - switch.plug_helens_light
     # Ceiling Light
     - light.bedroom_light
     # Wardrobe Light
@@ -306,6 +313,15 @@ RoomsHallway:
     - light.gateway_light_hallway
     - sensor.illumination_hallway
     - sensor.humidity_hallway
+    - sensor.temperature_hallway
+    
+RoomsLivingroom:
+  name: Livingroom
+  view: no
+  entities:
+    - binary_sensor.motion_livingroom
+    - switch.plug_xmas_tree
+    
     
 Nest:
   name: Nest Protect

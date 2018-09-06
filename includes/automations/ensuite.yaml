@@ -1,0 +1,82 @@
+# --------------------------------------------------
+# Automations running in the ensuite
+# --------------------------------------------------
+
+#  Ensuite Light by Motion
+# =================================================
+- alias: Ensuite Light by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_ensuite
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.ensuite_light
+    data_template: 
+      brightness: >
+        {% if   states.sensor.time_of_day.state == "night" %} 80
+        {% else %} 255
+        {% endif %}
+      color_name: >
+        {% if   states.sensor.time_of_day.state == "night"  %} blue
+        {% else %} white
+        {% endif %}
+        
+- alias: Ensuite Light by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_ensuite
+      to: 'off'
+      for:
+        minutes: 0
+        seconds: 30
+    - platform: state
+      entity_id: light.ensuite_light
+      from: 'unavailable'
+      to: 'on'
+      for:
+        minutes: 0
+        seconds: 10
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.ensuite_light
+      
+#  Ensuite Fan by Motion
+# =================================================
+# switch on fan after motion for 1 minute.
+# no fan at night! too noisy
+
+- alias: Ensuite Fan by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_ensuite
+      to: 'on'
+      for:
+        minutes: 1
+        seconds: 0
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.time_of_day.state != "night" }}'          
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.ensuite_fan
+        
+- alias: Ensuite Fan by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_ensuite
+      to: 'off'
+      for:
+        minutes: 5
+        seconds: 30
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: switch.ensuite_fan

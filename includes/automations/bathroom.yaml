@@ -1,0 +1,37 @@
+# --------------------------------------------------
+# Automations running in the bathroom
+# --------------------------------------------------
+
+#  BATHROOM Light by Motion 
+# =================================================
+- alias: Bathroom Light by motion ON
+  initial_state: 'on'
+ # hidden: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_bathroom
+      to: 'on'
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.light_of_day.state != "light" }}'    
+    # only switch on the light if it is not LIGHT outside now
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: light.bathroom_light
+      #rgb_color: [25,0,150]
+      brightness: 255
+
+- alias: Bathroom Light by motion OFF
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_bathroom
+      to: 'off'
+      for:
+        minutes: 3
+        seconds: 30
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: light.bathroom_light

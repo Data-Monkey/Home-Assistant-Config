@@ -17,10 +17,7 @@ views:
         card:
           type: glance
           title: People that are home          
-      - type: picture
-        image: /local/floorplanX.png         
-        entities:
-          - device_tracker.rolands_work_phone      
+
           
 
   - title: Floorplan
@@ -30,38 +27,24 @@ views:
         image: /local/floorplanX.png
         size: 200%
         elements:
+          # ---- Master Bedroom
           - type: state-icon
             entity: light.bedroom_light
             style:
               top: 78%
               left: 37%
           - type: state-icon
-            entity: light.laundry_light
-            style:
-              top: 25%
-              left: 59%
-          - type: state-icon
             entity: light.bathroom_light
             style:
               top: 17%
               left: 43%   
-          - type: state-icon
-            entity: light.ensuite_light
-            style:
-              top: 55%
-              left: 31%    
-          - type: state-icon
-            entity: light.wardrobe_light
-            style:
-              top: 55%
-              left: 44%                 
           - type: state-icon
             entity: switch.plug_rolands_light
             style:
               top: 86%
               left: 48%                    
           - type: state-icon
-            entity: switch.plug_158d0001288e14
+            entity: switch.plug_helens_light
             style:
               top: 72%
               left: 48%
@@ -69,10 +52,36 @@ views:
             entity: switch.plug_desk_light
             style:
               top: 88%
-              left: 30%      
+              left: 30%   
+              
+          # ---- Ensuite               
           - type: state-icon
-            # motion laundry
+            entity: light.ensuite_light
+            style:
+              top: 52%
+              left: 28%    
+          - type: state-icon
+            entity: binary_sensor.motion_ensuite
+            style:
+              top: 52.5%
+              left: 35% 
+              
+          # ---- Wardrobe               
+          - type: state-icon
+            entity: light.wardrobe_light
+            style:
+              top: 55%
+              left: 44%   
+              
+          # ---- Laundry               
+          - type: state-icon
             entity: binary_sensor.motion_laundry
             style:
               top: 18%
-              left: 63%                   
+              left: 63%    
+          - type: state-icon
+            entity: light.laundry_light
+            style:
+              top: 25%
+              left: 59%              
+               
