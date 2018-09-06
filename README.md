@@ -30,9 +30,19 @@ I will try to list the components that I use in this file and please feel free t
 
 - Efergy Energy Monitor           (demo: https://engage.efergy.com/dashboard)
 
-- Roku2  
+- Roku2  (replaced with RasPlex as PLEX was not updated on ROKU)
 
 - Google Home (x2) 
+
+- RasPlex (not realy any integration)
+
+- Google WiFI (no integration yet, but keeps all my IoT devices from accessing Internet as they are all paused in the family feature)
+
+- Sonoff to autoamate bathroom exhaust fan
+
+- Smart Lights (Yeelight linked to Xiaomi Body Sensors)
+
+- PiVPN (currently not used, need to work out integration with Google WiFi)
 
 <h2> Software </h2>
 
