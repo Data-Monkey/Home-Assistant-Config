@@ -1,0 +1,11 @@
+# -----------------------------------------
+# update custom_components and custom_cards
+# -----------------------------------------
+# Instructions:
+# https://github.com/custom-components/custom_updater
+
+# wget https://raw.githubusercontent.com/custom-components/custom_updater/master/custom_components/custom_updater.py
+
+custom_updater:
+  hide_sensor: True
+  

@@ -1,31 +1,39 @@
 
 
+resources:
+
+#Custom Cards
+  - url: /local/custom_cards/tracker-card.js?v=0.1.4
+    type: js
+  - url: /local/custom_cards/gauge-card.js?v=0.2.0
+    type: js 
+  
 views:
     # View tab title.
-  - title: Example
+   
+  - title: home
     cards:
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
-      - type: entity-filter
-        entities:
-          - device_tracker.rolands_work_phone
-          - device_tracker.sonos_playbar
-        state_filter:
-          - 'home'
-        card:
-          type: glance
-          title: People that are home          
 
-          
+        - type: custom:gauge-card
+          entity: sensor.efergy_591994
+          title: Energy Usage
+          min: 0
+          max: 5000
+          severity:
+            red: 2000
+            amber: 1000
+            green: 0
 
+  
+# --------------------------------------
+# Floorplan
+# --------------------------------------  
   - title: Floorplan
     id: floorplan
     cards:
       - type: picture-elements
         image: /local/floorplanX.png
-        size: 200%
+        
         elements:
           # ---- Master Bedroom
           - type: state-icon
@@ -84,4 +92,14 @@ views:
             style:
               top: 25%
               left: 59%              
-               
+ 
+
+
+  - title: Maintenance
+    cards:
+        - type: custom:tracker-card
+          title:
+          trackers:
+            - sensor.custom_card_tracker
+            - sensor.custom_component_tracker
+ 

@@ -28,20 +28,24 @@ homeassistant:
     battery_alert:  !include includes/packages/battery_alert.yaml
     enviro_pack:    !include includes/packages/Environment_Package.yaml
     efergy:         !include includes/packages/Efergy_Package.yaml
+    customupdater:  !include includes/packages/CustomUpdater.yaml
   
 # Enables configuration UI
 config:
   
 # Enables the frontend
 frontend:
-
+  javascript_version: latest
+  
 # Enables support for tracking state changes over time.
 history:
 
 # View all events in a logbook
+# -----------------------------------------
 logbook:
 
 
+  
 logger:
   default: warn
 
