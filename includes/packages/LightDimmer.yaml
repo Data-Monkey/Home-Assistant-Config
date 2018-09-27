@@ -11,7 +11,7 @@ automation:
      - platform: event
        event_type: click
        event_data:
-         entity_id: binary_sensor.switch_YOURSENSORID
+         entity_id: binary_sensor.switch_button_f
          click_type: long_click_press
    condition:
      condition: and
@@ -20,7 +20,7 @@ automation:
        entity_id: input_boolean.rgb_dim
        state: 'off'
      - condition: state
-       entity_id: light.YOURLIGHT
+       entity_id: light.felix_light 
        state: 'on'
    action:
      - service: script.turn_on
@@ -30,7 +30,7 @@ automation:
    initial_state: 'on'
    trigger:
      - platform: state
-       entity_id: binary_sensor.switch_YOURSENSORID
+       entity_id: binary_sensor.switch_button_f
        from: 'on'
        to: 'off'
    condition:
@@ -40,7 +40,7 @@ automation:
        entity_id: input_boolean.rgb_dim
        state: 'off'
      - condition: state
-       entity_id: light.YOURLIGHT
+       entity_id: light.felix_light
        state: 'on'
    action:
      - service: input_boolean.turn_on
@@ -52,7 +52,7 @@ automation:
      - platform: event
        event_type: click
        event_data:
-         entity_id: binary_sensor.switch_YOURSENSORID
+         entity_id: binary_sensor.switch_button_f
          click_type: long_click_press
    condition:
      condition: and
@@ -61,7 +61,7 @@ automation:
        entity_id: input_boolean.rgb_dim
        state: 'on'
      - condition: state
-       entity_id: light.YOURLIGHT
+       entity_id: light.felix_light
        state: 'on'
    action:
      - service: script.turn_on
@@ -71,7 +71,7 @@ automation:
    initial_state: 'on'
    trigger:
      - platform: state
-       entity_id: binary_sensor.switch_YOURSENSORID
+       entity_id: binary_sensor.switch_button_f
        from: 'on'
        to: 'off'
    condition:
@@ -81,7 +81,7 @@ automation:
        entity_id: input_boolean.rgb_dim
        state: 'on'
      - condition: state
-       entity_id: light.YOURLIGHT
+       entity_id: light.felix_light
        state: 'on'
    action:
      - service: input_boolean.turn_off
@@ -94,9 +94,9 @@ script:
         entity_id: input_boolean.rgb_dim
         state: 'on'
       - service: light.turn_on
-        entity_id: light.YOURLIGHT
+        entity_id: light.felix_light
         data_template:
-          brightness: '{{states.light.YOURLIGHT.attributes.brightness - 10}}'
+          brightness: '{{states.light.felix_light.attributes.brightness - 10}}'
       - service: script.turn_off
         entity_id: script.dim_rgb_traka
       - service: script.turn_on
@@ -107,9 +107,9 @@ script:
         entity_id: input_boolean.rgb_dim
         state: 'off'
       - service: light.turn_on
-        entity_id: light.YOURLIGHT
+        entity_id: light.felix_light
         data_template:
-          brightness: '{{states.light.YOURLIGHT.attributes.brightness + 10}}'
+          brightness: '{{states.light.felix_light.attributes.brightness + 10}}'
       - service: script.turn_off
         entity_id: script.brighten_rgb_traka
       - service: script.turn_on

@@ -1,0 +1,12 @@
+- alias: Toggle Felix Light
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_button_f
+      click_type: single
+  action:
+    service: homeassistant.toggle
+    data:
+      entity_id: light.felix_light

@@ -48,15 +48,6 @@ Test_View:
 # --------------
 # GROUPS
 # --------------
-
-Occupancy:
-  name: Occupancy
-  view: no
-  entities:
-    - group.where_is_roland
-    - group.where_is_helen 
-    - sensor.temperature_hallway
-    - sensor.energy_usage
     
 
 Activity:
@@ -72,29 +63,7 @@ Enviro:
     - sensor.time_of_day
     - sensor.light_of_day
     
-    
-#Family:
-#  view: no
-#  entities:
-#    - group.where_is_roland
-#    - group.where_is_helen
-#
-#    
-#Where_Is_Roland:
-#  name: Roland
-#  view: no 
-#  entities:
-#    - device_tracker.nmap_rolands_iphone
-#    - device_tracker.nmap_rolands_iphone_ext
-#    - device_tracker.nmap_rolands_nexus 
-#
-#Where_Is_Helen:
-#  name: Helen
-#  view: no 
-#  entities:
-#    - device_tracker.nmap_helens_iphone
-#    - device_tracker.nmap_helens_winphone 
-#    
+   
 
 Devices_Gadgets:
   name: Gadgets
@@ -126,8 +95,8 @@ Devices_Network:
   view: no
   entities:
     - sensor.device_modem_router
-    - sensor.device_repeater
-    - sensor.device_access_point
+    #- sensor.device_repeater
+    #- sensor.device_access_point
     - sensor.device_gate_pi  
     - sensor.device_hp_printer
 
@@ -135,6 +104,7 @@ Devices_Computer:
   name: Computer
   view: no
   entities:
+    - binary_sensor.blue_laptop  
     - sensor.device_obelix
     - sensor.device_blue_laptop
     - sensor.device_purple_laptop
@@ -203,6 +173,7 @@ Xiaomi1:
     - binary_sensor.motion_kitchen
     - binary_sensor.motion_livingroom
     - binary_sensor.motion_bathroom
+    - binary_sensor.switch_button_f
 
 Xiaomi2:
   name: Gateway 2

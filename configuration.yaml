@@ -8,14 +8,19 @@ homeassistant:
   time_zone: Australia/Sydney
   elevation: 178
 
-  customize: !include_dir_merge_named includes/customisations
+
+  customize_domain:
+    device_tracker:
+      hidden: true
+      
+  customize: !include_dir_merge_named includes/customisations  
   
   packages:
 #    janetpack:      !include includes/packages/janet/janet.yaml
 #    janetautopack:  !include includes/packages/janet/janet_automations.yaml
     
 #    castpack:       !include includes/packages/Cast_Package.yaml
-    devicepack:     !include includes/packages/Devices_Package.yaml   
+#    devicepack:     !include includes/packages/Devices_Package.yaml   
     harmonypack:    !include includes/packages/Harmony_Package.yaml    
     xiaomipack:     !include includes/packages/Xiaomi_Package.yaml 
     #sonospack:      !include includes/packages/Sonos_Package.yaml 
@@ -29,7 +34,10 @@ homeassistant:
     enviro_pack:    !include includes/packages/Environment_Package.yaml
     efergy:         !include includes/packages/Efergy_Package.yaml
     customupdater:  !include includes/packages/CustomUpdater.yaml
-  
+    trellopack:     !include includes/packages/Trello_Package.yaml
+#    lightdimmer:    !include includes/packages/LightDimmer.yaml
+    ledpack: !include includes/packages/LED.yaml
+    
 # Enables configuration UI
 config:
   
@@ -66,7 +74,7 @@ ios:
  
 http:
   base_url: !secret HA_BASE_URL
-  api_password: !secret HA_PASSWORD
+#  api_password: !secret HA_PASSWORD
   use_x_forwarded_for: True
   ip_ban_enabled: True
   login_attempts_threshold: 5

@@ -14,17 +14,27 @@ views:
   - title: home
     cards:
 
-        - type: custom:gauge-card
-          entity: sensor.efergy_591994
-          title: Energy Usage
-          min: 0
-          max: 5000
-          severity:
-            red: 2000
-            amber: 1000
-            green: 0
-
-  
+    - type: entity-filter
+      entities:
+        - device_tracker.blue_laptop
+        - device_tracker.bedroom_light
+        - device_tracker.bathroom_light
+      state_filter:
+        - "home"
+      card: 
+        type: glance
+        title: Online
+    - type: entity-filter
+      entities:
+        - device_tracker.blue_laptop
+        - device_tracker.bedroom_light
+        - device_tracker.bathroom_light
+      state_filter:
+        - "not_home"
+      card: 
+        type: glance
+        title: Offline
+        
 # --------------------------------------
 # Floorplan
 # --------------------------------------  

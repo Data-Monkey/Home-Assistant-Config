@@ -66,36 +66,10 @@
   action:
     service: homeassistant.turn_on
     entity_id: switch.ensuite_fan
-        
-- alias: Ensuite Fan by motion OFF
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.motion_ensuite
-      to: 'off'
-      for:
-        minutes: 5
-        seconds: 30
-  action:
-    service: homeassistant.turn_off
-    data:
-      entity_id: switch.ensuite_fan
+  
       
 
         
-- alias: Ensuite Fan by motion OFF
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.motion_ensuite
-      to: 'off'
-      for:
-        minutes: 5
-        seconds: 30
-  action:
-    service: homeassistant.turn_off
-    data:
-      entity_id: switch.ensuite_fan
 
       
 # If humidity in the ensuite is greater than in the hallway then keep running      
@@ -124,3 +98,22 @@
   action:
     service: homeassistant.turn_on
     entity_id: switch.ensuite_fan
+
+
+# switch fan off after 5 minutes of running    
+# if there is still motion it will start again
+# if it is still humid it will start as well
+- alias: Ensuite Fan OFF after 5:30 min
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: switch.ensuite_fan
+      from: 'off'
+      to: 'on'
+      for:
+        minutes: 5
+        seconds: 30
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: switch.ensuite_fan    
