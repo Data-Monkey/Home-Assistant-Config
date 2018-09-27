@@ -1,8 +1,29 @@
 #Device Trackers
+
+# Zanzito defied in the package -- Not used anymore
+# Composite tracker defined in package
+
+# the network is split into groups
+#
+
+
   - platform: nmap_tracker
     track_new_devices: yes
-    hosts: -Pn 192.168.2.1-150
+    hosts: -Pn 192.168.2.1-99
     home_interval: 60
-#    entity_namespace: 'nmap'
 
-# Zanzito defied in the package
+# servers (Unraid, Roku, RasPlex)    
+  - platform: nmap_tracker
+    track_new_devices: yes
+    hosts: -Pn 192.168.2.100-150
+    interval_seconds: 300
+    home_interval: 60
+    
+
+# Network devices (Modem, Google Wifi)    
+  - platform: nmap_tracker
+    track_new_devices: yes
+    hosts: -Pn 192.168.2.200-255
+    interval_seconds: 300
+    home_interval: 60
+    

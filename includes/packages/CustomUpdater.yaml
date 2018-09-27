@@ -8,4 +8,6 @@
 
 custom_updater:
   hide_sensor: True
-  
+  component_urls:
+    # composite device tracker
+    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/ed9bab69ea9cdd2bb2a892cf3a1b23f930119f0b/custom_components.json  

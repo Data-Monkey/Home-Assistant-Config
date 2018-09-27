@@ -22,18 +22,22 @@ views:
       state_filter:
         - "home"
       card: 
-        type: glance
+#        type: glance
         title: Online
+        
     - type: entity-filter
       entities:
-        - device_tracker.blue_laptop
-        - device_tracker.bedroom_light
         - device_tracker.bathroom_light
+        - device_tracker.bedroom_light
+        - device_tracker.ensuite_light
+        - device_tracker.laundry_light
+        - device_tracker.felix_light
+        - device_tracker.wardrobe_light        
       state_filter:
         - "not_home"
       card: 
         type: glance
-        title: Offline
+        title: Home Automation Components Offline
         
 # --------------------------------------
 # Floorplan

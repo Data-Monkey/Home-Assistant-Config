@@ -16,27 +16,37 @@ homeassistant:
   customize: !include_dir_merge_named includes/customisations  
   
   packages:
-#    janetpack:      !include includes/packages/janet/janet.yaml
-#    janetautopack:  !include includes/packages/janet/janet_automations.yaml
+  # set some global environmental sensors (time od day, light of day,...)
+    enviro_pack:    !include includes/packages/Environment_Package.yaml
+  # composite devices
+    compo_pack:     !include includes/packages/Composite_Package.yaml
+  # customize devices 
+    devicepack:     !include includes/packages/Devices_Package.yaml  
     
-#    castpack:       !include includes/packages/Cast_Package.yaml
-#    devicepack:     !include includes/packages/Devices_Package.yaml   
     harmonypack:    !include includes/packages/Harmony_Package.yaml    
     xiaomipack:     !include includes/packages/Xiaomi_Package.yaml 
-    #sonospack:      !include includes/packages/Sonos_Package.yaml 
- #   zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
-    piholepack:     !include includes/packages/PiHole_Package.yaml     
     apcupsdpack:    !include includes/packages/APCUPSd_Package.yaml     
     nestpack:       !include includes/packages/Nest_Package.yaml     
+  # logging to influx db
     loggingpack:    !include includes/packages/Logging_Package.yaml      
+  # google assistant config and customisations
     ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
     battery_alert:  !include includes/packages/battery_alert.yaml
-    enviro_pack:    !include includes/packages/Environment_Package.yaml
     efergy:         !include includes/packages/Efergy_Package.yaml
     customupdater:  !include includes/packages/CustomUpdater.yaml
     trellopack:     !include includes/packages/Trello_Package.yaml
-#    lightdimmer:    !include includes/packages/LightDimmer.yaml
-    ledpack: !include includes/packages/LED.yaml
+
+
+    
+## experimental packages mostly switched off
+#    janetpack:      !include includes/packages/janet/janet.yaml
+#    janetautopack:  !include includes/packages/janet/janet_automations.yaml
+#    castpack:       !include includes/packages/Cast_Package.yaml
+#    sonospack:      !include includes/packages/Sonos_Package.yaml 
+#    zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
+#    piholepack:     !include includes/packages/PiHole_Package.yaml            # not using pihole on the new Google Wifi Router (yet)
+#    lightdimmer:    !include includes/packages/LightDimmer.yaml               # couldn't make it work yet
+#    ledpack: !include includes/packages/LED.yaml                              # it works, but LEDs are not installed at the moment
     
 # Enables configuration UI
 config:
@@ -52,11 +62,8 @@ history:
 # -----------------------------------------
 logbook:
 
-
-  
 logger:
   default: warn
-
 #  logs:
 #    homeassistant.custom_components.google_assistant: debug  
 #    homeassistant.components.xiaomi_aqara: debug
@@ -134,20 +141,7 @@ device_tracker: !include includes/device_trackers.yaml
 automation:     !include_dir_merge_list includes/automations
 
 
-# testing stuff 
-
-
-
-
-#panel_custom:
-#  - name: floorplan
-#    sidebar_title: Floorplan
-#    sidebar_icon: mdi:home
-#    url_path: floorplan
-#    config: !include floorplan.yaml
-
-
-    
+  
     
 # switches
 switch:
@@ -161,18 +155,7 @@ switch:
     retain: true    
     
     
-#person:
-#  - firstname: Roland
-#    lastname: Beck
-#    gender: male
-#    relationships:
-#      - person: person.helen_beck
-#        relation: WIFE
-#    device_trackers:
-#      - device_tracker.nmap_rolands_nexus
-#
-#  - firstname: Helen
-#    lastname: Beck
+
 
 
 
