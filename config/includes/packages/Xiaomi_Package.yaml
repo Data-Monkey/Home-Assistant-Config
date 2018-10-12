@@ -25,6 +25,7 @@ light:
         transition: 1000     
       192.168.2.83:
         name: Bedroom Light
+        use_music_mode: true        
         transition: 1000          
       192.168.2.84:
         name: Ensuite Light
