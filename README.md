@@ -25,12 +25,12 @@ Please make sure you **star** this repo to keep up to date with the progress.
       How?
     </a>
     <span> | </span>
-    <a href="https://github.com/Data-Monkey/Home-Assistant-Config#hardware">
-      Hardware / Gadgets
-    </a>    
-    <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config#software">
       Software
+    </a>    
+    <span> | </span>
+    <a href="https://github.com/Data-Monkey/Home-Assistant-Config#hardware">
+      Hardware / Gadgets
     </a>    
     <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config/issues">
