@@ -3,7 +3,7 @@
 resources:
 
 #Custom Cards
-  - url: /local/custom_cards/tracker-card.js?v=0.1.4
+  - url: /local/custom_cards/tracker-card.js?v=0.1.5
     type: js
   - url: /local/custom_cards/gauge-card.js?v=0.2.0
     type: js 

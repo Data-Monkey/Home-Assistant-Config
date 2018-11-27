@@ -3,3 +3,9 @@ sensor.home_eta:
   
 binary_sensor.home_away:
   hidden: true
+  
+sensor.time:
+  hidden: true
+  
+sensor.date:
+  hidden: true  

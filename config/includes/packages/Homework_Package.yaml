@@ -1,0 +1,78 @@
+# this package will monitor the homework progress in trello 
+# and enable/disable TV watching accordingly
+
+binary_sensor:
+  - platform: workday
+    name: Business Day
+    friendly_name: Business Day
+    country: AU
+    province: NSW
+
+    
+input_boolean:
+  tv_restriction:
+      name: TV Restriction
+      initial: off
+      
+  school_day:
+      name: School Day
+      initial: on      
+
+# a manual overwrite for school holiday
+# might want to integrate some kind of calendar at some point      
+  school_holiday:
+      name: School Holiday
+      initial: off 
+
+      
+automation:
+
+# set school day based on business day (workday) and school holiday but allow manual overwrite
+
+  - alias: Set School Day
+    hide_entity: false
+    initial_state: 'on'
+    trigger:
+      platform: state
+      entity_id: 
+        - binary_sensor.business_day
+        - input_boolean.school_holiday
+    action:
+      service_template: >-
+        {%- if is_state('binary_sensor.business_day', 'on') and is_state('input_boolean.school_holiday', 'off') -%}
+          input_boolean.turn_on
+        {%- else -%}
+          input_boolean.turn_off
+        {%- endif -%}
+      entity_id: input_boolean.school_day
+      
+
+
+  # TV restriction must bo on every school day between 3pm and 8pm
+  # completing all Trello cards will release the restriction
+  
+    
+
+
+
+  - alias: Anounce Trello Count
+    hide_entity: false
+    initial_state: 'on'
+    trigger:
+      platform: state
+      entity_id: sensor.trello_count
+    condition:
+        condition: template
+        value_template: '{{ states.sensor.time_of_day.state != "night" }}'      
+    action:  
+      service: tts.google_say
+      data_template:
+        entity_id: media_player.master_bedroom_speaker
+        message: >
+          {% if states("sensor.trello_count")|int == 0 %} 
+            Great job kids, you are DONE!
+          {% elif states("sensor.trello_count")|int < 5  %} 
+            Well done Kids!! Only {{ states("sensor.trello_count") }} cards to go!
+          {% else  %} 
+            Keep going Kids!! Still {{ states("sensor.trello_count") }} cards to go!
+          {% endif %}

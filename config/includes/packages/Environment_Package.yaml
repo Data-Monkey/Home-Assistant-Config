@@ -3,43 +3,35 @@
 # -----------------------
 
 sensor:
-  platform: template
-  sensors:
-    time_of_day:
-      friendly_name: 'Time of Day'
-      value_template: >-
-        {% if   now().strftime("%H:%M") < "06:00" %} night
-        {% elif now().strftime("%H:%M") < "09:00" %} early morning
-        {% elif now().strftime("%H:%M") < "11:30" %} morning
-        {% elif now().strftime("%H:%M") < "13:30" %} lunchtime
-        {% elif now().strftime("%H:%M") < "16:00" %} afternoon
-        {% elif now().strftime("%H:%M") < "19:00" %} evening
-        {% elif now().strftime("%H:%M") < "21:00" %} late evening
-        {% elif now().strftime("%H:%M") < "24:00" %} night
-        {% endif %}
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
 
-    light_of_day:
-      friendly_name: 'Light of Day'
-      value_template: >-
-        {% if   now().strftime("%H:%M") < "06:00" %} dark
-        {% elif now().strftime("%H:%M") < "07:00" %} twilight
-        {% elif now().strftime("%H:%M") < "17:00" %} light
-        {% elif now().strftime("%H:%M") < "18:30" %} twilight
-        {% elif now().strftime("%H:%M") < "24:00" %} dark
-        {% endif %}        
-        
-        
-        
-    #    {% if states.sun.sun.state == 'above_horizon' and as_timestamp(now()) < as_timestamp(states.sensor.date.state ~ ' 12:00:00') %}
-    #      morning
-    #    {% elif states.sun.sun.state == 'above_horizon' and as_timestamp(now()) >= as_timestamp(states.sensor.date.state ~ ' 12:00:00') %}
-    #      afternoon
-    #    {% elif states.sun.sun.state == 'below_horizon' and states.sensor.date.state == states.sun.sun.attributes.next_rising | truncate(10, True, '') %}
-    #      twilight
-    #    {% elif states.sun.sun.state == 'below_horizon' and as_timestamp(now()) < as_timestamp(states.sensor.date.state ~ ' 16:00:00') %}
-    #      early_evening
-    #    {% elif states.sun.sun.state == 'below_horizon' and as_timestamp(now()) < as_timestamp(states.sensor.date.state ~ ' 19:00:00') %}
-    #      evening
-    #    {% elif states.sun.sun.state == 'below_horizon' and as_timestamp(now()) >= as_timestamp(states.sensor.date.state ~ ' 21:00:00') %}
-    #      late_evening
-    #    {% endif %}
+  - platform: template
+    sensors:
+      time_of_day:
+        friendly_name: 'Time of Day'
+        entity_id: sensor.time
+        value_template: >-
+          {% if   now().strftime("%H:%M") < "06:00" %} night
+          {% elif now().strftime("%H:%M") < "09:00" %} early morning
+          {% elif now().strftime("%H:%M") < "11:30" %} morning
+          {% elif now().strftime("%H:%M") < "13:30" %} lunchtime
+          {% elif now().strftime("%H:%M") < "16:00" %} afternoon
+          {% elif now().strftime("%H:%M") < "19:00" %} evening
+          {% elif now().strftime("%H:%M") < "21:00" %} late evening
+          {% elif now().strftime("%H:%M") < "24:00" %} night
+          {% endif %}
+    
+      light_of_day:
+        friendly_name: 'Light of Day'
+        entity_id: sensor.time      
+        value_template: >-
+          {% if   now().strftime("%H:%M") < "06:00" %} dark
+          {% elif now().strftime("%H:%M") < "07:00" %} twilight
+          {% elif now().strftime("%H:%M") < "17:00" %} light
+          {% elif now().strftime("%H:%M") < "19:30" %} twilight
+          {% elif now().strftime("%H:%M") < "24:00" %} dark
+          {% endif %}        
+    

@@ -16,6 +16,7 @@ sensor:
         value_template: '{% if is_state("device_tracker.modem_router", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:router-wireless
         friendly_name: Modem/Router
+        entity_id: device_tracker.modem_router
     
     
     
@@ -44,16 +45,20 @@ sensor:
 #        
 # MEDIA PLAYER
       device_fetch:
+        entity_id: device_tracker.fetch
         value_template: '{% if is_state("device_tracker.fetch", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:camcorder-box
         friendly_name: FetchTV Box
 
+
       device_sonos_playbar:
+        entity_id: device_tracker.sonos_playbar
         value_template: '{% if is_state("device_tracker.sonos_playbar", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:surround-sound
         friendly_name: Sonos Playbar  
 
       device_chromecast:
+        entity_id: device_tracker.chromecast
         value_template: '{% if is_state("device_tracker.chromecast", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:cast
         friendly_name: Chromecast 
@@ -64,6 +69,7 @@ sensor:
 #        friendly_name: Roku
 
       device_audiocast:
+        entity_id: device_tracker.audiocast
         value_template: '{% if is_state("device_tracker.audiocast", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:music-box-outline
         friendly_name: Audio Cast       
@@ -71,91 +77,108 @@ sensor:
 
 # LAPTOP / SERVER
       device_hp_tablet:
+        entity_id: device_tracker.hp_tablet
         value_template: '{% if is_state("device_tracker.hp_tablet", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:tablet
         friendly_name: Roland's Work Tablet  
 
       device_obelix:
+        entity_id: device_tracker.obelix
         value_template: '{% if is_state("device_tracker.obelix", "home") or is_state("device_tracker.obelix_ext", "home") %} Online {% else %} Offline {% endif %}'
         icon_template: '{% if is_state("device_tracker.obelix", "home") or is_state("device_tracker.obelix_ext", "home") %} mdi:laptop {% else %} mdi:laptop-off {% endif %}'
         friendly_name: Obelix
 
       device_blue_laptop:
+        entity_id: device_tracker.blue_laptop
         value_template: '{% if is_state("device_tracker.blue_laptop", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: '{% if is_state("device_tracker.blue_laptop", "home") %}mdi:laptop{% else %}mdi:laptop-off{% endif %}'
         friendly_name: 'Blue Laptop'
  
       device_purple_laptop:
+        entity_id: device_tracker.purple_laptop
         value_template: '{% if is_state("device_tracker.purple_laptop", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: '{% if is_state("device_tracker.purple_laptop", "home") %}mdi:laptop{% else %}mdi:laptop-off{% endif %}'
         friendly_name: 'Purple Laptop'
          
       device_hp_printer:
+        entity_id: device_tracker.hp_printer
         value_template: '{% if is_state("device_tracker.hp_printer", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:printer
         friendly_name: HP Printer    
 
 # MOBILE
       device_iconia_tab:
+        entity_id: device_tracker.iconia_tab
         value_template: '{% if is_state("device_tracker.iconia_tab", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:tablet
         friendly_name: 'Iconia Tablet' 
 
       device_galaxy_tab:
+        entity_id: device_tracker.galaxy_tab
         value_template: '{% if is_state("device_tracker.galaxy_tab", "home") or is_state("device_tracker.galaxy_tab_ext", "home") %} Online {% else %} Offline {% endif %}'
         icon_template: mdi:tablet
         friendly_name: 'Galaxy Tablet'
 
 # -- Helen        
       device_nmap_helens_workphone:
+        entity_id: device_tracker.nmap_helens_workphone
         value_template: '{% if is_state("device_tracker.nmap_helens_workphone", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:cellphone
         friendly_name: Helen's WorkPhone
 
       device_nmap_helens_iphone:
+        entity_id: device_tracker.nmap_helens_iphone
         value_template: '{% if is_state("device_tracker.nmap_helens_iphone", "home") or is_state("device_tracker.nmap_helens_iphone_ext", "home") %} Online {% else %} Offline {% endif %}'
         icon_template: mdi:cellphone-iphone
         friendly_name: Helen's iPhone
         
 # -- Roland
       device_nmap_rolands_iphone:
+        entity_id: device_tracker.nmap_rolands_iphone
         value_template: '{% if is_state("device_tracker.nmap_rolands_iphone", "home") or is_state("device_tracker.nmap_rolands_iphone_ext", "home") %} Online {% else %} Offline {% endif %}'
         icon_template: mdi:cellphone-iphone
         friendly_name: Roland's iPhone
         
       device_nmap_rolands_nexus:
+        entity_id: device_tracker.nmap_rolands_nexus
         value_template: '{% if is_state("device_tracker.nmap_rolands_nexus", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:cellphone-android
         friendly_name: Roland's Nexus
 
 # HOME AUTOMATION
       device_xiaomi_gateway:
+        entity_id: device_tracker.xiaomi_gateway
         value_template: '{% if is_state("device_tracker.xiaomi_gateway", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:image-filter-tilt-shift
         friendly_name: Xiaomi Gateway  
 
       device_xiaomi_gateway2:
+        entity_id: device_tracker.xiaomi_gateway2
         value_template: '{% if is_state("device_tracker.xiaomi_gateway2", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:image-filter-tilt-shift
         friendly_name: Xiaomi Gateway  
 
       device_google_home:
+        entity_id: device_tracker.nmap_google_home
         value_template: '{% if is_state("device_tracker.nmap_google_home", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:home-circle
         friendly_name: Google Home  
 
       device_google_home_bedroom:
+        entity_id: device_tracker.nmap_google_home_bedroom
         value_template: '{% if is_state("device_tracker.nmap_google_home_bedroom", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:home-circle
         friendly_name: Google Home Bedroom         
 
 # SENSOR
       device_efergy_hub:
+        entity_id: device_tracker.efergy_hub
         value_template: '{% if is_state("device_tracker.efergy_hub", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:gauge
         friendly_name: Efergy Hub  
  
       device_nest_protect:
+        entity_id: device_tracker.nmap_nest_protect
         value_template: '{% if is_state("device_tracker.nmap_nest_protect", "home") %}Online{% else %}Offline{% endif %}'
         icon_template: mdi:nest-protect
         friendly_name: Nest Protect         

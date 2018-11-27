@@ -1,6 +1,7 @@
 # All things XIAOMI
 
 xiaomi_aqara:
+ discovery_retry: 10
  gateways:
  # hallway gateway
    - mac: !secret XIAOMI_MAC_1
@@ -33,6 +34,7 @@ light:
       192.168.2.85:
         name: Felix Light
         transition: 1000       
+        use_music_mode: true     
         
 homeassistant:
   customize:

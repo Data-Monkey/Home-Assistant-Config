@@ -37,7 +37,13 @@ Xioami_View:
     - group.xiaomi1
     - group.xiaomi2
 
-
+HomeworkTracker:
+  view: yes
+  name: HWT
+  entities:
+    - group.hwt
+    - group.activity
+    
 Test_View:
   view: yes
   name: test
@@ -48,7 +54,15 @@ Test_View:
 # --------------
 # GROUPS
 # --------------
-    
+hwt:
+  view: no
+  name: HWT Inputs
+  entities:
+    - binary_sensor.business_day
+    - input_boolean.school_holiday
+    - input_boolean.school_day
+    - sensor.trello_count  
+    - input_boolean.tv_restriction
 
 Activity:
   view: no
@@ -180,7 +194,7 @@ Xiaomi2:
   view: no
   entities:
     - sensor.xiaomi_gateway2
-    - light.gateway_light_f0b429cfbc12
+    - light.gateway_light_gateway2
     - sensor.illumination_gateway2
     # Office Light
     - binary_sensor.switch_button_l
@@ -316,3 +330,17 @@ UPS:
     - sensor.ups_time_left
     - sensor.ups_time_on_battery
     - sensor.ups_transfer_count        
+
+GoogleWiFi:
+  name: Google WiFi
+  view: no
+  entities:
+    - sensor.onhub_packets_sent
+    - sensor.onhub_bytes_sent
+    - sensor.onhub_packetssec_sent
+    - sensor.onhub_bytes_received
+    - sensor.onhub_packetssec_received
+    - sensor.onhub_kbytesec_sent
+    - sensor.onhub_packets_received
+    - sensor.onhub_kbytesec_received
+    

@@ -34,7 +34,7 @@ homeassistant:
     battery_alert:  !include includes/packages/battery_alert.yaml
     efergy:         !include includes/packages/Efergy_Package.yaml
     customupdater:  !include includes/packages/CustomUpdater.yaml
-    trellopack:     !include includes/packages/Trello_Package.yaml
+    homeworkpack:   !include includes/packages/Homework_Package.yaml
 
 
     
@@ -45,7 +45,7 @@ homeassistant:
 #    sonospack:      !include includes/packages/Sonos_Package.yaml 
 #    zanzitopack:    !include includes/packages/Zanzito_Package.yaml 
 #    piholepack:     !include includes/packages/PiHole_Package.yaml            # not using pihole on the new Google Wifi Router (yet)
-    lightdimmer:    !include includes/packages/LightDimmer.yaml               # couldn't make it work yet
+#    lightdimmer:    !include includes/packages/LightDimmer.yaml               # couldn't make it work yet
 #    ledpack: !include includes/packages/LED.yaml                              # it works, but LEDs are not installed at the moment
     
 # Enables configuration UI
