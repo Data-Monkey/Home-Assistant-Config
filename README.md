@@ -63,8 +63,8 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
 <tr>
   <td align="center" width=20%>
     <a href="https://home-assistant.io">
-    <b>Home Assistant</b><br>
-    <img src="https://raw.githubusercontent.com/balloob/unraid-docker-templates/master/balloob/home-assistant-icon.png" width=100>
+      <b>Home Assistant</b><br>
+      <img src="https://raw.githubusercontent.com/balloob/unraid-docker-templates/master/balloob/home-assistant-icon.png" width=100>
     <\a>
     <a href="https://registry.hub.docker.com/u/homeassistant/home-assistant/">dockerhub</a>
   </td>
@@ -76,7 +76,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="http://mqtt.org/">
     <b>MQTT</b><br>
     <img src="http://i.imgur.com/Cc9Jkcr.png" width=100>
-    <\a>
+    </a>
     <a href="https://registry.hub.docker.com/u/spants/mqtt/">dockerhub</a>
   </td>
     <td>
@@ -89,7 +89,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="https://www.influxdata.com/time-series-platform/influxdb/">
     <b>InfluxDB</b><br>
     <img src="https://raw.githubusercontent.com/pootzko/InfluxData.Net/master/nuget-icon.png" width=100>
-    <\a>
+    </a>
   
   [dockerhub](https://hub.docker.com/_/influxdb/)   
   </td>
@@ -99,7 +99,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="http://www.grafana.org">
     <b>Grafana</b><br>
     <img src="https://github.com/atribe/unRAID-docker/raw/master/icons/grafana.png" width=100>
-    <\a>
+    </a>
     <a href="https://hub.docker.com/r/grafana/grafana/">dockerhub</a>
   </td>
     <td>
@@ -110,7 +110,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="http://www.duckdns.org">
     <b>DuckDNS</b><br>
     <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/duckdns.png" width=100>
-    <\a>
+    </a>
     <a href="https://hub.docker.com/r/linuxserver/duckdns/">dockerhub</a>
   </td>
     <td>
@@ -122,7 +122,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="https://letsencrypt.org/">
     <b>Let's Encrypt</b><br>
     <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/letsencrypt.png" width=100>
-    <\a>
+    </a>
     <a href="https://hub.docker.com/r/linuxserver/letsencrypt/">dockerhub</a>
   </td>
     <td>
