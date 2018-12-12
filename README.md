@@ -18,27 +18,27 @@ Please make sure you **star** this repo to keep up to date with the progress.
 <div align="center" font-color=orange><a name="menu"></a>
   <h4>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config#why">
-      <img src="/readme/why.png">
+      Why?
     </a>
-    <span> <img src="/readme/pipe.png"> </span>
+    <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config#how">
-      <img src="/readme/how.png">
+      How?
     </a>
-    <span> <img src="/readme/pipe.png"> </span>
+    <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config#software">
-      <img src="/readme/software.png">
+      Software
     </a>    
-    <span> <img src="/readme/pipe.png"> </span>
+    <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config#hardware">
-      <img src="/readme/hardwaregadgets.png">
+      Hardware / Gadgets
     </a>    
-    <span> <img src="/readme/pipe.png"> </span>
+    <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config/issues">
-      <img src="/readme/todo.png">
+      ToDo List
     </a>
-    <span> <img src="/readme/pipe.png"> </span>
+    <span> | </span>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config/tree/master/config">
-      <img src="/readme/code.png">
+      Code
     </a>
   </h4>
 </div>
