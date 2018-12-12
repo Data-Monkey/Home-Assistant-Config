@@ -8,7 +8,7 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_button_l
       click_type: single
@@ -25,7 +25,7 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_button_r
       click_type: single
@@ -39,7 +39,7 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_button_h
       click_type: single
@@ -55,19 +55,19 @@
   trigger:
     # Switch L
     - platform: event
-      event_type: click
+      event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_button_l
         click_type: long_click_press
     # Switch R
     - platform: event
-      event_type: click
+      event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_button_r
         click_type: long_click_press
     # Switch H
     - platform: event
-      event_type: click
+      event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_button_h
         click_type: long_click_press
@@ -81,19 +81,19 @@
   trigger:
     # Switch L
     - platform: event
-      event_type: click
+      event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_button_l
         click_type: double
     # Switch R
     - platform: event
-      event_type: click
+      event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_button_r
         click_type: double
     # Switch H
     - platform: event
-      event_type: click
+      event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_button_h
         click_type: double

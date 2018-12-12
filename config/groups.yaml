@@ -90,6 +90,7 @@ Devices_Gadgets:
     - sensor.device_nest_protect
     - sensor.device_google_home
     - sensor.device_google_home_bedroom
+    - sensor.device_felix_gh
     
 Devices_Phones:
   name: Mobiles
@@ -138,10 +139,10 @@ Monitoring:
   view: no
   entities:
     - sensor.crashplan_status
-    - binary_sensor.zan_nexus_status
     - sensor.zan_nexus_battery
 #    - sensor.energy_usage
     - sensor.efergy_591994
+    - binary_sensor.internet_connected
 
 
 Environment:
@@ -241,7 +242,8 @@ RoomsFelix:
   name: Felix's Room
   view: no
   entities:
-    - light.felix_light    
+    - light.felix_light  
+    - device.device_felix_gh    
     
 RoomsBedroom:
   name: Bedroom
@@ -330,17 +332,3 @@ UPS:
     - sensor.ups_time_left
     - sensor.ups_time_on_battery
     - sensor.ups_transfer_count        
-
-GoogleWiFi:
-  name: Google WiFi
-  view: no
-  entities:
-    - sensor.onhub_packets_sent
-    - sensor.onhub_bytes_sent
-    - sensor.onhub_packetssec_sent
-    - sensor.onhub_bytes_received
-    - sensor.onhub_packetssec_received
-    - sensor.onhub_kbytesec_sent
-    - sensor.onhub_packets_received
-    - sensor.onhub_kbytesec_received
-    

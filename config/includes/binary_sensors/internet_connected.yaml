@@ -1,0 +1,6 @@
+
+  - platform: ping
+    name: Internet Connected
+    host: 8.8.8.8
+    count: 2
+    scan_interval: 30 

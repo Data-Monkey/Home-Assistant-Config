@@ -6,6 +6,12 @@
 # the network is split into groups
 #
 
+# DHCP: 10 - 50
+# Lights 80 - 99
+# Google Homes / casts: 100 - 129
+# Servers / Media  / Xiaomi : 130 - 150
+
+
 
   - platform: nmap_tracker
     track_new_devices: yes

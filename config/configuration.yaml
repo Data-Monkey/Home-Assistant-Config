@@ -93,7 +93,9 @@ http:
 # Discover some devices automatically
 discovery:
   ignore: 
+  # prefer to manually configure these paltforms
   - yeelight
+#  - xiaomi_gw
 
 
   
@@ -136,6 +138,7 @@ mqtt:
 #Includes  
 group:          !include groups.yaml
 sensor:         !include_dir_merge_list includes/sensors
+binary_sensor:  !include_dir_merge_list includes/binary_sensors
 zone:           !include includes/zones.yaml
 device_tracker: !include includes/device_trackers.yaml
 automation:     !include_dir_merge_list includes/automations

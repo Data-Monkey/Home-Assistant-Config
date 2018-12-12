@@ -9,7 +9,7 @@ automation:
    initial_state: 'on'
    trigger:
      - platform: event
-       event_type: click
+       event_type: xiaomi_aqara.click
        event_data:
          entity_id: binary_sensor.switch_button_f
          click_type: long_click_press
@@ -50,7 +50,7 @@ automation:
    initial_state: 'on'
    trigger:
      - platform: event
-       event_type: click
+       event_type: xiaomi_aqara.click
        event_data:
          entity_id: binary_sensor.switch_button_f
          click_type: long_click_press
