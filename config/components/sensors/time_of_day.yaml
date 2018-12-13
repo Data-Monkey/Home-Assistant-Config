@@ -1,0 +1,21 @@
+# Time of Day
+#
+# gives certain timeframes over the day a name
+#
+# mostly used in automations to restrict or customize bahaviour by time
+
+platform: template
+sensors:
+  time_of_day:
+    friendly_name: 'Time of Day'
+    entity_id: sensor.time
+    value_template: >-
+      {% if   now().strftime("%H:%M") < "06:00" %} night
+      {% elif now().strftime("%H:%M") < "09:00" %} early morning
+      {% elif now().strftime("%H:%M") < "11:30" %} morning
+      {% elif now().strftime("%H:%M") < "13:30" %} lunchtime
+      {% elif now().strftime("%H:%M") < "16:00" %} afternoon
+      {% elif now().strftime("%H:%M") < "19:00" %} evening
+      {% elif now().strftime("%H:%M") < "21:00" %} late evening
+      {% elif now().strftime("%H:%M") < "24:00" %} night
+      {% endif %}

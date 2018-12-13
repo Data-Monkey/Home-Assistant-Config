@@ -1,0 +1,18 @@
+# Light of Day
+#
+# gives certain timeframes over the day a name
+#
+# mostly used in automations to restrict or customize behaviour by light
+
+platform: template
+sensors:
+  light_of_day:
+    friendly_name: 'Light of Day'
+    entity_id: sensor.time      
+    value_template: >-
+      {% if   now().strftime("%H:%M") < "06:00" %} dark
+      {% elif now().strftime("%H:%M") < "07:00" %} twilight
+      {% elif now().strftime("%H:%M") < "17:00" %} light
+      {% elif now().strftime("%H:%M") < "19:30" %} twilight
+      {% elif now().strftime("%H:%M") < "24:00" %} dark
+      {% endif %} 

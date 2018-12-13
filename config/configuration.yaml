@@ -47,7 +47,7 @@ homeassistant:
   # old style packages setup
   
   # set some global environmental sensors (time of day, light of day,...)
-    enviro_pack:    !include includes/packages/Environment_Package.yaml
+  #  enviro_pack:    !include includes/packages/Environment_Package.yaml
   # composite devices
     compo_pack:     !include includes/packages/Composite_Package.yaml
   # customize devices 
@@ -83,10 +83,6 @@ homeassistant:
     
 #Includes  
 group:          !include groups.yaml
-#sensor:         !include_dir_merge_list includes/sensors
-#binary_sensor:  !include_dir_merge_list includes/binary_sensors
-#zone:           !include includes/zones.yaml
-#device_tracker: !include includes/device_trackers.yaml
 automation:     !include_dir_merge_list includes/automations
 
 
