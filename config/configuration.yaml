@@ -1,6 +1,15 @@
 ## UNRAID VERSION ##
 
+# this unraid config is a bit different.
+# the file structure is inspired by frenck_nl
+# https://github.com/frenck/home-assistant-config
+#
+# thanks for looking at it!
+#
+
 homeassistant:
+
+  # some basic information on where we are ...
   name: Home
   latitude: !secret HOME_LATITUDE
   longitude: !secret HOME_LONGITUDE
@@ -8,15 +17,36 @@ homeassistant:
   time_zone: Australia/Sydney
   elevation: 178
 
-
-#  customize_domain:
-#    device_tracker:
-#      hidden: true
        
   
   packages:
+  
+  #all these will be imported by one statement once the rework is completed
+  
+  # packages: !include_dir_named components/packages
+  
     homeassistant:  !include packages/homeassistant.yaml
-  # set some global environmental sensors (time od day, light of day,...)
+    ios:            !include packages/ios.yaml
+    logger:         !include packages/logger.yaml
+    http:           !include packages/http.yaml  
+    config:         !include packages/config.yaml  
+    frontend:       !include packages/frontend.yaml  
+    history:        !include packages/history.yaml  
+    discovery:      !include packages/discovery.yaml  
+    sun:            !include packages/sun.yaml  
+    tts:            !include packages/tts.yaml  
+    mqtt:           !include packages/mqtt.yaml     
+    notify:         !include packages/notify.yaml     
+    sensor:         !include packages/sensor.yaml  
+    binary_sensor:  !include packages/binary_sensor.yaml    
+    zone:           !include packages/zone.yaml        
+    automation:     !include packages/automation.yaml
+    device_tracker: !include packages/device_tracker.yaml
+    
+  # -------------------------------------------------------------  
+  # old style packages setup
+  
+  # set some global environmental sensors (time of day, light of day,...)
     enviro_pack:    !include includes/packages/Environment_Package.yaml
   # composite devices
     compo_pack:     !include includes/packages/Composite_Package.yaml
@@ -48,99 +78,15 @@ homeassistant:
 #    lightdimmer:    !include includes/packages/LightDimmer.yaml               # couldn't make it work yet
 #    ledpack: !include includes/packages/LED.yaml                              # it works, but LEDs are not installed at the moment
     
-# Enables configuration UI
-config:
-  
-# Enables the frontend
-frontend:
-  javascript_version: latest
-  
-# Enables support for tracking state changes over time.
-history:
-
-# View all events in a logbook
-# -----------------------------------------
-logbook:
-
-logger:
-  default: warn
-#  logs:
-#    homeassistant.custom_components.google_assistant: debug  
-#    homeassistant.components.xiaomi_aqara: debug
-#    homeassistant.components.sensor.xiaomi_aqara: debug
-#    homeassistant.components.binary_sensor.xiaomi_aqara: debug
-#    homeassistant.components.light.xiaomi_aqara: debug
-#    homeassistant.components.switch.xiaomi_aqara: debug
-
-
-
-ios:
-  
-
-       
- 
-http:
-  base_url: !secret HA_BASE_URL
-#  api_password: !secret HA_PASSWORD
-  use_x_forwarded_for: True
-  ip_ban_enabled: True
-  login_attempts_threshold: 5
-  trusted_proxies: !secret PROXY_IP
-  trusted_networks:
-    - 127.0.0.1
-    - 192.168.2.0/24
-    
-# Discover some devices automatically
-discovery:
-  ignore: 
-  # prefer to manually configure these paltforms
-  - yeelight
-#  - xiaomi_gw
-
-
-  
-  
-# Track the sun
-sun:
-
-# Text to speech
-tts:
-  platform: google
-
-notify:
-  - name: pushover
-    platform: pushover
-    api_key:  !secret PUSHOVER_API_KEY
-    user_key: !secret PUSHOVER_USER_KEY 
-    
-  # using pushover for Janet! text notification  
-  - name: janet
-    platform: pushover
-    api_key:  !secret PUSHOVER_API_KEY
-    user_key: !secret PUSHOVER_USER_KEY    
-
-
-mqtt:
-  broker:    !secret MQTT_IP
-  port:      !secret MQTT_PORT
-  client_id: home-assistant
-  keepalive: 60
-  username:  !secret MQTT_USER
-  password:  !secret MQTT_PWD
-  discovery: true
-  discovery_prefix: homeassistant  
-
-
-
 
 
     
 #Includes  
 group:          !include groups.yaml
-sensor:         !include_dir_merge_list includes/sensors
-binary_sensor:  !include_dir_merge_list includes/binary_sensors
-zone:           !include includes/zones.yaml
-device_tracker: !include includes/device_trackers.yaml
+#sensor:         !include_dir_merge_list includes/sensors
+#binary_sensor:  !include_dir_merge_list includes/binary_sensors
+#zone:           !include includes/zones.yaml
+#device_tracker: !include includes/device_trackers.yaml
 automation:     !include_dir_merge_list includes/automations
 
 
@@ -156,14 +102,3 @@ switch:
     payload_on: "ON"
     payload_off: "OFF"
     retain: true    
-    
-    
-
-
-
-
-#camera:
-#  name: Roland
-#  platform: generic
-#  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.zan_rolands_nexus.attributes.latitude }},{{ states.device_tracker.zan_rolands_nexus.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:R%7C{{ states.device_tracker.zan_rolands_nexus.attributes.latitude }},{{ states.device_tracker.zan_rolands_nexus.attributes.longitude }}
-#  limit_refetch_to_url_change: true

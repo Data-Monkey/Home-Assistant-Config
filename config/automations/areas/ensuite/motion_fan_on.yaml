@@ -1,0 +1,21 @@
+# Automation running in the ensuite
+#
+# Ensuite Fan by Motion
+# switch on fan after motion for 1 minute.
+# no fan at night! too noisy
+
+alias: Ensuite Fan by motion ON
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_ensuite
+    to: 'on'
+    for:
+      minutes: 3
+      seconds: 0
+condition:
+  condition: template
+  value_template: '{{ states.sensor.time_of_day.state != "night" }}'          
+action:
+  service: homeassistant.turn_on
+  entity_id: switch.ensuite_fan

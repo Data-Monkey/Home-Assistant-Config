@@ -1,0 +1,6 @@
+# Automations 
+# are stored by area like bedroom, bathroom, wardrobe, ....
+# one automation per file!
+#
+
+automation: !include_dir_list ../automations

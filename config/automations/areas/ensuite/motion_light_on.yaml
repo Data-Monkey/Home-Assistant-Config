@@ -1,0 +1,23 @@
+# Automation running in the ensuite
+# switch on the light on motion
+# based on the time of day the brightness and clour adjusts
+#
+
+alias: Ensuite Light by motion ON
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_ensuite
+    to: 'on'
+action:
+  service: homeassistant.turn_on
+  entity_id: light.ensuite_light
+  data_template: 
+    brightness: >
+      {% if   states.sensor.time_of_day.state == "night" %} 80
+      {% else %} 255
+      {% endif %}
+    color_name: >
+      {% if   states.sensor.time_of_day.state == "night"  %} blue
+      {% else %} white
+      {% endif %}

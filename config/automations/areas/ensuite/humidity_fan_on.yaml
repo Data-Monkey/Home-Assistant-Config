@@ -1,0 +1,33 @@
+# Automation running in the ensuite
+#
+# If humidity in the ensuite is greater than in the hallway 
+# then start the fan      
+#
+# not at night!
+#
+
+alias: Ensuite Fan by Humidity
+initial_state: 'on'
+trigger:
+  # when the fan switches off
+  - platform: state
+    entity_id: switch.ensuite_fan
+    from: 'on'
+    to: 'off'
+    # to avoid the switch rattling    
+    for:
+      seconds: 10  
+  # also check    
+  # every hour at 5 past the hour  
+  - platform: time
+    minutes: 5
+    seconds: 00      
+condition:
+  - condition: template
+    value_template: '{{ states.sensor.time_of_day.state != "night" }}'   
+  - condition: numeric_state
+    entity_id: sensor.humidity_delta
+    above: 10
+action:
+  service: homeassistant.turn_on
+  entity_id: switch.ensuite_fan

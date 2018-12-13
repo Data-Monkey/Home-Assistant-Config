@@ -1,0 +1,14 @@
+# Device Trackers
+
+# the netowrk is split into segments, and separate trackers cover them
+#
+# DHCP: 10 - 50
+# Lights 80 - 99
+# Google Homes / casts: 100 - 129
+# Servers / Media  / Xiaomi : 130 - 150
+
+# presence detection
+platform: nmap_tracker
+track_new_devices: yes
+hosts: -Pn 192.168.2.1-99
+home_interval: 60

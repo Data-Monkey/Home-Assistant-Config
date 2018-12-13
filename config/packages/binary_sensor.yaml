@@ -1,0 +1,6 @@
+# Binary Sensors 
+# are being included from the binary_sensors folder
+# one sensor per file!
+#
+
+binary_sensor: !include_dir_list ../components/binary_sensors

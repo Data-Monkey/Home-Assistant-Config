@@ -1,0 +1,40 @@
+# Weather from BOM
+#
+platform: bom
+name: "Sydney"
+station: IDN60901.95766
+monitored_conditions:
+  - air_temp
+  - weather
+  - wind_dir
+  - wind_spd_kmh
+  - wind_spd_kt    
+#    - wmo
+#    - name
+#    - history_product
+#    - local_date_time
+#    - local_date_time_full
+#    - aifstime_utc
+#    - lat
+#    - lon
+#    - apparent_t
+#    - cloud
+#    - cloud_base_m
+#    - cloud_oktas
+#    - cloud_type_id
+#    - cloud_type
+#    - delta_t
+#    - gust_kmh
+#    - gust_kt
+#   - dewpt
+#   - press
+#   - press_qnh
+#   - press_msl
+#    - press_tend
+#    - rain_trace
+#    - rel_hum
+#    - sea_state
+#    - swell_dir_worded
+#    - swell_height
+#    - swell_period
+#   - vis_km
