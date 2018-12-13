@@ -1,0 +1,27 @@
+# Automation running in the Master Bedroom
+#     
+# All OFF from any of the buttons
+alias: All Bedroom Lights OFF
+initial_state: 'on'
+trigger:
+  # Switch L
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_button_l
+      click_type: double
+  # Switch R
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_button_r
+      click_type: double
+  # Switch H
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_button_h
+      click_type: double
+action:
+  service: homeassistant.turn_off
+  entity_id: group.BedroomLights

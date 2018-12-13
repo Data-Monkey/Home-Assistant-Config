@@ -42,6 +42,7 @@ homeassistant:
     zone:           !include packages/zone.yaml        
     automation:     !include packages/automation.yaml
     device_tracker: !include packages/device_tracker.yaml
+    switch:         !include packages/switch.yaml
     
   # -------------------------------------------------------------  
   # old style packages setup
@@ -78,23 +79,6 @@ homeassistant:
 #    lightdimmer:    !include includes/packages/LightDimmer.yaml               # couldn't make it work yet
 #    ledpack: !include includes/packages/LED.yaml                              # it works, but LEDs are not installed at the moment
     
-
-
     
 #Includes  
 group:          !include groups.yaml
-automation:     !include_dir_merge_list includes/automations
-
-
-  
-    
-# switches
-switch:
-  - platform: mqtt
-    name: "Ensuite Fan"
-    command_topic: "cmnd/sonoff_ensuite_fan/power"
-    state_topic: "stat/sonoff_ensuite_fan/POWER"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true    

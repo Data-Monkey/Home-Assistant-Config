@@ -1,0 +1,16 @@
+# Automations running in the WIR
+#
+
+#  Wardrobe Light by Motion
+
+alias: Wardrobe Light by motion ON
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_wardrobe
+    to: 'on'
+action:
+  service: homeassistant.turn_on
+  data:
+    entity_id: light.wardrobe_light
+    brightness: 255

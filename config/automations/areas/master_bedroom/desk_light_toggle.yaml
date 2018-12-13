@@ -1,0 +1,17 @@
+# Automation running in the Master Bedroom
+#
+# Bedroom Desk/Office Lamp toggle
+#
+
+alias: Toggle Light Plug
+initial_state: 'on'
+trigger:
+  platform: event
+  event_type: xiaomi_aqara.click
+  event_data:
+    entity_id: binary_sensor.switch_button_l
+    click_type: single
+action:
+  service: homeassistant.toggle
+  data:
+    entity_id: switch.plug_desk_light

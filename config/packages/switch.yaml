@@ -1,0 +1,6 @@
+# Switches 
+# are being included from the switches folder
+# one switch per file!
+#
+
+switch: !include_dir_list ../components/switches

@@ -1,0 +1,12 @@
+# Ensuite Fan
+# powered by a sonoff basic
+
+
+platform: mqtt
+name: "Ensuite Fan"
+command_topic: "cmnd/sonoff_ensuite_fan/power"
+state_topic: "stat/sonoff_ensuite_fan/POWER"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+retain: true  

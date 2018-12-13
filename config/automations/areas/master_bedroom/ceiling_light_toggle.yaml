@@ -1,0 +1,32 @@
+# Automation running in the Master Bedroom
+#
+#
+# Ceiling light toggle
+# this can be done from any of the 3 buttons 
+# using a long press
+#
+
+alias: Bedroom Ceiling Light toggle
+initial_state: 'on'
+trigger:
+  # Switch L
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_button_l
+      click_type: long_click_press
+  # Switch R
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_button_r
+      click_type: long_click_press
+  # Switch H
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_button_h
+      click_type: long_click_press
+action:
+  service: homeassistant.toggle
+  entity_id: light.bedroom_light

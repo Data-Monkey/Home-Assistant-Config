@@ -1,0 +1,17 @@
+# Automation running in the Master Bedroom
+#
+# Bedside Table Lamp Helen Toggle
+#
+
+alias: Toggle Helens Light
+initial_state: 'on'
+trigger:
+  platform: event
+  event_type: xiaomi_aqara.click
+  event_data:
+    entity_id: binary_sensor.switch_button_h
+    click_type: single
+action:
+  service: homeassistant.toggle
+  data:
+    entity_id: switch.plug_helens_light

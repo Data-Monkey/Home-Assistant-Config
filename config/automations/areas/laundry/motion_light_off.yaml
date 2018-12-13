@@ -1,0 +1,17 @@
+# Automation running in the laundry
+#
+#
+#  Laundry Light by Motion
+
+alias: Laundry Light by motion OFF
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_laundry
+    to: 'off'
+    for:
+      minutes: 3
+action:
+  service: homeassistant.turn_off
+  data:
+    entity_id: light.laundry_light  
