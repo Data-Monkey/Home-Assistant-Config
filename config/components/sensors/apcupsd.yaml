@@ -1,0 +1,13 @@
+# UPS Sensor
+#
+
+platform: apcupsd
+resources:
+  - bcharge
+  - linev
+  - loadpct
+  - numxfers
+  - outputv
+  - status
+  - timeleft
+  - tonbatt

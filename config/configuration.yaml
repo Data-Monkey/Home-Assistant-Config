@@ -43,6 +43,10 @@ homeassistant:
     automation:     !include packages/automation.yaml
     device_tracker: !include packages/device_tracker.yaml
     switch:         !include packages/switch.yaml
+    apcupsd:        !include packages/apcupsd.yaml
+    nest:           !include packages/nest.yaml
+    influxdb:       !include packages/influxdb.yaml
+
     
   # -------------------------------------------------------------  
   # old style packages setup
@@ -55,15 +59,14 @@ homeassistant:
     devicepack:     !include includes/packages/Devices_Package.yaml  
     
     harmonypack:    !include includes/packages/Harmony_Package.yaml    
-    xiaomipack:     !include includes/packages/Xiaomi_Package.yaml 
-    apcupsdpack:    !include includes/packages/APCUPSd_Package.yaml     
-    nestpack:       !include includes/packages/Nest_Package.yaml     
+    xiaomipack:     !include includes/packages/Xiaomi_Package.yaml     
+ #   nestpack:       !include includes/packages/Nest_Package.yaml     
   # logging to influx db
-    loggingpack:    !include includes/packages/Logging_Package.yaml      
+ #   loggingpack:    !include includes/packages/Logging_Package.yaml      
   # google assistant config and customisations
     ga_pack:        !include includes/packages/GoogleAssistant_Package.yaml
     battery_alert:  !include includes/packages/battery_alert.yaml
-    efergy:         !include includes/packages/Efergy_Package.yaml
+#    efergy:         !include includes/packages/Efergy_Package.yaml
     customupdater:  !include includes/packages/CustomUpdater.yaml
     homeworkpack:   !include includes/packages/Homework_Package.yaml
 

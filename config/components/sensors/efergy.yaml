@@ -1,0 +1,8 @@
+# Efergy Energy Monitoring Sensor
+
+platform: efergy
+app_token: !secret EFERGY_TOKEN
+utc_offset: 600
+monitored_variables:
+   #- type: instant_readings
+    - type: current_values

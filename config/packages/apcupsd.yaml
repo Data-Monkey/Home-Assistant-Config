@@ -1,0 +1,4 @@
+# UPS monitoring platform
+
+apcupsd:
+  host: !secret TOWER_IP

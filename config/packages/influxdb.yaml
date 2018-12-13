@@ -1,7 +1,7 @@
-# defining what to log and where to log it too
+# InfluxDB 
+# configuartion and 
+# defining what to log
 
-
-  
 influxdb:
   host: !secret INFLUX_HOST_IP
   username: !secret INFLUX_USER

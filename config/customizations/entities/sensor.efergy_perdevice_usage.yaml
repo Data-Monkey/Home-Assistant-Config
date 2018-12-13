@@ -1,0 +1,5 @@
+# Customize the sensor from Efergy.
+# It is not usefull for me so I want to hide it.
+
+sensor.perdevice_usage:
+  hidden: true
