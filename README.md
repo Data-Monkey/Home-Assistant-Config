@@ -65,7 +65,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="https://home-assistant.io">
       <b>Home Assistant</b><br>
       <img src="https://raw.githubusercontent.com/balloob/unraid-docker-templates/master/balloob/home-assistant-icon.png" width=100>
-    <\a>
+    </a>
     <a href="https://registry.hub.docker.com/u/homeassistant/home-assistant/">dockerhub</a>
   </td>
   <td>

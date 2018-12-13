@@ -9,13 +9,13 @@ homeassistant:
   elevation: 178
 
 
-  customize_domain:
-    device_tracker:
-      hidden: true
-      
-  customize: !include_dir_merge_named includes/customisations  
+#  customize_domain:
+#    device_tracker:
+#      hidden: true
+       
   
   packages:
+    homeassistant:  !include packages/homeassistant.yaml
   # set some global environmental sensors (time od day, light of day,...)
     enviro_pack:    !include includes/packages/Environment_Package.yaml
   # composite devices
