@@ -98,7 +98,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
   [dockerhub](https://hub.docker.com/_/influxdb/)   
   </td>
   <td>
-    InfluxDB is where I store a time series of some of my HA [entities](https://github.com/Data-Monkey/Home-Assistant-Config/blob/master/config/packages/influxdb.yaml). 
+    InfluxDB is where I store a time series of some of my HA [entities](config/packages/influxdb.yaml)  
   </td>
 </tr><tr>
   <td align="center">
