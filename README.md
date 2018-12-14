@@ -81,13 +81,13 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <b>MQTT</b><br>
     <img src="http://i.imgur.com/Cc9Jkcr.png" width=100>
     </a>
-    [dockerhub](https://registry.hub.docker.com/u/spants/mqtt/)
+    <a href="https://hub.docker.com/u/spants/mqtt/">dockerhub</a>    
   </td>
     <td>
       MQTT is a lightweight protocol that lets devices communicate with each other. 
       I use it to let my devices communicate with HA. <br>
       I am still trying to come up with a topic strucutre that makes sense and is supported by my devices. 
-      See this post [MQTT Topic Design](https://community.home-assistant.io/t/mqtt-topic-design/69687)
+      See this post <a href="https://community.home-assistant.io/t/mqtt-topic-design/69687">MQTT Topic Design</a>
     </td>
   </tr><tr>  
   <td align="center">
@@ -95,10 +95,10 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
       <b>InfluxDB</b><br>
       <img src="https://raw.githubusercontent.com/pootzko/InfluxData.Net/master/nuget-icon.png" width=100>
     </a>
-    [dockerhub](https://hub.docker.com/_/influxdb/)   
+    <a href="https://hub.docker.com/_/influxdb/">dockerhub</a>
   </td>
   <td>
-    InfluxDB is where I store a time series of some of my HA [entities](config/packages/influxdb.yaml)  
+    InfluxDB is where I store a time series of some of my HA <a href="https://github.com/Data-Monkey/Home-Assistant-Config/blob/master/config/packages/influxdb.yaml">entities</a>
   </td>
 </tr><tr>
   <td align="center">
