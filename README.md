@@ -10,7 +10,7 @@ But I am happy for this repo to be inspirational for other Home Automation enthu
 
 The new file structure has been heavily influenced by [Frenck](https://github.com/frenck/) and his [HA Config structure](https://github.com/frenck/home-assistant-config). While this README is influenced by [CCOSTAN](https://github.com/CCOSTAN) and the [Bear Stone Smart Home](https://github.com/CCOSTAN/Home-AssistantConfig). 
 
-Please make sure you **star** this repo to keep up to date with the progress.
+Please make sure you :star: this repo to keep up to date with the progress.
 <div align="center">
   <h4>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config/stargazers"><img src="https://img.shields.io/github/stars/Data-Monkey/Home-Assistant-Config.svg?style=plasticr"></a>
