@@ -48,15 +48,17 @@ Please make sure you **star** this repo to keep up to date with the progress.
 <h2>Why?</h2>
 Really, the question should be <b>"Why NOT?!"</b> <br>
 Why wouldn't you want to automate your home? 
-But then, what is home automation? I didn't want to replace a light bulb with a smart light and now I have to find my phnoe, open the app and change the status every time I want to switch on/off my light. Home-Automation needs to make life easier.
+But then, what is home automation? I didn't want to replace a light bulb with a smart light and as a result I now have to find my phone, open the app and change the status every time I want to switch on/off my light.<br>
+Home-Automation needs to make life easier!<br>
 So I was looking for tasks that I can actually automate. 
 Thinking back now, one of my earliest home-automation was to buy a harmony remote. One to rule them all :-) So now I don't need 2 or 3 remotes anymore, just to switch on the TV, change the input, switch on the DVR and browse to the recording or channel. 
 Other simple automations that are now running in our appartment are looking after some lights. The ensuite light and wardrobe light are fully automated.
+More challanging tasks are still in the making. Don't let the TV be switched on until todays chores (homework mostly) are done!
 
 <h2>How?</h2>
 This is what you are here for, so lets just dive in!<br>
 Home Assistant and most of the other software used for home automation are installed in docker containers on an <a href="https://unraid.net/">unRAID</a> server. The build of this server is discussed in the <a href="https://forums.lime-technology.com/topic/30331-first-unraid-build-h87i-plus-lian-li-pc-q25/">unRAID forum</a>. <br>
-The unRAID server is called TOWER and is the backbone of most things happening in our appartment. It serves a Media Server via Plex as well as a backup for all our laptops and photo library. And it also hosts all the software required for our Home Automation.
+The unRAID server is called TOWER and is the backbone of most things happening in our appartment. It serves as Media Server via Plex as well as a backup for all our laptops and photo library. And it also hosts all the software required for our Home Automation.
 
 <h2>Software</h2>
 As mentioned the unRAID TOWER runs docker with the following containers relevant to home automation
@@ -95,7 +97,9 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
   
   [dockerhub](https://hub.docker.com/_/influxdb/)   
   </td>
-  <td></td>
+  <td>
+    InfluxDB is where I store a time series of some of my HA [entities](https://github.com/Data-Monkey/Home-Assistant-Config/blob/master/config/packages/influxdb.yaml). 
+  </td>
 </tr><tr>
   <td align="center">
     <a href="http://www.grafana.org">
@@ -105,7 +109,7 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
     <a href="https://hub.docker.com/r/grafana/grafana/">dockerhub</a>
   </td>
     <td>
-      Grafana is 
+      Grafana is used to visualise the data stored in InfluxDB.
     </td>
   </tr><tr> 
   <td align="center">
@@ -134,7 +138,9 @@ As mentioned the unRAID TOWER runs docker with the following containers relevant
   </tr><tr>
 </table>
 
+<br>
 not in use anymore:
+<br>
 
 - Zanzito on Nexus5 mobile (http://www.barbaro.it/cms/index.php/83-zanzito)
 
@@ -163,8 +169,6 @@ not in use anymore:
 
 - Efergy Energy Monitor           (demo: https://engage.efergy.com/dashboard)
 
-- Roku2  (replaced with RasPlex as PLEX was not updated on ROKU)
-
 - Google Home (x2) 
 
 - RasPlex (not realy any integration)
@@ -177,10 +181,8 @@ not in use anymore:
 
 - PiVPN (currently not used, need to work out integration with Google WiFi)
 
+<br>
+Some of my hardware has been retired for various reasons:
 
-
-
-
-
-
+- Roku2  (replaced with RasPlex as PLEX was not updated on ROKU)
 
