@@ -8,7 +8,7 @@ How I installed it is described in this other repo over here: (https://github.co
 
 But I am happy for this repo to be inspirational for other Home Automation enthusiasts and if you can find some usefull code here, feel free to adapt it to your needs. Most likely I found it in somebody elses repo anyway :-)
 
-The new file structure has been heavily influenced by [Frenck](https://github.com/frenck/) and his [HA Config structure](https://github.com/frenck/home-assistant-config). While this readme is influenced by [CCOSTAN](https://github.com/CCOSTAN) and the [Bear Stone Smart Home](https://github.com/CCOSTAN/Home-AssistantConfig). 
+The new file structure has been heavily influenced by [Frenck](https://github.com/frenck/) and his [HA Config structure](https://github.com/frenck/home-assistant-config). While this README is influenced by [CCOSTAN](https://github.com/CCOSTAN) and the [Bear Stone Smart Home](https://github.com/CCOSTAN/Home-AssistantConfig). 
 
 Please make sure you **star** this repo to keep up to date with the progress.
 <div align="center">
