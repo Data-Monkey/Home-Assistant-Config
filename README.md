@@ -15,7 +15,7 @@ Please make sure you :star: this repo to keep up to date with the progress.
   <h4>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config/stargazers"><img src="https://img.shields.io/github/stars/Data-Monkey/Home-Assistant-Config.svg?style=plasticr"></a>
     <a href="https://github.com/Data-Monkey/Home-Assistant-Config/commits/master"><img src="https://img.shields.io/github/last-commit/Data-Monkey/Home-Assistant-Config.svg?style=plasticr"></a>
-    <a href="https://travis-ci.org/Data-Monkey/Home-Assistant-Config"><img src="https://travis-ci.org/Data-Monkey/Home-Assistant-Config.svg?branch=master"></a>
+    <a href="https://travis-ci.org/Data-Monkey/Home-Assistant-Config" target="_new"><img src="https://travis-ci.org/Data-Monkey/Home-Assistant-Config.svg?branch=master"></a>
   </h4>
 </div>
 <div align="center" font-color=orange><a name="menu"></a>
