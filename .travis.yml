@@ -5,6 +5,10 @@ python: "3.6.4"
 before_install:
   - mv config/travis_secrets.yaml config/secrets.yaml
 
-install: pip3 install homeassistant
+install: 
+  - pip3 install homeassistant
+  - pip install yamllint
 
-script: hass -c config/ --script check_config --info all
+script:
+  - yamllint config 
+  - hass -c config/ --script check_config --info all
