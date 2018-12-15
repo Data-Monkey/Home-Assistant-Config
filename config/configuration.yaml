@@ -1,15 +1,14 @@
 ---
 ## UNRAID VERSION ##
 
-# this unraid config is a bit different.
+# this home assistant config is a bit different.
 # the file structure is inspired by frenck_nl
 # https://github.com/frenck/home-assistant-config
 #
 # thanks for looking at it!
-#
+# 
 
 homeassistant:
-
   # some basic information on where we are ...
   name: Home
   latitude: !secret HOME_LATITUDE
@@ -18,12 +17,10 @@ homeassistant:
   time_zone: Australia/Sydney
   elevation: 178
 
-
-
   packages:
 
     # all these will be imported by one statement once the rework is completed
-    
+
     # !include_dir_named components/packages
 
     homeassistant: !include packages/homeassistant.yaml
@@ -67,18 +64,21 @@ homeassistant:
     customupdater:  !include includes/packages/CustomUpdater.yaml
     homeworkpack:   !include includes/packages/Homework_Package.yaml
 
-
-
     # experimental packages mostly switched off
     # janetpack:      !include includes/packages/janet/janet.yaml
     # janetautopack:  !include includes/packages/janet/janet_automations.yaml
     # castpack:       !include includes/packages/Cast_Package.yaml
     # sonospack:      !include includes/packages/Sonos_Package.yaml
     # zanzitopack:    !include includes/packages/Zanzito_Package.yaml
-    # piholepack:     !include includes/packages/PiHole_Package.yaml            # not using pihole on the new Google Wifi Router (yet)
-    # lightdimmer:    !include includes/packages/LightDimmer.yaml               # couldn't make it work yet
-    # ledpack: !include includes/packages/LED.yaml                              # it works, but LEDs are not installed at the moment
     
+    # not using pihole on the new Google Wifi Router (yet)
+    # piholepack:     !include includes/packages/PiHole_Package.yaml
+
+    # couldn't make it work yet
+    # lightdimmer:    !include includes/packages/LightDimmer.yam
+
+    # it works, but LEDs are not installed at the moment
+    # ledpack: !include includes/packages/LED.yaml
 
 # Includes
 group: !include groups.yaml
