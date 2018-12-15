@@ -1,3 +1,4 @@
+---
 # --------------
 # VIEWS
 # --------------
@@ -9,12 +10,12 @@ Devices:
     - group.devices_computer
     - group.devices_mediaplayer
     - group.devices_gadgets
-  
+
 Rooms:
   view: yes
   name: Rooms
   entities:
-    #- group.BedroomLights
+    # - group.BedroomLights
     - group.RoomsBedroom
     - group.RoomsBathroom
     - group.RoomsLaundry
@@ -23,13 +24,13 @@ Rooms:
     - group.RoomsEnsuite
     - group.RoomsLivingroom
     - group.RoomsFelix
-    
+
 Harmony:
   view: yes
   entities:
     - group.activity
 
-        
+
 Xioami_View:
   view: yes
   name: Xiaomi
@@ -43,14 +44,14 @@ HomeworkTracker:
   entities:
     - group.hwt
     - group.activity
-    
+
 Test_View:
   view: yes
   name: test
   entities:
     - group.occupancy
-    
-    
+
+
 # --------------
 # GROUPS
 # --------------
@@ -61,7 +62,7 @@ hwt:
     - binary_sensor.business_day
     - input_boolean.school_holiday
     - input_boolean.school_day
-    - sensor.trello_count  
+    - sensor.trello_count
     - input_boolean.tv_restriction
 
 Activity:
@@ -76,8 +77,8 @@ Enviro:
   entities:
     - sensor.time_of_day
     - sensor.light_of_day
-    
-   
+
+
 
 Devices_Gadgets:
   name: Gadgets
@@ -86,16 +87,16 @@ Devices_Gadgets:
     - sensor.device_efergy_hub
     - sensor.device_xiaomi_gateway
     - sensor.device_xiaomi_gateway2
-    - sensor.device_iconia_tab 
+    - sensor.device_iconia_tab
     - sensor.device_nest_protect
     - sensor.device_google_home
     - sensor.device_google_home_bedroom
     - sensor.device_felix_gh
-    
+
 Devices_Phones:
   name: Mobiles
   view: no
-  entities:  
+  entities:
     - sensor.device_nmap_helens_iphone
     - sensor.device_nmap_helens_workphone
     - sensor.device_nmap_rolands_iphone
@@ -104,27 +105,27 @@ Devices_Phones:
     - sensor.device_nmap_rolands_nexus
     - sensor.zan_nexus_battery
     - sensor.device_galaxy_tab
-    
+
 Devices_Network:
   name: Network
   view: no
   entities:
     - sensor.device_modem_router
-    #- sensor.device_repeater
-    #- sensor.device_access_point
-    - sensor.device_gate_pi  
+    # - sensor.device_repeater
+    # - sensor.device_access_point
+    - sensor.device_gate_pi
     - sensor.device_hp_printer
 
 Devices_Computer:
   name: Computer
   view: no
   entities:
-    - binary_sensor.blue_laptop  
+    - binary_sensor.blue_laptop
     - sensor.device_obelix
     - sensor.device_blue_laptop
     - sensor.device_purple_laptop
     - sensor.device_hp_tablet
-    
+
 Devices_MediaPlayer:
   name: Media Player
   view: no
@@ -134,26 +135,26 @@ Devices_MediaPlayer:
     - sensor.device_fetch
     - sensor.device_roku
     - sensor.device_sonos_playbar
-    
+
 Monitoring:
   view: no
   entities:
     - sensor.crashplan_status
     - sensor.zan_nexus_battery
-#    - sensor.energy_usage
+    # - sensor.energy_usage
     - sensor.efergy_591994
     - binary_sensor.internet_connected
 
 
 Environment:
   view: no
-  entities: 
+  entities:
     - sensor.humidity_hallway
     - sensor.temperature_hallway
     - sensor.hallway
     - sensor.balcony
     - sensor.laundry
-        
+
 Weather:
   view: no
   entities:
@@ -161,13 +162,13 @@ Weather:
     - sensor.bom_sydney_weather
     - sensor.bom_sydney_wind_direction
     - sensor.bom_sydney_wind_speed_kt
-    - sensor.bom_sydney_wind_speed_kmh    
+    - sensor.bom_sydney_wind_speed_kmh
     - sensor.dark_sky_icon
     - sensor.dark_sky_temperature
     - sun.sun
     - sensor.yr_symbol
-    
-   
+
+
 Xiaomi1:
   name: Gateway 1
   view: no
@@ -178,11 +179,11 @@ Xiaomi1:
     - binary_sensor.motion_hallway
 
     - binary_sensor.door_appartment_door
-    - sensor.front_door    
+    - sensor.front_door
     - sensor.humidity_hallway
-    - sensor.temperature_hallway    
+    - sensor.temperature_hallway
     - sensor.humidity_balcony
-    - sensor.temperature_balcony 
+    - sensor.temperature_balcony
     - sensor.humidity_ensuite
     - sensor.temperature_ensuite
     - binary_sensor.motion_kitchen
@@ -203,7 +204,7 @@ Xiaomi2:
     # Rolands Light
     - binary_sensor.switch_button_r
     - switch.plug_rolands_light
-    # Helens Light    
+    # Helens Light
     - binary_sensor.switch_button_h
     - switch.plug_helens_light
     # bedroom
@@ -211,7 +212,7 @@ Xiaomi2:
     - light.bedroom_light
     - light.wardrobe_light
 
-    
+
 BedroomLights:
   name: Bedroom Lights
   view: no
@@ -220,7 +221,7 @@ BedroomLights:
     - switch.plug_desk_light
     # Rolands Light
     - switch.plug_rolands_light
-    # Helens Light    
+    # Helens Light
     - switch.plug_helens_light
     # Ceiling Light
     - light.bedroom_light
@@ -242,9 +243,9 @@ RoomsFelix:
   name: Felix's Room
   view: no
   entities:
-    - light.felix_light  
-    - device.device_felix_gh    
-    
+    - light.felix_light
+    - device.device_felix_gh
+
 RoomsBedroom:
   name: Bedroom
   view: no
@@ -253,7 +254,7 @@ RoomsBedroom:
     - switch.plug_desk_light
     # Rolands Light
     - switch.plug_rolands_light
-    # Helens Light    
+    # Helens Light
     - switch.plug_helens_light
     # Ceiling Light
     - light.bedroom_light
@@ -274,16 +275,15 @@ RoomsEnsuite:
     - sensor.humidity_ensuite
     - sensor.temperature_ensuite
     - sensor.humidity_delta
-    
-    
+
 RoomsLaundry:
-    name: Laundry
-    view: no
-    entities:
-      - binary_sensor.water_leak_sensor_laundry
-      - light.laundry_light
-      - binary_sensor.motion_laundry
-      - sensor.illumination_laundry    
+  name: Laundry
+  view: no
+  entities:
+    - binary_sensor.water_leak_sensor_laundry
+    - light.laundry_light
+    - binary_sensor.motion_laundry
+    - sensor.illumination_laundry
 
 
 RoomsKitchen:
@@ -301,15 +301,15 @@ RoomsHallway:
     - sensor.illumination_hallway
     - sensor.humidity_hallway
     - sensor.temperature_hallway
-    
+
 RoomsLivingroom:
   name: Livingroom
   view: no
   entities:
     - binary_sensor.motion_livingroom
     - switch.plug_xmas_tree
-    
-    
+
+
 Nest:
   name: Nest Protect
   view: no
@@ -319,11 +319,11 @@ Nest:
     - sensor.hallway_nest_protect_co_status
     - sensor.hallway_nest_protect_smoke_status
     - sensor.hallway_nest_protect_color_status
-    
+
 UPS:
   name: UPS
   view: no
-  entities: 
+  entities:
     - sensor.ups_battery
     - sensor.ups_input_voltage
     - sensor.ups_load
@@ -331,4 +331,4 @@ UPS:
     - sensor.ups_status
     - sensor.ups_time_left
     - sensor.ups_time_on_battery
-    - sensor.ups_transfer_count        
+    - sensor.ups_transfer_count

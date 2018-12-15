@@ -1,3 +1,4 @@
+---
 ## UNRAID VERSION ##
 
 # this unraid config is a bit different.
@@ -21,12 +22,11 @@ homeassistant:
   
   packages:
   
-  #all these will be imported by one statement once the rework is completed
+    # all these will be imported by one statement once the rework is completed
+    # packages: !include_dir_named components/packages
   
-  # packages: !include_dir_named components/packages
-  
-    homeassistant:  !include packages/homeassistant.yaml
-    ios:            !include packages/ios.yaml
+    homeassistant : !include packages/homeassistant.yaml
+    ios           : !include packages/ios.yaml
     logger:         !include packages/logger.yaml
     http:           !include packages/http.yaml  
     config:         !include packages/config.yaml  
