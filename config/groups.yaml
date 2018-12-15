@@ -78,8 +78,6 @@ Enviro:
     - sensor.time_of_day
     - sensor.light_of_day
 
-
-
 Devices_Gadgets:
   name: Gadgets
   view: no
