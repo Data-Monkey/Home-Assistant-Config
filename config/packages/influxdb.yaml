@@ -1,3 +1,4 @@
+---
 # InfluxDB 
 # configuartion and 
 # defining what to log
@@ -11,4 +12,3 @@ influxdb:
        - binary_sensor
        - sensor
        - switch
-

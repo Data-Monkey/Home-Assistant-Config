@@ -1,3 +1,4 @@
+---
 # Discover some devices automatically
 #
 # exclude platforms that I prefer to configure manually
@@ -6,4 +7,3 @@ discovery:
   ignore: 
   # prefer to manually configure these paltforms
   - yeelight
-

@@ -1,3 +1,4 @@
+---
 # MQTT Broker config
 # the mqtt broker is another docker on the unRAID server
 #
@@ -10,4 +11,4 @@ mqtt:
   username:  !secret MQTT_USER
   password:  !secret MQTT_PWD
   discovery: true
-  discovery_prefix: homeassistant  
+  discovery_prefix: homeassistant 
