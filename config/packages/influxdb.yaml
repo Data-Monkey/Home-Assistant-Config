@@ -1,6 +1,6 @@
 ---
-# InfluxDB 
-# configuartion and 
+# InfluxDB
+# configuartion and
 # defining what to log
 
 influxdb:
@@ -9,6 +9,6 @@ influxdb:
   password: !secret INFLUX_PWD
   include:
     domains:
-       - binary_sensor
-       - sensor
-       - switch
+      - binary_sensor
+      - sensor
+      - switch

@@ -4,11 +4,11 @@
 #
 
 mqtt:
-  broker:    !secret MQTT_IP
-  port:      !secret MQTT_PORT
+  broker: !secret MQTT_IP
+  port: !secret MQTT_PORT
   client_id: home-assistant
   keepalive: 60
-  username:  !secret MQTT_USER
-  password:  !secret MQTT_PWD
+  username: !secret MQTT_USER
+  password: !secret MQTT_PWD
   discovery: true
-  discovery_prefix: homeassistant 
+  discovery_prefix: homeassistant

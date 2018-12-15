@@ -4,11 +4,11 @@
 notify:
   - name: pushover
     platform: pushover
-    api_key:  !secret PUSHOVER_API_KEY
+    api_key: !secret PUSHOVER_API_KEY
     user_key: !secret PUSHOVER_USER_KEY
 
   # using pushover for Janet! text notification  (experimental)
   - name: janet
     platform: pushover
-    api_key:  !secret PUSHOVER_API_KEY
+    api_key: !secret PUSHOVER_API_KEY
     user_key: !secret PUSHOVER_USER_KEY
