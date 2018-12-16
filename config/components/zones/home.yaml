@@ -1,9 +1,10 @@
+---
 # Zone for home
-#  
-  
+#
+
 name: home
 latitude: !secret HOME_LATITUDE
 longitude: !secret HOME_LONGITUDE
 radius: 250
 passive: false
-icon: mdi:home  
+icon: mdi:home

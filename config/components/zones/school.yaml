@@ -1,7 +1,9 @@
-
+--
+# defining the kids school zone
+# as they do no carry any gps gadget this is not very useful at the moment
 
 name: School
 latitude:  !secret SCHOOL_LATITUDE
 longitude: !secret SCHOOL_LONGITUDE
 radius: 100
-icon: mdi:work    
+icon: mdi:work

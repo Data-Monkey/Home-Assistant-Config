@@ -1,0 +1,13 @@
+---
+# Automation running in the livingroom
+# switch on christmas tree off at midnight
+#
+
+alias: Christmas Tree off at midnight
+initial_state: 'on'
+trigger:
+    platform: time
+    at: '00:00:00'
+action:
+  service: homeassistant.turn_off
+  entity_id: switch.plug_xmas_tree

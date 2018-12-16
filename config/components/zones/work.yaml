@@ -1,5 +1,8 @@
+---
+# defining my workplace zone
+
 name: Work
 latitude:  !secret WORK_LATITUDE
 longitude: !secret WORK_LONGITUDE
 radius: 100
-icon: mdi:work    
+icon: mdi:work

@@ -1,7 +1,6 @@
+---
 # Time of Day
-#
 # gives certain timeframes over the day a name
-#
 # mostly used in automations to restrict or customize bahaviour by time
 
 platform: template

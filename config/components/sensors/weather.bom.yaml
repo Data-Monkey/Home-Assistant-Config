@@ -1,3 +1,4 @@
+---
 # Weather from BOM
 #
 platform: bom
@@ -8,7 +9,7 @@ monitored_conditions:
   - weather
   - wind_dir
   - wind_spd_kmh
-  - wind_spd_kt    
+  - wind_spd_kt
 #    - wmo
 #    - name
 #    - history_product
