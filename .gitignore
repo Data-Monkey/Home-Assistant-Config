@@ -22,6 +22,7 @@ harmony*.conf
 pyozw.sqlite
 .*
 !/.gitignore
+!/.yamllint
 html5_push_registrations.conf
 ip_bans.yaml
 /icloud/*

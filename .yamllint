@@ -1,0 +1,7 @@
+---
+extends: default
+
+ignore: |
+  /config/currently_disabled
+  /config/ui-lovelace.yaml
+  /config/floorplan.yaml
