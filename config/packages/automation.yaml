@@ -1,7 +1,10 @@
 ---
 # Automations
-# are stored by area like bedroom, bathroom, wardrobe, ....
-# one automation per file!
+# this loads all automations, just add a new one in the folder and it will load on next restart
+#
+# Automations are stored by areas like bedroom, bathroom, wardrobe, .... or system
+#
+# https://www.home-assistant.io/components/automation/
 #
 
 automation: !include_dir_list ../automations
