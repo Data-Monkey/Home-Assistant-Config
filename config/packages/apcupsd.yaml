@@ -1,5 +1,9 @@
 ---
 # UPS monitoring platform
+#
+# setting up the UPS monitoring platform
+# https://www.home-assistant.io/components/apcupsd/
+#
 
 apcupsd:
   host: !secret TOWER_IP
