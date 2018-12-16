@@ -1,11 +1,12 @@
+---
 # binary sensor PING
 #
 # my internet connection was a bit flakie
-# this gives me a log on how connected I am 
+# this gives me a log on how connected I am
 #
 
 platform: ping
 name: Internet Connected
 host: 8.8.8.8
 count: 2
-scan_interval: 30 
+scan_interval: 30

@@ -2,6 +2,14 @@
 extends: default
 
 ignore: |
+  /config/includes/
   /config/currently_disabled
   /config/ui-lovelace.yaml
   /config/floorplan.yaml
+
+
+rules:
+  # 80 chars should be enough, but don't fail if a line is longer
+  line-length:
+    max: 80
+    level: warning

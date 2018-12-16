@@ -4,5 +4,5 @@
 platform: darksky
 api_key: !secret DARKSKY_API_KEY
 monitored_conditions:
-- icon
-- temperature
+  - icon
+  - temperature

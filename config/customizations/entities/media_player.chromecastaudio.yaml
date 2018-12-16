@@ -1,0 +1,5 @@
+---
+# rename chromecast audio
+
+media_player.chromecastaudio:
+   friendly_name: 'AudioCast'

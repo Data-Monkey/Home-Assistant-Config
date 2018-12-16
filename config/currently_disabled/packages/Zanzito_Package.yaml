@@ -1,16 +1,17 @@
+---
 # All things Wall Panel
-      
+
 homeassistant:
   customize:
     sensor.zan_nexus_battery:
       hidden: false
       friendly_name: "Nexus5 Battery"
       icon: mdi:battery-unknown
-      
+
     binary_sensor.zan_nexus_status:
       hidden: false
       friendly_name: "Zanzito Connectivity"
-   
+
 device_tracker:
   - platform: mqtt_json
     entity_namespace: 'zan'
@@ -30,5 +31,5 @@ binary_sensor:
     state_topic: "zanzito/Nexus5/status"
     payload_on: "1"
     payload_off: "0"
-    device_class: connectivity      
-      
+    device_class: connectivity
+

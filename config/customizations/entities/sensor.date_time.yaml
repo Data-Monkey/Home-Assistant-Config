@@ -1,8 +1,9 @@
+---
 # Customize the date and time sensor.
 # It is used to trigger automations, but does not need to be displayed.
 
 sensor.time:
   hidden: true
-  
+
 sensor.date:
-  hidden: true  
+  hidden: true

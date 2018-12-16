@@ -1,5 +1,6 @@
+---
 # Automation running in the Master Bedroom
-#     
+#
 # All OFF from any of the buttons
 alias: All Bedroom Lights OFF
 initial_state: 'on'

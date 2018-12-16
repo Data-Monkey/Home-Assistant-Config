@@ -1,8 +1,8 @@
---
+---
 # Time and Date
 #
 # mostly used to trigger automations
-# or trigger template updates  
+# or trigger template updates
 
 platform: time_date
 display_options:

@@ -1,3 +1,4 @@
+---
 # Device Trackers
 
 # the netowrk is split into segments, and separate trackers cover them
@@ -7,10 +8,9 @@
 # Google Homes / casts: 100 - 129
 # Servers / Media  / Xiaomi : 130 - 150
 
-# Network devices (Modem, Google Wifi)    
+# Network devices (Modem, Google Wifi)
 platform: nmap_tracker
 track_new_devices: yes
 hosts: -Pn 192.168.2.200-255
 interval_seconds: 300
 home_interval: 60
-    

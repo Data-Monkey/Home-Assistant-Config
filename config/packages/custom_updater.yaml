@@ -1,3 +1,4 @@
+---
 # -----------------------------------------
 # update custom_components and custom_cards
 # -----------------------------------------
@@ -7,7 +8,7 @@
 # wget https://raw.githubusercontent.com/custom-components/custom_updater/master/custom_components/custom_updater.py
 
 custom_updater:
-  hide_sensor: True
+  hide_sensor: true
   component_urls:
     # composite device tracker
-    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/ed9bab69ea9cdd2bb2a892cf3a1b23f930119f0b/custom_components.json  
+    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/ed9bab69ea9cdd2bb2a892cf3a1b23f930119f0b/custom_components.json

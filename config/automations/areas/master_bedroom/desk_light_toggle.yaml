@@ -1,7 +1,7 @@
+---
 # Automation running in the Master Bedroom
 #
 # Bedroom Desk/Office Lamp toggle
-#
 
 alias: Toggle Light Plug
 initial_state: 'on'

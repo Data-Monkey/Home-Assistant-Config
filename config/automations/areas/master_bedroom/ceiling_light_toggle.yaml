@@ -1,10 +1,9 @@
+---
 # Automation running in the Master Bedroom
 #
-#
 # Ceiling light toggle
-# this can be done from any of the 3 buttons 
+# this can be done from any of the 3 buttons
 # using a long press
-#
 
 alias: Bedroom Ceiling Light toggle
 initial_state: 'on'

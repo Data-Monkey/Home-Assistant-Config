@@ -1,3 +1,6 @@
+---
+# Travis CI configuration
+
 language: python
 
 python: "3.6.4"
@@ -5,10 +8,10 @@ python: "3.6.4"
 before_install:
   - mv config/travis_secrets.yaml config/secrets.yaml
 
-install: 
+install:
   - pip3 install homeassistant
   - pip install yamllint
 
 script:
-  - yamllint config 
+  - yamllint config
   - hass -c config/ --script check_config --info all

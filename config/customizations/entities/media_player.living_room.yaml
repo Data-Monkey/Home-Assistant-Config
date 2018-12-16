@@ -1,0 +1,7 @@
+---
+# customize the sonos player
+
+media_player.living_room:
+   friendly_name: 'Sonos Playbar'
+   name: sonos_playbar
+   icon: mdi:speaker-wireless

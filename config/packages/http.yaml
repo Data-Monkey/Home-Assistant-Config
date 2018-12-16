@@ -5,18 +5,18 @@
 
 http:
   base_url: !secret HA_BASE_URL
-  
-  # not required anymore  
+
+  # not required anymore
   # api_password: !secret HA_PASSWORD
 
   # used due to the proxy setup I am using
-  use_x_forwarded_for: True
+  use_x_forwarded_for: true
   trusted_proxies: !secret PROXY_IP
   trusted_networks:
     - 127.0.0.1
     - 192.168.2.0/24
-    
+
   # make it a bit more secure
   # ban after 5 wrong passwrods
-  ip_ban_enabled: True
+  ip_ban_enabled: true
   login_attempts_threshold: 5

@@ -5,5 +5,5 @@
 #
 discovery:
   ignore:
-  # prefer to manually configure these paltforms
+    # prefer to manually configure these paltforms
     - yeelight

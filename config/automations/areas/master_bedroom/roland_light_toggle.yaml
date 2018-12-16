@@ -1,7 +1,7 @@
+---
 # Automation running in the Master Bedroom
 #
 # Bedside Table Lamp Roland Toggle
-#
 
 alias: Toggle Rolands Light
 initial_state: 'on'
@@ -15,4 +15,3 @@ action:
   service: homeassistant.toggle
   data:
     entity_id: switch.plug_rolands_light
-

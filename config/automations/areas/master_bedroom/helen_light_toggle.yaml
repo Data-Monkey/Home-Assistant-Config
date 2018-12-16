@@ -1,7 +1,7 @@
+---
 # Automation running in the Master Bedroom
 #
 # Bedside Table Lamp Helen Toggle
-#
 
 alias: Toggle Helens Light
 initial_state: 'on'
