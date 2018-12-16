@@ -3,5 +3,7 @@
 # are being included from the binary_sensors folder
 # one sensor per file!
 #
+# https://www.home-assistant.io/components/binary_sensor
+#
 
 binary_sensor: !include_dir_list ../components/binary_sensors
