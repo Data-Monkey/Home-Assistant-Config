@@ -1,5 +1,6 @@
+---
 # Automations running in the bathroom
-#  BATHROOM Light by Motion 
+#  BATHROOM Light by Motion
 
 alias: Bathroom Light by motion ON
 initial_state: 'on'
@@ -9,11 +10,11 @@ trigger:
     to: 'on'
 condition:
   condition: template
-  value_template: '{{ states.sensor.light_of_day.state != "light" }}'    
+  value_template: '{{ states.sensor.light_of_day.state != "light" }}'
   # only switch on the light if it is not LIGHT outside now
 action:
   service: homeassistant.turn_on
   data:
     entity_id: light.bathroom_light
-    #rgb_color: [25,0,150]
+    # rgb_color: [25, 0, 150]
     brightness: 255

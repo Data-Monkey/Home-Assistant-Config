@@ -1,0 +1,6 @@
+---
+# Google Cast
+#
+cast:
+  media_player:
+    - host: ?

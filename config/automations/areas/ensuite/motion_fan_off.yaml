@@ -1,8 +1,10 @@
+---
 # Automation running in the ensuite
 #
-# switch fan off after 5 minutes of running    
+# switch fan off after 5 minutes of running
 # if there is still motion it will start again
 # if it is still humid it will start as well
+
 alias: Ensuite Fan OFF after 5:30 min
 initial_state: 'on'
 trigger:

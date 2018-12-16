@@ -1,4 +1,5 @@
-# Automation running in the ensuite
+---
+# Automation running in the ensuite bathroom
 # switch on the light on motion
 # based on the time of day the brightness and clour adjusts
 #
@@ -12,7 +13,7 @@ trigger:
 action:
   service: homeassistant.turn_on
   entity_id: light.ensuite_light
-  data_template: 
+  data_template:
     brightness: >
       {% if   states.sensor.time_of_day.state == "night" %} 80
       {% else %} 255

@@ -1,14 +1,14 @@
+---
 # Automation running in the hallway
 #
 # simple automation to swtich the gateway light off after motion
-#
 
 alias: Hallway Lights by motion at night OFF
 initial_state: 'on'
 condition:
-   - condition: state
-     entity_id: sun.sun
-     state: 'below_horizon'
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
 trigger:
   - platform: state
     entity_id: binary_sensor.motion_hallway

@@ -1,8 +1,8 @@
+---
 # Automation running in the hallway
 #
 # simple automation to swtich the gateway light on on motion
 # but only at night
-#
 
 alias: Hallway Lights by motion at night ON
 initial_state: 'on'
@@ -18,5 +18,5 @@ action:
   service: homeassistant.turn_on
   data:
     entity_id: light.gateway_light_hallway
-    rgb_color: [25,0,150]
+    rgb_color: [25, 0, 150]
     brightness: 75

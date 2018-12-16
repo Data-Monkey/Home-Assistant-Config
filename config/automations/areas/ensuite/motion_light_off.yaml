@@ -1,7 +1,7 @@
+---
 # Automation running in the ensuite
 # switch off the light on no motion
-#
-        
+
 alias: Ensuite Light by motion OFF
 initial_state: 'on'
 trigger:

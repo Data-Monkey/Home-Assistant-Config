@@ -1,3 +1,6 @@
+---
+# Automation in Felix's room to toggle the light via button press
+
 alias: Toggle Felix Light
 initial_state: 'on'
 trigger:

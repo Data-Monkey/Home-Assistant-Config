@@ -1,5 +1,0 @@
----
-# Google Cast
-#
-media_player:
-  - platform: cast
