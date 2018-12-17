@@ -1,0 +1,10 @@
+---
+# School Holiday
+#
+# a manual overwrite for school holiday
+# might want to integrate some kind of calendar at some point
+#
+
+school_holiday:
+  name: School Holiday
+  initial: off

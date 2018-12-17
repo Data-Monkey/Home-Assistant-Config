@@ -45,14 +45,13 @@ homeassistant:
     nest: !include packages/nest.yaml
     influxdb: !include packages/influxdb.yaml
     customupdater: !include packages/custom_updater.yaml
+    input_bool: !include packages/input_boolean.yaml
 
     # -------------------------------------------------------------
     # old style packages setup
 
     # set some global environmental sensors (time of day, light of day,...)
     # enviro_pack:    !include includes/packages/Environment_Package.yaml
-    # composite devices
-    compo_pack: !include includes/packages/Composite_Package.yaml
     # customize devices
     devicepack: !include includes/packages/Devices_Package.yaml
 
@@ -61,8 +60,6 @@ homeassistant:
     # google assistant config and customisations
     ga_pack: !include includes/packages/GoogleAssistant_Package.yaml
     battery_alert: !include includes/packages/battery_alert.yaml
-    homeworkpack: !include includes/packages/Homework_Package.yaml
-
     # experimental packages mostly switched off
     # janetpack:      !include includes/packages/janet/janet.yaml
     # janetautopack:  !include includes/packages/janet/janet_automations.yaml

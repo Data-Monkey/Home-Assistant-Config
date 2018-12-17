@@ -1,0 +1,9 @@
+---
+# tracking school days
+#
+# set to ON at startup
+# an automation will set it correctly
+#
+school_day:
+  name: School Day
+  initial: on

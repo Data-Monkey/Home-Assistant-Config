@@ -1,0 +1,13 @@
+---
+# TV Restriction
+#
+# if the homework / chores are not done
+# TV is restricted
+#
+# set to OFF at startup
+# an automation will set it correctly
+#
+
+tv_restriction:
+  name: TV Restriction
+  initial: off

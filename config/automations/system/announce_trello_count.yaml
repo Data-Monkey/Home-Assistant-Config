@@ -1,0 +1,25 @@
+---
+# Automation to announce the trello card count
+#
+
+alias: Anounce Trello Count
+hide_entity: false
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: sensor.trello_count
+condition:
+    condition: template
+    value_template: '{{ states.sensor.time_of_day.state != "night" }}'      
+action:  
+  service: tts.google_say
+  data_template:
+    entity_id: media_player.master_bedroom_speaker
+    message: >
+      {% if states("sensor.trello_count")|int == 0 %} 
+        Great job kids, you are DONE!
+      {% elif states("sensor.trello_count")|int < 5  %} 
+        Well done Kids!! Only {{ states("sensor.trello_count") }} cards to go!
+      {% else  %} 
+        Keep going Kids!! Still {{ states("sensor.trello_count") }} cards to go!
+      {% endif %}
