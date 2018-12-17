@@ -1,0 +1,11 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_modem_router:
+  value_template: '{% if is_state("device_tracker.modem_router", "home")%}Online
+                   {% else %}Offline{% endif %}'
+  icon_template: mdi:router-wireless
+  friendly_name: Modem/Router
+  entity_id: device_tracker.modem_router

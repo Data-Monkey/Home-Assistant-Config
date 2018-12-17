@@ -1,0 +1,11 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_fetch:
+  entity_id: device_tracker.fetch
+  value_template: '{% if is_state("device_tracker.fetch", "home") %}Online
+                   {% else %}Offline{% endif %}'
+  icon_template: mdi:camcorder-box
+  friendly_name: FetchTV Box

@@ -46,6 +46,7 @@ homeassistant:
     influxdb: !include packages/influxdb.yaml
     customupdater: !include packages/custom_updater.yaml
     input_bool: !include packages/input_boolean.yaml
+    device_sensor: !include packages/device_sensor.yaml
 
     # -------------------------------------------------------------
     # old style packages setup

@@ -1,0 +1,14 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_hp_printer:
+  entity_id: device_tracker.hp_printer
+  value_template: '{% if is_state("device_tracker.hp_printer", "home") %}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:printer
+  friendly_name: HP Printer

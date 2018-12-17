@@ -1,0 +1,18 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_blue_laptop:
+  entity_id: device_tracker.blue_laptop
+  value_template: '{% if is_state("device_tracker.blue_laptop", "home") %}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: '{% if is_state("device_tracker.blue_laptop", "home")%}
+                    mdi:laptop
+                  {% else %}
+                    mdi:laptop-off
+                  {% endif %}'
+  friendly_name: 'Blue Laptop'
