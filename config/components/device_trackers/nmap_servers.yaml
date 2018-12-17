@@ -10,7 +10,7 @@
 
 # servers (Unraid, Roku, RasPlex)
 platform: nmap_tracker
-track_new_devices: yes
+track_new_devices: true
 hosts: -Pn 192.168.2.100-150
 interval_seconds: 300
 home_interval: 60

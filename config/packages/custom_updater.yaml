@@ -5,6 +5,8 @@
 # Instructions:
 # https://github.com/custom-components/custom_updater
 
+# my linting OCD took over ...
+# yamllint disable-line rule:line-length
 # wget https://raw.githubusercontent.com/custom-components/custom_updater/master/custom_components/custom_updater.py
 
 custom_updater:
