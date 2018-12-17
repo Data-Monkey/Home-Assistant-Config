@@ -10,4 +10,4 @@
 
 tv_restriction:
   name: TV Restriction
-  initial: off
+  initial: false

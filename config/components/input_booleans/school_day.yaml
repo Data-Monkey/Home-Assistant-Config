@@ -6,4 +6,4 @@
 #
 school_day:
   name: School Day
-  initial: on
+  initial: true

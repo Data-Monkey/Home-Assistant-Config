@@ -1,22 +1,24 @@
 ---
 # Automation to set the school day input_boolean
 #
-# set school day based on business day (workday) and school holiday but allow manual overwrite
+# set school day based on business day (workday) and school holiday
+# but allow manual overwrite
 #
 
- alias: Set School Day
- hide_entity: false
- initial_state: 'on'
- trigger:
-   platform: state
-   entity_id:
-     - binary_sensor.business_day
-     - input_boolean.school_holiday
- action:
-   service_template: >-
-     {%- if is_state('binary_sensor.business_day', 'on') and is_state('input_boolean.school_holiday', 'off') -%}
-       input_boolean.turn_on
-     {%- else -%}
-       input_boolean.turn_off
-     {%- endif -%}
-   entity_id: input_boolean.school_day
+alias: Set School Day
+hide_entity: false
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id:
+    - binary_sensor.business_day
+    - input_boolean.school_holiday
+action:
+  service_template: >-
+    {%- if is_state('binary_sensor.business_day', 'on') and
+           is_state('input_boolean.school_holiday', 'off') -%}
+      input_boolean.turn_on
+    {%- else -%}
+      input_boolean.turn_off
+    {%- endif -%}
+  entity_id: input_boolean.school_day

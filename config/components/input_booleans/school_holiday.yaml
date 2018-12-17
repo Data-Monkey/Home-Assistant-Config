@@ -7,4 +7,4 @@
 
 school_holiday:
   name: School Holiday
-  initial: off
+  initial: false
