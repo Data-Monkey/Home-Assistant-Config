@@ -4,7 +4,7 @@
 # --------------
 
 Devices:
-  view: yes
+  view: true
   entities:
     - group.devices_network
     - group.devices_computer
@@ -12,7 +12,7 @@ Devices:
     - group.devices_gadgets
 
 Rooms:
-  view: yes
+  view: true
   name: Rooms
   entities:
     # - group.BedroomLights
@@ -26,27 +26,27 @@ Rooms:
     - group.RoomsFelix
 
 Harmony:
-  view: yes
+  view: true
   entities:
     - group.activity
 
 
 Xioami_View:
-  view: yes
+  view: true
   name: Xiaomi
   entities:
     - group.xiaomi1
     - group.xiaomi2
 
 HomeworkTracker:
-  view: yes
+  view: true
   name: HWT
   entities:
     - group.hwt
     - group.activity
 
 Test_View:
-  view: yes
+  view: true
   name: test
   entities:
     - group.occupancy
@@ -56,7 +56,7 @@ Test_View:
 # GROUPS
 # --------------
 hwt:
-  view: no
+  view: false
   name: HWT Inputs
   entities:
     - binary_sensor.business_day
@@ -66,21 +66,21 @@ hwt:
     - input_boolean.tv_restriction
 
 Activity:
-  view: no
+  view: false
   entities:
     - sensor.harmony_current_activity
     - input_select.harmony_control
     - remote.harmonyhub
 
 Enviro:
-  view: no
+  view: false
   entities:
     - sensor.time_of_day
     - sensor.light_of_day
 
 Devices_Gadgets:
   name: Gadgets
-  view: no
+  view: false
   entities:
     - sensor.device_efergy_hub
     - sensor.device_xiaomi_gateway
@@ -93,7 +93,7 @@ Devices_Gadgets:
 
 Devices_Phones:
   name: Mobiles
-  view: no
+  view: false
   entities:
     - sensor.device_nmap_helens_iphone
     - sensor.device_nmap_helens_workphone
@@ -106,7 +106,7 @@ Devices_Phones:
 
 Devices_Network:
   name: Network
-  view: no
+  view: false
   entities:
     - sensor.device_modem_router
     # - sensor.device_repeater
@@ -116,7 +116,7 @@ Devices_Network:
 
 Devices_Computer:
   name: Computer
-  view: no
+  view: false
   entities:
     - binary_sensor.blue_laptop
     - sensor.device_obelix
@@ -126,7 +126,7 @@ Devices_Computer:
 
 Devices_MediaPlayer:
   name: Media Player
-  view: no
+  view: false
   entities:
     - sensor.device_chromecast
     - sensor.device_audiocast
@@ -135,7 +135,7 @@ Devices_MediaPlayer:
     - sensor.device_sonos_playbar
 
 Monitoring:
-  view: no
+  view: false
   entities:
     - sensor.crashplan_status
     - sensor.zan_nexus_battery
@@ -145,7 +145,7 @@ Monitoring:
 
 
 Environment:
-  view: no
+  view: false
   entities:
     - sensor.humidity_hallway
     - sensor.temperature_hallway
@@ -154,7 +154,7 @@ Environment:
     - sensor.laundry
 
 Weather:
-  view: no
+  view: false
   entities:
     - sensor.bom_sydney_air_temp_c
     - sensor.bom_sydney_weather
@@ -169,7 +169,7 @@ Weather:
 
 Xiaomi1:
   name: Gateway 1
-  view: no
+  view: false
   entities:
     - sensor.xiaomi_gateway
     - light.gateway_light_hallway
@@ -191,7 +191,7 @@ Xiaomi1:
 
 Xiaomi2:
   name: Gateway 2
-  view: no
+  view: false
   entities:
     - sensor.xiaomi_gateway2
     - light.gateway_light_gateway2
@@ -213,7 +213,7 @@ Xiaomi2:
 
 BedroomLights:
   name: Bedroom Lights
-  view: no
+  view: false
   entities:
     # Office Light
     - switch.plug_desk_light
@@ -231,7 +231,7 @@ BedroomLights:
 
 RoomsBathroom:
   name: Bathroom
-  view: no
+  view: false
   entities:
     - light.bathroom_light
     - binary_sensor.motion_bathroom
@@ -239,14 +239,14 @@ RoomsBathroom:
 
 RoomsFelix:
   name: Felix's Room
-  view: no
+  view: false
   entities:
     - light.felix_light
     - device.device_felix_gh
 
 RoomsBedroom:
   name: Bedroom
-  view: no
+  view: false
   entities:
     # Office Light
     - switch.plug_desk_light
@@ -264,7 +264,7 @@ RoomsBedroom:
 
 RoomsEnsuite:
   name: Ensuite
-  view: no
+  view: false
   entities:
     - light.ensuite_light
     - sensor.illumination_ensuite
@@ -276,7 +276,7 @@ RoomsEnsuite:
 
 RoomsLaundry:
   name: Laundry
-  view: no
+  view: false
   entities:
     - binary_sensor.water_leak_sensor_laundry
     - light.laundry_light
@@ -286,13 +286,13 @@ RoomsLaundry:
 
 RoomsKitchen:
   name: Kitchen
-  view: no
+  view: false
   entities:
     - binary_sensor.motion_kitchen
 
 RoomsHallway:
   name: Hallway
-  view: no
+  view: false
   entities:
     - sensor.xiaomi_gateway
     - light.gateway_light_hallway
@@ -302,7 +302,7 @@ RoomsHallway:
 
 RoomsLivingroom:
   name: Livingroom
-  view: no
+  view: false
   entities:
     - binary_sensor.motion_livingroom
     - switch.plug_xmas_tree
@@ -310,7 +310,7 @@ RoomsLivingroom:
 
 Nest:
   name: Nest Protect
-  view: no
+  view: false
   entities:
     - binary_sensor.hallway_nest_protect_online
     - sensor.hallway_nest_protect_battery_health
@@ -320,7 +320,7 @@ Nest:
 
 UPS:
   name: UPS
-  view: no
+  view: false
   entities:
     - sensor.ups_battery
     - sensor.ups_input_voltage
