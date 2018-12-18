@@ -54,7 +54,6 @@ homeassistant:
     # set some global environmental sensors (time of day, light of day,...)
     # enviro_pack:    !include includes/packages/Environment_Package.yaml
     # customize devices
-    devicepack: !include includes/packages/Devices_Package.yaml
 
     harmonypack: !include includes/packages/Harmony_Package.yaml
     xiaomipack: !include includes/packages/Xiaomi_Package.yaml

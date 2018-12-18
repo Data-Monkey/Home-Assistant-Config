@@ -1,0 +1,14 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_xiaomi_gateway2:
+  entity_id: device_tracker.xiaomi_gateway2
+  value_template: '{% if is_state("device_tracker.xiaomi_gateway2", "home") %}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:image-filter-tilt-shift
+  friendly_name: Xiaomi Gateway 2

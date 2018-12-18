@@ -1,0 +1,14 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_efergy_hub:
+  entity_id: device_tracker.efergy_hub
+  value_template: '{% if is_state("device_tracker.efergy_hub", "home") %}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:gauge
+  friendly_name: Efergy Hub

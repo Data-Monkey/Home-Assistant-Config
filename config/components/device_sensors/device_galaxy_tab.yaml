@@ -1,0 +1,14 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_galaxy_tab:
+  entity_id: device_tracker.galaxy_tab
+  value_template: '{% if is_state("device_tracker.galaxy_tab", "home") %}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:tablet
+  friendly_name: 'Galaxy Tablet'

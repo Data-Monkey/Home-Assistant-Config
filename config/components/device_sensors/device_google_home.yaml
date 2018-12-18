@@ -1,0 +1,14 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_google_home:
+  entity_id: device_tracker.nmap_google_home
+  value_template: '{% if is_state("device_tracker.nmap_google_home", "home") %}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:home-circle
+  friendly_name: Google Home

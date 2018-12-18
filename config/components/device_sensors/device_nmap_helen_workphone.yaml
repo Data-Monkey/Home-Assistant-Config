@@ -1,0 +1,15 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_nmap_helens_workphone:
+  entity_id: device_tracker.nmap_helens_workphone
+  # yamllint disable-line rule:line-length
+  value_template: '{% if is_state("device_tracker.nmap_helens_workphone", "home")%}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:cellphone
+  friendly_name: Helen's WorkPhone

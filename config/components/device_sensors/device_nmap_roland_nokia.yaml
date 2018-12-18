@@ -1,0 +1,14 @@
+---
+# Device Sensor
+# See readme for more details
+#
+
+device_nmap_rolands_nokia:
+  entity_id: device_tracker.nmap_rolands_nokia
+  value_template: '{% if is_state("device_tracker.nmap_rolands_nokia", "home")%}
+                     Online
+                   {% else %}
+                     Offline
+                   {% endif %}'
+  icon_template: mdi:cellphone-android
+  friendly_name: Roland's Nokia
