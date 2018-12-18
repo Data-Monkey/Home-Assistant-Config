@@ -1,0 +1,6 @@
+---
+# Sensor in the Hallway
+#
+
+sensor.hallway:
+  icon: mdi:oil-temperature

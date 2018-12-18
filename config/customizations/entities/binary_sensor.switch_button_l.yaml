@@ -1,0 +1,6 @@
+---
+# Xiaomi Button Left Side
+#
+
+binary_sensor.switch_button_l:
+  icon: mdi:checkbox-multiple-blank-circle-outline

@@ -47,7 +47,8 @@ homeassistant:
     customupdater: !include packages/custom_updater.yaml
     input_bool: !include packages/input_boolean.yaml
     device_sensor: !include packages/device_sensor.yaml
-
+    xiaomi: !include packages/xiaomi.yaml
+    light: !include packages/light.yaml
     # -------------------------------------------------------------
     # old style packages setup
 
@@ -56,7 +57,7 @@ homeassistant:
     # customize devices
 
     harmonypack: !include includes/packages/Harmony_Package.yaml
-    xiaomipack: !include includes/packages/Xiaomi_Package.yaml
+
     # google assistant config and customisations
     ga_pack: !include includes/packages/GoogleAssistant_Package.yaml
     battery_alert: !include includes/packages/battery_alert.yaml

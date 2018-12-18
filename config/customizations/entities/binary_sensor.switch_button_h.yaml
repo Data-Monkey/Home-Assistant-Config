@@ -1,0 +1,6 @@
+---
+# Xiaomi Button Helen
+#
+
+binary_sensor.switch_button_h:
+  icon: mdi:checkbox-multiple-blank-circle-outline

@@ -1,0 +1,17 @@
+---
+# Front Door
+# translate on / off to Open/Closed
+#
+
+platform: template
+sensors:
+  front_door:
+    friendly_name: Front Door
+    value_template: >-
+      {% if states.binary_sensor.door_appartment_door.state == 'on' %}
+        Open
+      {% elif states.binary_sensor.door_appartment_door.state == 'off' %}
+        Closed
+      {% else %}
+        n/a
+      {% endif %}

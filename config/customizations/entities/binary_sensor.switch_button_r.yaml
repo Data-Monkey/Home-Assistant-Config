@@ -1,0 +1,6 @@
+---
+# Xiaomi Button Roland
+#
+
+binary_sensor.switch_button_r:
+  icon: mdi:checkbox-multiple-blank-circle-outline

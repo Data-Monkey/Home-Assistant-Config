@@ -1,0 +1,13 @@
+---
+# Humidity Delta
+# Compares the humidity between hallway and ensuite
+# used to run the exhaust fan in the ensuite
+#
+
+platform: template
+sensors:
+  humidity_delta:
+    value_template: '{{ states("sensor.humidity_ensuite")|int -
+                        states("sensor.humidity_hallway")|int}}'
+    unit_of_measurement: '%'
+    friendly_name: Humidity compared to Hallway

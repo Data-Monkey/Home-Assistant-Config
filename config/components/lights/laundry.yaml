@@ -1,0 +1,8 @@
+---
+# Yeelight in the Laundry
+#
+platform: yeelight
+devices:
+  192.168.2.80:
+    name: Laundry Light
+    transition: 1000

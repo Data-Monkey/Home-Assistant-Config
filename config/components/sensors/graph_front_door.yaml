@@ -1,0 +1,17 @@
+---
+# Front Door
+# translate on/off to 1/0 for easy graphing
+#
+
+platform: template
+sensors:
+  graph_front_door:
+    unit_of_measurement: 'graph'
+    value_template: >-
+      {% if states.binary_sensor.door_appartment_door.state == 'on' %}
+        1
+      {% elif states.binary_sensor.door_appartment_door.state == 'off' %}
+        0
+      {% else %}
+        -1
+      {% endif %}

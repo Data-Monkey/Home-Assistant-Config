@@ -1,0 +1,7 @@
+---
+# Hide the graphing sensor.
+# Only used in collecting data
+#
+
+sensor.graph_hallway_motion:
+  hidden: true

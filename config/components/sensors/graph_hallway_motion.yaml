@@ -1,0 +1,17 @@
+---
+# Graph Hallway Motion
+# translate on/off to 1/0 for easy graphing
+#
+
+platform: template
+sensors:
+  graph_hallway_motion:
+    unit_of_measurement: 'graph'
+    value_template: >-
+      {% if states.binary_sensor.motion_hallway.state == 'on' %}
+        1
+      {% elif states.binary_sensor.motion_hallway.state == 'off' %}
+        0
+      {% else %}
+        -1
+      {% endif %}
