@@ -1,0 +1,12 @@
+---
+# Time of Day
+# gives certain timeframes over the day a name
+# mostly used in automations to restrict or customize bahaviour by time
+
+platform: template
+sensors:
+  harmony_current_activity:
+    friendly_name: 'Harmony Current Activity'
+    value_template: '{% if states.remote.harmonyhub.state %}
+                       {{states.remote.harmonyhub.attributes.current_activity}}
+                     {% endif %}'

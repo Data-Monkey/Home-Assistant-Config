@@ -1,0 +1,27 @@
+---
+# Automation running in the livingroom
+# switching activities on Harmony Hub
+#
+
+alias: Harmony Switch
+hide_entity: true
+trigger:
+  platform: state
+  entity_id: input_select.harmony_control
+  from: 'Select Input'
+action:
+  - service: remote.turn_on
+    entity_id: remote.harmonyhub
+    data_template:
+      activity: >
+        {% if is_state("input_select.harmony_control", "Watch TV") %}
+          23619023
+        {% elif is_state("input_select.harmony_control", "Watch Plex") %}
+          29111371
+        {% elif is_state("input_select.harmony_control", "PowerOff") %}
+          -1
+        {% endif %}
+  - service: input_select.select_option
+    entity_id: input_select.harmony_control
+    data:
+      option: "Select Input"

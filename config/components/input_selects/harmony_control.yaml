@@ -1,0 +1,11 @@
+---
+# Input Select to control the Harmony Hub
+
+harmony_control:
+  name: Harmony Control
+  options:
+    - Select Input
+    - Watch TV
+    - Watch Plex
+    - PowerOff
+  icon: mdi:settings_remote

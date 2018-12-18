@@ -1,0 +1,8 @@
+---
+# Input Select
+# are being included from the folder
+#
+# https://www.home-assistant.io/components/input_select
+#
+
+input_select: !include_dir_merge_named ../components/input_selects

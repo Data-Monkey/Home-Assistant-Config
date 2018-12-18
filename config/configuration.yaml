@@ -46,6 +46,7 @@ homeassistant:
     influxdb: !include packages/influxdb.yaml
     customupdater: !include packages/custom_updater.yaml
     input_bool: !include packages/input_boolean.yaml
+    input_select: !include packages/input_select.yaml
     device_sensor: !include packages/device_sensor.yaml
     xiaomi: !include packages/xiaomi.yaml
     light: !include packages/light.yaml
@@ -57,7 +58,7 @@ homeassistant:
     # enviro_pack:    !include includes/packages/Environment_Package.yaml
     # customize devices
 
-    harmonypack: !include includes/packages/Harmony_Package.yaml
+    # harmonypack: !include includes/packages/Harmony_Package.yaml
 
     # google assistant config and customisations
     ga_pack: !include includes/packages/GoogleAssistant_Package.yaml

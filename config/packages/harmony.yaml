@@ -1,0 +1,15 @@
+---
+# Harmony Hub from Logitech
+# This connects the hub with Home Assistant.
+#
+# https://www.home-assistant.io/components/remote.harmony/
+#
+
+remote:
+  - platform: harmony
+    name: HarmonyHub
+    username: !secret HARMONY_USER
+    password: !secret HARMONY_PWD
+    host: !secret HARMONY_IP
+    port: 5222
+    activity: Watch Plex

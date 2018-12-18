@@ -1,0 +1,18 @@
+---
+# Automation running in the livingroom
+# switching activities on Harmony Hub OFF
+#
+
+alias: Harmony Off
+hide_entity: true
+trigger:
+  platform: state
+  entity_id: input_select.harmony_control
+  to: 'PowerOff'
+action:
+  - service: remote.turn_off
+    entity_id: remote.harmonyhub
+  - service: input_select.select_option
+    entity_id: input_select.harmony_control
+    data_template:
+      option: "Select Input"
