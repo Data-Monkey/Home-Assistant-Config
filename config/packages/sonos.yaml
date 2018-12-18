@@ -1,5 +1,0 @@
----
-# Sonos Player
-#
-media_player:
-  - platform: sonos

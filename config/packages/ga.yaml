@@ -1,0 +1,59 @@
+---
+#
+#
+
+google_assistant:
+  project_id: !secret GOOGLE_ASSISTANT_PROJECT_ID
+  api_key: !secret GOOGLE_ASSISTANT_API_KEY
+  expose_by_default: false
+
+  entity_config:
+    light.bedroom_light:
+      name: 'Ceiling Light'
+      room: Master Bedroom
+      expose: true
+
+    light.wardrobe_light:
+      name: 'Wardrobe Light'
+      room: Master Bedroom
+      expose: true
+
+    light.ensuite_light:
+      name: 'Ensuite Light'
+      room: Master Bedroom
+      expose: true
+
+    switch.plug_rolands_light:
+      name: 'Roand''s Light'
+      room: Master Bedroom
+      expose: true
+
+    switch.plug_helens_light:
+      name: 'Helen''s Light'
+      room: Master Bedroom
+      expose: true
+
+    switch.plug_desk_light:
+      name: 'Desk Light'
+      room: Master Bedroom
+      expose: true
+
+    switch.plug_xmas_tree:
+      name: 'Christmas Tree'
+      room: Living Room
+      expose: true
+
+    light.bathroom_light:
+      name: 'Bathroom Light'
+      room: Bathroom
+      expose: true
+
+    light.laundry_light:
+      name: 'Laundry Light'
+      room: Laundry
+      expose: true
+
+    light.felix_light:
+      name: 'Felix''s Light'
+      room: 'Felix''s Room'
+      expose: true

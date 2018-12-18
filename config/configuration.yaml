@@ -19,64 +19,37 @@ homeassistant:
 
   packages:
 
-    # all these will be imported by one statement once the rework is completed
+    !include_dir_named packages
 
-    # !include_dir_named components/packages
-
-    homeassistant: !include packages/homeassistant.yaml
-    ios: !include packages/ios.yaml
-    logger: !include packages/logger.yaml
-    http: !include packages/http.yaml
-    config: !include packages/config.yaml
-    frontend: !include packages/frontend.yaml
-    history: !include packages/history.yaml
-    discovery: !include packages/discovery.yaml
-    sun: !include packages/sun.yaml
-    tts: !include packages/tts.yaml
-    mqtt: !include packages/mqtt.yaml
-    notify: !include packages/notify.yaml
-    sensor: !include packages/sensor.yaml
-    binary_sensor: !include packages/binary_sensor.yaml
-    zone: !include packages/zone.yaml
-    automation: !include packages/automation.yaml
-    device_tracker: !include packages/device_tracker.yaml
-    switch: !include packages/switch.yaml
-    apcupsd: !include packages/apcupsd.yaml
-    nest: !include packages/nest.yaml
-    influxdb: !include packages/influxdb.yaml
-    customupdater: !include packages/custom_updater.yaml
-    input_bool: !include packages/input_boolean.yaml
-    input_select: !include packages/input_select.yaml
-    device_sensor: !include packages/device_sensor.yaml
-    xiaomi: !include packages/xiaomi.yaml
-    light: !include packages/light.yaml
-    battery_alert: !include packages/community_packages/battery_alert.yaml
-    # -------------------------------------------------------------
-    # old style packages setup
-
-    # set some global environmental sensors (time of day, light of day,...)
-    # enviro_pack:    !include includes/packages/Environment_Package.yaml
-    # customize devices
-
-    # harmonypack: !include includes/packages/Harmony_Package.yaml
-
-    # google assistant config and customisations
-    ga_pack: !include includes/packages/GoogleAssistant_Package.yaml
-
-    # experimental packages mostly switched off
-    # janetpack:      !include includes/packages/janet/janet.yaml
-    # janetautopack:  !include includes/packages/janet/janet_automations.yaml
-    # sonospack:      !include includes/packages/Sonos_Package.yaml
-    # zanzitopack:    !include includes/packages/Zanzito_Package.yaml
-
-    # not using pihole on the new Google Wifi Router (yet)
-    # piholepack:     !include includes/packages/PiHole_Package.yaml
-
-    # couldn't make it work yet
-    # lightdimmer:    !include includes/packages/LightDimmer.yam
-
-    # it works, but LEDs are not installed at the moment
-    # ledpack: !include includes/packages/LED.yaml
+    # homeassistant: !include packages/homeassistant.yaml
+    # ios: !include packages/ios.yaml
+    # logger: !include packages/logger.yaml
+    # http: !include packages/http.yaml
+    # config: !include packages/config.yaml
+    # frontend: !include packages/frontend.yaml
+    # history: !include packages/history.yaml
+    # discovery: !include packages/discovery.yaml
+    # sun: !include packages/sun.yaml
+    # tts: !include packages/tts.yaml
+    # mqtt: !include packages/mqtt.yaml
+    # notify: !include packages/notify.yaml
+    # sensor: !include packages/sensor.yaml
+    # binary_sensor: !include packages/binary_sensor.yaml
+    # zone: !include packages/zone.yaml
+    # automation: !include packages/automation.yaml
+    # device_tracker: !include packages/device_tracker.yaml
+    # switch: !include packages/switch.yaml
+    # apcupsd: !include packages/apcupsd.yaml
+    # nest: !include packages/nest.yaml
+    # influxdb: !include packages/influxdb.yaml
+    # customupdater: !include packages/custom_updater.yaml
+    # input_bool: !include packages/input_boolean.yaml
+    # input_select: !include packages/input_select.yaml
+    # device_sensor: !include packages/device_sensor.yaml
+    # xiaomi: !include packages/xiaomi.yaml
+    # light: !include packages/light.yaml
+    # ga: !include packages/ga.yaml
+    # battery_alert: !include packages/community_packages/battery_alert.yaml
 
 # Includes
 group: !include groups.yaml
