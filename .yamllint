@@ -2,6 +2,7 @@
 extends: default
 
 ignore: |
+  /config/packages/community_packages/
   /config/includes/
   /config/currently_disabled
   /config/ui-lovelace.yaml

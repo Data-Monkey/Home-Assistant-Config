@@ -49,6 +49,7 @@ homeassistant:
     device_sensor: !include packages/device_sensor.yaml
     xiaomi: !include packages/xiaomi.yaml
     light: !include packages/light.yaml
+    battery_alert: !include packages/community_packages/battery_alert.yaml
     # -------------------------------------------------------------
     # old style packages setup
 
@@ -60,7 +61,7 @@ homeassistant:
 
     # google assistant config and customisations
     ga_pack: !include includes/packages/GoogleAssistant_Package.yaml
-    battery_alert: !include includes/packages/battery_alert.yaml
+
     # experimental packages mostly switched off
     # janetpack:      !include includes/packages/janet/janet.yaml
     # janetautopack:  !include includes/packages/janet/janet_automations.yaml
