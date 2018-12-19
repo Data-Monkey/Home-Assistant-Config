@@ -1,0 +1,12 @@
+---
+# Group defined as VIEW
+#
+
+Environment:
+  view: false
+  entities:
+    - sensor.humidity_hallway
+    - sensor.temperature_hallway
+    - sensor.hallway
+    - sensor.balcony
+    - sensor.laundry

@@ -1,0 +1,11 @@
+---
+# Group defined as VIEW
+#
+
+RoomsBathroom:
+  name: Bathroom
+  view: false
+  entities:
+    - light.bathroom_light
+    - binary_sensor.motion_bathroom
+    - sensor.illumination_bathroom

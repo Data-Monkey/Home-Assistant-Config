@@ -1,0 +1,24 @@
+---
+# Group defined as VIEW
+#
+
+Xiaomi2:
+  name: Gateway 2
+  view: false
+  entities:
+    - sensor.xiaomi_gateway2
+    - light.gateway_light_gateway2
+    - sensor.illumination_gateway2
+    # Office Light
+    - binary_sensor.switch_button_l
+    - switch.plug_desk_light
+    # Rolands Light
+    - binary_sensor.switch_button_r
+    - switch.plug_rolands_light
+    # Helens Light
+    - binary_sensor.switch_button_h
+    - switch.plug_helens_light
+    # bedroom
+    - binary_sensor.motion_wardrobe
+    - light.bedroom_light
+    - light.wardrobe_light

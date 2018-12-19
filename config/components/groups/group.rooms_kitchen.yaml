@@ -1,0 +1,9 @@
+---
+# Group defined as VIEW
+#
+
+RoomsKitchen:
+  name: Kitchen
+  view: false
+  entities:
+    - binary_sensor.motion_kitchen

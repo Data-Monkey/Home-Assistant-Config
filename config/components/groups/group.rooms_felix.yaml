@@ -1,0 +1,10 @@
+---
+# Group defined as VIEW
+#
+
+RoomsFelix:
+  name: Felix's Room
+  view: false
+  entities:
+    - light.felix_light
+    - device.device_felix_gh

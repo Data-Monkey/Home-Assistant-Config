@@ -1,0 +1,10 @@
+---
+# Group defined as VIEW
+#
+
+RoomsLivingroom:
+  name: Livingroom
+  view: false
+  entities:
+    - binary_sensor.motion_livingroom
+    - switch.plug_xmas_tree

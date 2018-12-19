@@ -1,0 +1,12 @@
+---
+# Group defined as VIEW
+#
+
+Monitoring:
+  view: false
+  entities:
+    - sensor.crashplan_status
+    - sensor.zan_nexus_battery
+    # - sensor.energy_usage
+    - sensor.efergy_591994
+    - binary_sensor.internet_connected

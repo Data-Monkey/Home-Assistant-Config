@@ -1,0 +1,15 @@
+---
+# Group defined as VIEW
+#
+
+RoomsEnsuite:
+  name: Ensuite
+  view: false
+  entities:
+    - light.ensuite_light
+    - sensor.illumination_ensuite
+    - binary_sensor.motion_ensuite
+    - switch.ensuite_fan
+    - sensor.humidity_ensuite
+    - sensor.temperature_ensuite
+    - sensor.humidity_delta

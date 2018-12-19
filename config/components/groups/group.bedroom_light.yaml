@@ -1,0 +1,20 @@
+---
+# Group defined as VIEW
+#
+
+BedroomLights:
+  name: Bedroom Lights
+  view: false
+  entities:
+    # Office Light
+    - switch.plug_desk_light
+    # Rolands Light
+    - switch.plug_rolands_light
+    # Helens Light
+    - switch.plug_helens_light
+    # Ceiling Light
+    - light.bedroom_light
+    # Wardrobe Light
+    - light.wardrobe_light
+    # Ensuite Light
+    - light.ensuite_light

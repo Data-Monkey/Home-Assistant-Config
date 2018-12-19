@@ -1,0 +1,13 @@
+---
+# Group defined as VIEW
+#
+
+RoomsHallway:
+  name: Hallway
+  view: false
+  entities:
+    - sensor.xiaomi_gateway
+    - light.gateway_light_hallway
+    - sensor.illumination_hallway
+    - sensor.humidity_hallway
+    - sensor.temperature_hallway

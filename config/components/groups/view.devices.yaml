@@ -1,0 +1,11 @@
+---
+# Group defined as VIEW
+#
+
+Devices:
+  view: true
+  entities:
+    - group.devices_network
+    - group.devices_computer
+    - group.devices_mediaplayer
+    - group.devices_gadgets
