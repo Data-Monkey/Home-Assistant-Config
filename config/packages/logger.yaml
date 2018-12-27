@@ -11,3 +11,4 @@ logger:
   #   homeassistant.components.binary_sensor.xiaomi_aqara: debug
   #   homeassistant.components.light.xiaomi_aqara: debug
   #   homeassistant.components.switch.xiaomi_aqara: debug
+  
