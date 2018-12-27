@@ -1,0 +1,8 @@
+---
+# Device Trackers via Google Home BLE
+
+# this GH is in the Master Bedroom
+#
+
+platform: googlehome
+host: !secret GH_MASTERBEDROOM_IP
