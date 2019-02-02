@@ -9,4 +9,4 @@ Environment:
     - sensor.temperature_hallway
     - sensor.temperature_balcony
     - sensor.humidity_balcony
-    - sun.sun    
+    - sun.sun
