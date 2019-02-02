@@ -7,4 +7,4 @@ RoomsFelix:
   view: false
   entities:
     - light.felix_light
-    - device.device_felix_gh
+    - sensor.device_google_home_felix

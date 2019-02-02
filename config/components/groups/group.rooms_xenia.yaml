@@ -1,0 +1,9 @@
+---
+# Group defined as VIEW
+#
+
+RoomsFelix:
+  name: Xenia's Room
+  view: false
+  entities:
+    - sensor.device_google_home_xenia

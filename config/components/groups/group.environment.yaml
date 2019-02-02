@@ -7,6 +7,6 @@ Environment:
   entities:
     - sensor.humidity_hallway
     - sensor.temperature_hallway
-    - sensor.hallway
-    - sensor.balcony
-    - sensor.laundry
+    - sensor.temperature_balcony
+    - sensor.humidity_balcony
+    - sun.sun    

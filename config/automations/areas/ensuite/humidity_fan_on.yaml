@@ -20,7 +20,7 @@ trigger:
       seconds: 10
   # also check
   # every hour at 5 past the hour
-  - platform: time
+  - platform: time_pattern
     minutes: 5
     seconds: 00
 condition:

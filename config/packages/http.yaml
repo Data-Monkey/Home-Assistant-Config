@@ -18,5 +18,5 @@ http:
 
   # make it a bit more secure
   # ban after 5 wrong passwrods
-  ip_ban_enabled: true
+  ip_ban_enabled: false
   login_attempts_threshold: 5

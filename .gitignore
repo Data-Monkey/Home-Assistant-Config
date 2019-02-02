@@ -28,3 +28,4 @@ ip_bans.yaml
 /icloud/*
 gitupdate.sh
 .storage
+.storage*

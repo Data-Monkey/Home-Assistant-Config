@@ -6,7 +6,7 @@ Xiaomi1:
   name: Gateway 1
   view: false
   entities:
-    - sensor.xiaomi_gateway
+    - sensor.device_xiaomi_gateway
     - light.gateway_light_hallway
     - sensor.illumination_hallway
     - binary_sensor.motion_hallway
