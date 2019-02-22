@@ -8,6 +8,5 @@
 
 platform: workday
 name: Business Day
-friendly_name: Business Day
 country: AU
 province: NSW
