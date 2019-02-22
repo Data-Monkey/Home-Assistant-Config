@@ -8,8 +8,8 @@
 remote:
   - platform: harmony
     name: HarmonyHub
-    username: !secret HARMONY_USER
-    password: !secret HARMONY_PWD
+    # username: !secret HARMONY_USER
+    # password: !secret HARMONY_PWD
     host: !secret HARMONY_IP
     port: 5222
     activity: Watch Plex
