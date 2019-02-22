@@ -3,7 +3,7 @@
 # and enable more fine tuned logging
 
 logger:
-  default: info
+  default: warn
   # logs:
   #   homeassistant.custom_components.google_assistant: debug
   #   homeassistant.components.xiaomi_aqara: debug
