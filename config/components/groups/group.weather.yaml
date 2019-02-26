@@ -1,0 +1,13 @@
+---
+# Group defined as VIEW
+#
+
+weather:
+  name: Weather
+  view: false
+  entities:
+    - sensor.bom_sydney_air_temp_c
+    - sensor.bom_sydney_weather
+    - sensor.bom_sydney_wind_direction
+    - sensor.bom_sydney_wind_speed_kmh
+    - sensor.bom_sydney_wind_speed_kt
