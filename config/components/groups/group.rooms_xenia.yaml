@@ -2,7 +2,7 @@
 # Group defined as VIEW
 #
 
-RoomsFelix:
+RoomsXenia:
   name: Xenia's Room
   view: false
   entities:
