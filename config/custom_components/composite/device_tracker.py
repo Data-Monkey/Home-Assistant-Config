@@ -1,8 +1,8 @@
 """
-A Device Tracker platform that combines one or more GPS based device trackers.
+A Device Tracker platform that combines one or more device trackers.
 
 For more details about this platform, please refer to
-https://github.com/pnbruckner/homeassistant-config#device_trackercompositepy
+https://github.com/pnbruckner/homeassistant-config#composite-device-tracker-platform
 """
 
 from datetime import datetime
@@ -15,24 +15,37 @@ from homeassistant.components.device_tracker import (
     ATTR_BATTERY, ATTR_SOURCE_TYPE, ENTITY_ID_FORMAT, PLATFORM_SCHEMA,
     SOURCE_TYPE_BLUETOOTH, SOURCE_TYPE_BLUETOOTH_LE, SOURCE_TYPE_GPS,
     SOURCE_TYPE_ROUTER)
-try:
-    from homeassistant.components.zone.zone import active_zone
-except ImportError:
-    from homeassistant.components.zone import active_zone
+from homeassistant.components.zone import ENTITY_ID_HOME
+from homeassistant.components.zone.zone import active_zone
 from homeassistant.const import (
-    ATTR_GPS_ACCURACY, ATTR_ENTITY_ID, ATTR_LATITUDE, ATTR_LONGITUDE,
+    ATTR_BATTERY_CHARGING, ATTR_BATTERY_LEVEL,
+    ATTR_ENTITY_ID, ATTR_GPS_ACCURACY, ATTR_LATITUDE, ATTR_LONGITUDE,
     ATTR_STATE, CONF_ENTITY_ID, CONF_NAME, EVENT_HOMEASSISTANT_START,
-    STATE_HOME, STATE_NOT_HOME, STATE_ON)
+    STATE_HOME, STATE_NOT_HOME, STATE_ON, STATE_UNKNOWN)
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.event import track_state_change
-from homeassistant.util import dt as dt_util
+import homeassistant.util.dt as dt_util
 
-__version__ = '1.3.0'
+
+__version__ = '1.7.0'
 
 _LOGGER = logging.getLogger(__name__)
 
+REQUIREMENTS = ['timezonefinderL==2.*']
+
+CONF_TIME_AS = 'time_as'
+
+TZ_UTC = 'utc'
+TZ_LOCAL = 'local'
+TZ_DEVICE_UTC = 'device_or_utc'
+TZ_DEVICE_LOCAL = 'device_or_local'
+# First item in list is default.
+TIME_AS_OPTS = [TZ_UTC, TZ_LOCAL, TZ_DEVICE_UTC, TZ_DEVICE_LOCAL]
+
+ATTR_CHARGING = 'charging'
 ATTR_LAST_SEEN = 'last_seen'
 ATTR_LAST_ENTITY_ID = 'last_entity_id'
+ATTR_TIME_ZONE = 'time_zone'
 
 WARNED = 'warned'
 SOURCE_TYPE = ATTR_SOURCE_TYPE
@@ -46,14 +59,15 @@ SOURCE_TYPE_NON_GPS = (
     SOURCE_TYPE_ROUTER)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
-    vol.Required(CONF_NAME): cv.string,
-    vol.Required(CONF_ENTITY_ID): cv.entity_ids
+    vol.Required(CONF_NAME): cv.slugify,
+    vol.Required(CONF_ENTITY_ID): cv.entity_ids,
+    vol.Optional(CONF_TIME_AS, default=TIME_AS_OPTS[0]):
+        vol.In(TIME_AS_OPTS),
 })
 
+
 def setup_scanner(hass, config, see, discovery_info=None):
-    def run_setup(event):
-        CompositeScanner(hass, config, see)
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, run_setup)
+    CompositeScanner(hass, config, see)
     return True
 
 class CompositeScanner:
@@ -68,16 +82,25 @@ class CompositeScanner:
                 SOURCE_TYPE: None,
                 STATE: None}
         self._dev_id = config[CONF_NAME]
+        self._entity_id = ENTITY_ID_FORMAT.format(self._dev_id)
+        self._time_as = config[CONF_TIME_AS]
+        if self._time_as in [TZ_DEVICE_UTC, TZ_DEVICE_LOCAL]:
+            from timezonefinderL import TimezoneFinder
+            self._tf = TimezoneFinder()
         self._lock = threading.Lock()
         self._prev_seen = None
 
         self._remove = track_state_change(
             hass, entities, self._update_info)
 
-    def _bad_entity(self, entity_id, message, remove_now=False):
+        for entity_id in entities:
+            self._update_info(entity_id, None, hass.states.get(entity_id),
+                              init=True)
+
+    def _bad_entity(self, entity_id, message, init):
         msg = '{} {}'.format(entity_id, message)
         # Has there already been a warning for this entity?
-        if self._entities[entity_id][WARNED] or remove_now:
+        if self._entities[entity_id][WARNED]:
             _LOGGER.error(msg)
             self._remove()
             self._entities.pop(entity_id)
@@ -87,7 +110,8 @@ class CompositeScanner:
                     self._hass, self._entities.keys(), self._update_info)
         else:
             _LOGGER.warning(msg)
-            self._entities[entity_id][WARNED] = True
+            # Don't count warnings during init.
+            self._entities[entity_id][WARNED] = not init
 
     def _good_entity(self, entity_id, source_type, state):
         self._entities[entity_id].update({
@@ -106,7 +130,14 @@ class CompositeScanner:
             for entity in entities
             if entity[SOURCE_TYPE] in SOURCE_TYPE_NON_GPS)
 
-    def _update_info(self, entity_id, old_state, new_state):
+    def _dt_attr_from_utc(self, utc, tz):
+        if self._time_as in [TZ_DEVICE_UTC, TZ_DEVICE_LOCAL] and tz:
+            return utc.astimezone(tz)
+        if self._time_as in [TZ_LOCAL, TZ_DEVICE_LOCAL]:
+            return dt_util.as_local(utc)
+        return utc
+
+    def _update_info(self, entity_id, old_state, new_state, init=False):
         if new_state is None:
             return
 
@@ -126,9 +157,12 @@ class CompositeScanner:
                     last_seen = new_state.last_updated
 
             # Is this newer info than last update?
-            if self._prev_seen and self._prev_seen >= last_seen:
-                _LOGGER.debug('Skipping: prv({}) >= new({})'.format(
-                    self._prev_seen, last_seen))
+            if self._prev_seen and last_seen <= self._prev_seen:
+                _LOGGER.debug(
+                    'For {} skipping update from {}: '
+                    'last_seen not newer than previous update ({} <= {})'
+                    .format(self._entity_id, entity_id, last_seen,
+                        self._prev_seen))
                 return
 
             # Try to get GPS and battery data.
@@ -138,7 +172,10 @@ class CompositeScanner:
             except KeyError:
                 gps = None
             gps_accuracy = new_state.attributes.get(ATTR_GPS_ACCURACY)
-            battery = new_state.attributes.get(ATTR_BATTERY)
+            battery = new_state.attributes.get(
+                ATTR_BATTERY, new_state.attributes.get(ATTR_BATTERY_LEVEL))
+            charging = new_state.attributes.get(
+                ATTR_BATTERY_CHARGING, new_state.attributes.get(ATTR_CHARGING))
             # Don't use location_name unless we have to.
             location_name = None
 
@@ -153,11 +190,12 @@ class CompositeScanner:
             if source_type == SOURCE_TYPE_GPS:
                 # GPS coordinates and accuracy are required.
                 if gps is None:
-                    self._bad_entity(entity_id, 'missing gps attributes')
+                    self._bad_entity(entity_id,
+                                     'missing gps attributes', init)
                     return
                 if gps_accuracy is None:
                     self._bad_entity(entity_id,
-                                     'missing gps_accuracy attribute')
+                                     'missing gps_accuracy attribute', init)
                     return
                 self._good_entity(entity_id, SOURCE_TYPE_GPS, state)
 
@@ -180,15 +218,14 @@ class CompositeScanner:
                     gps = gps_accuracy = None
                 # Get current GPS data, if any, and determine if it is in
                 # 'zone.home'.
-                cur_state = self._hass.states.get(
-                    ENTITY_ID_FORMAT.format(self._dev_id))
+                cur_state = self._hass.states.get(self._entity_id)
                 try:
                     cur_lat = cur_state.attributes[ATTR_LATITUDE]
                     cur_lon = cur_state.attributes[ATTR_LONGITUDE]
                     cur_acc = cur_state.attributes[ATTR_GPS_ACCURACY]
                     cur_gps_is_home = (
                         active_zone(self._hass, cur_lat, cur_lon, cur_acc)
-                        .entity_id == 'zone.home')
+                        .entity_id == ENTITY_ID_HOME)
                 except (AttributeError, KeyError):
                     cur_gps_is_home = False
 
@@ -219,15 +256,32 @@ class CompositeScanner:
                 self._bad_entity(
                     entity_id,
                     'unsupported source_type: {}'.format(source_type),
-                    remove_now=True)
+                    init)
                 return
 
-            attrs = {
+            tz = None
+            if self._time_as in [TZ_DEVICE_UTC, TZ_DEVICE_LOCAL]:
+                tzname = None
+                if gps:
+                    # timezone_at will return a string or None.
+                    tzname = self._tf.timezone_at(lng=gps[1], lat=gps[0])
+                    # get_time_zone will return a tzinfo or None.
+                    tz = dt_util.get_time_zone(tzname)
+                attrs = {ATTR_TIME_ZONE: tzname or STATE_UNKNOWN}
+            else:
+                attrs = {}
+
+            attrs.update({
                 ATTR_ENTITY_ID: tuple(
                     entity_id for entity_id, entity in self._entities.items()
                     if entity[ATTR_SOURCE_TYPE] is not None),
                 ATTR_LAST_ENTITY_ID: entity_id,
-                ATTR_LAST_SEEN: last_seen.replace(microsecond=0)}
+                ATTR_LAST_SEEN:
+                    self._dt_attr_from_utc(last_seen.replace(microsecond=0),
+                                           tz)
+            })
+            if charging is not None:
+                attrs[ATTR_BATTERY_CHARGING] = charging
             self._see(dev_id=self._dev_id, location_name=location_name,
                 gps=gps, gps_accuracy=gps_accuracy, battery=battery,
                 attributes=attrs, source_type=source_type)
