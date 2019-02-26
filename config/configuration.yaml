@@ -19,3 +19,10 @@ homeassistant:
 
   packages:
     !include_dir_named packages
+
+# workaround until merge is fixed
+person:
+  - name: Roland
+    id: person_roland
+    device_trackers:
+      - device_tracker.nmap_rolands_nokia
