@@ -13,5 +13,4 @@ platform: composite
 name: Roland
 entity_id:
   - device_tracker.nmap_rolands_iphone
-  - device_tracker.rolands_ios_app
   - device_traker.mobile_nokia6
