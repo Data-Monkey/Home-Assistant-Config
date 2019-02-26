@@ -25,4 +25,8 @@ person:
   - name: Roland
     id: person_roland
     device_trackers:
-      - device_tracker.nmap_rolands_nokia
+      - device_tracker.roland
+  - name: Helen
+    id: person_helen
+    device_trackers:
+      - device_tracker.helen

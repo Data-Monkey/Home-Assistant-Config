@@ -14,3 +14,4 @@ name: Roland
 entity_id:
   - device_tracker.nmap_rolands_iphone
   - device_traker.mobile_nokia6
+  - device_tracker.nmap_rolands_nokia
