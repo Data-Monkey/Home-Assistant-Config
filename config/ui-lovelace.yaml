@@ -1,0 +1,14 @@
+---
+# Lovelace Frontend Configuration
+
+# this is the stub of the lovelace configuration
+# all files are in their respective folders again
+
+# views are called out individually to guarnatee order
+
+resources: !include_dir_list lovelace/resources
+  
+views:
+  - !include lovelace/views/home.yaml
+  - !include lovelace/views/floorplan.yaml
+  - !include lovelace/views/maintenance.yaml

@@ -1,0 +1,6 @@
+---
+# Enables support for system health api and reports
+# https://www.home-assistant.io/components/system_health/
+#
+
+system_health:

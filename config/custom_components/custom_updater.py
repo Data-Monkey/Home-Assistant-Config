@@ -10,15 +10,16 @@ from datetime import timedelta
 
 import voluptuous as vol
 from aiohttp import web
+from homeassistant.const import EVENT_HOMEASSISTANT_START
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.http import HomeAssistantView
 from homeassistant.helpers.event import async_track_time_interval
 
-VERSION = '4.2.13'
+VERSION = '4.2.15'
 
 _LOGGER = logging.getLogger(__name__)
 
-REQUIREMENTS = ['pyupdate==1.3.3']
+REQUIREMENTS = ['pyupdate==1.3.5']
 
 CONF_TRACK = 'track'
 CONF_HIDE_SENSOR = 'hide_sensor'
@@ -67,7 +68,7 @@ async def async_setup(hass, config):
 
     _LOGGER.debug('Version %s', VERSION)
     _LOGGER.debug('Mode %s', conf_mode)
-    
+
     if conf_mode == 'yaml':
         if not os.path.exists("{}/ui-lovelace.yaml".format(str(hass.config.path()))):
             _LOGGER.warning(
@@ -78,7 +79,7 @@ async def async_setup(hass, config):
         card_controller = CustomCards(
             hass, conf_hide_sensor, conf_card_urls, conf_mode)
 
-        await card_controller.extra_init()
+        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, card_controller.extra_init())
 
         async_track_time_interval(
             hass, card_controller.force_reload, INTERVAL)
@@ -87,7 +88,7 @@ async def async_setup(hass, config):
         components_controller = CustomComponents(
             hass, conf_hide_sensor, conf_component_urls)
 
-        await components_controller.extra_init()
+        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, components_controller.extra_init())
 
         async_track_time_interval(
             hass, components_controller.cache_versions, INTERVAL)
@@ -96,7 +97,7 @@ async def async_setup(hass, config):
         python_scripts_controller = CustomPythonScripts(
             hass, conf_hide_sensor, conf_py_script_urls)
 
-        await python_scripts_controller.extra_init()
+        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, python_scripts_controller.extra_init())
 
         async_track_time_interval(
             hass, python_scripts_controller.cache_versions, INTERVAL)
