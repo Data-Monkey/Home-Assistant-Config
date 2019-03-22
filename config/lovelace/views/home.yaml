@@ -9,7 +9,7 @@ cards:
         tap_action:
           action: navigate
           navigation_path: /states
-    
+
       - type: entity-filter
         entities:
           - device_tracker.blue_laptop
@@ -20,7 +20,7 @@ cards:
         card:
           # type: glance
           title: Online
-    
+
       - type: entity-filter
         entities:
           - device_tracker.bathroom_light

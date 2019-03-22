@@ -4,9 +4,9 @@
 # This fills in the authentication_providers section of the main config file
 # https://www.home-assistant.io/docs/authentication/providers/#trusted-networks
 
-#homeassistant:
-#  auth_providers:
-#    - type: trusted_networks
-#      trusted_networks:
-#        - 127.0.0.1
-#        - 192.168.2.0/24
+# homeassistant:
+#   auth_providers:
+#     - type: trusted_networks
+#       trusted_networks:
+#         - 127.0.0.1
+#         - 192.168.2.0/24
