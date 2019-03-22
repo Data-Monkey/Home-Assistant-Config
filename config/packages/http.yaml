@@ -12,9 +12,9 @@ http:
   # used due to the proxy setup I am using
   use_x_forwarded_for: true
   trusted_proxies: !secret PROXY_IP
-  trusted_networks:
-    - 127.0.0.1
-    - 192.168.2.0/24
+  #trusted_networks:
+  #  - 127.0.0.1
+  #  - 192.168.2.0/24
 
   # make it a bit more secure
   # ban after 5 wrong passwrods

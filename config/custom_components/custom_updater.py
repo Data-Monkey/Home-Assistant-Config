@@ -15,11 +15,11 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.components.http import HomeAssistantView
 from homeassistant.helpers.event import async_track_time_interval
 
-VERSION = '4.2.15'
+VERSION = '4.2.17'
 
 _LOGGER = logging.getLogger(__name__)
 
-REQUIREMENTS = ['pyupdate==1.3.5']
+REQUIREMENTS = ['pyupdate==1.3.6']
 
 CONF_TRACK = 'track'
 CONF_HIDE_SENSOR = 'hide_sensor'
@@ -159,7 +159,7 @@ class CustomCards():
         await self.cache_versions()
         await self.serve_dynamic_files()
 
-    async def force_reload(self):
+    async def force_reload(self, now=None):
         """Force data refresh"""
         _LOGGER.debug('CustomCards - force_reload')
         await self.pyupdate.force_reload()

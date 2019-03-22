@@ -1,7 +1,7 @@
 ---
-# Sets up Home Assistant.
+# Sets up Home Assistant customizations
 #
-# This fills in the homeassistant section of the main config file
+# This fills in the customize section of the main config file
 
 homeassistant:
 

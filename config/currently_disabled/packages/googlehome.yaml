@@ -1,0 +1,10 @@
+---
+# Google Home as BT Tracker
+#
+# https://www.home-assistant.io/components/googlehome/
+#
+
+googlehome:
+  devices:
+    - host: !secret GH_MASTERBEDROOM_IP
+      device_types: 2

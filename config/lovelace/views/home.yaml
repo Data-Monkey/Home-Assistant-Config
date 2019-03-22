@@ -2,33 +2,35 @@
 id: home
 title: home
 cards:
-  - type: picture
-    image: /local/home-assistant-icon.png
-    tap_action:
-      action: navigate
-      navigation_path: /states
-
-  - type: entity-filter
-    entities:
-      - device_tracker.blue_laptop
-      - device_tracker.bedroom_light
-      - device_tracker.bathroom_light
-    state_filter:
-      - "home"
-    card:
-      # type: glance
-      title: Online
-
-  - type: entity-filter
-    entities:
-      - device_tracker.bathroom_light
-      - device_tracker.bedroom_light
-      - device_tracker.ensuite_light
-      - device_tracker.laundry_light
-      - device_tracker.felix_light
-      - device_tracker.wardrobe_light
-    state_filter:
-      - "not_home"
-    card:
-      type: glance
-      title: Home Automation Components Offline
+  - type: horizontal-stack
+    cards:
+      - type: picture
+        image: /local/home-assistant-icon.png
+        tap_action:
+          action: navigate
+          navigation_path: /states
+    
+      - type: entity-filter
+        entities:
+          - device_tracker.blue_laptop
+          - device_tracker.bedroom_light
+          - device_tracker.bathroom_light
+        state_filter:
+          - "home"
+        card:
+          # type: glance
+          title: Online
+    
+      - type: entity-filter
+        entities:
+          - device_tracker.bathroom_light
+          - device_tracker.bedroom_light
+          - device_tracker.ensuite_light
+          - device_tracker.laundry_light
+          - device_tracker.felix_light
+          - device_tracker.wardrobe_light
+        state_filter:
+          - "not_home"
+        card:
+          type: glance
+          title: Home Automation Components Offline
