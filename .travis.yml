@@ -14,4 +14,4 @@ install:
 
 script:
   - yamllint config
-  - hass -c config/ --script check_config --info all
+  - hass -c config/ --script check_config
