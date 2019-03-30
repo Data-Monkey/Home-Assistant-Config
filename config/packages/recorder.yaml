@@ -1,0 +1,7 @@
+---
+# recorder 
+# defining what database to use
+# in this case, a maria db in a separate docker
+
+recorder:
+  db_url: !secret MARIADB
