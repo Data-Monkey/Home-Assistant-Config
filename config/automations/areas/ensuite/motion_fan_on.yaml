@@ -12,7 +12,7 @@ trigger:
     entity_id: binary_sensor.motion_ensuite
     to: 'on'
     for:
-      minutes: 3
+      minutes: 1
       seconds: 0
 condition:
   condition: template
