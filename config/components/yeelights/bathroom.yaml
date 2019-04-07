@@ -1,0 +1,6 @@
+---
+# Yeelight in the Bathroom
+#
+192.168.2.82:
+  name: Bathroom Light
+  transition: 1000

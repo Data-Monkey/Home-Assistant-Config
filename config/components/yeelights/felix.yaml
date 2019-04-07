@@ -1,0 +1,6 @@
+---
+# Yeelight in the Felix's room
+#
+192.168.2.85:
+  name: Felix Light
+  transition: 1000

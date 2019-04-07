@@ -1,8 +1,0 @@
----
-# Yeelight in the Laundry
-#
-platform: yeelight
-devices:
-  192.168.2.85:
-    name: Felix Light
-    transition: 1000

@@ -1,0 +1,6 @@
+---
+# Yeelight in the Ensuite
+#
+192.168.2.84:
+  name: Ensuite Light
+  transition: 1000

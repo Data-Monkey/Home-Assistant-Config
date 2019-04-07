@@ -1,0 +1,6 @@
+---
+# Yeelight in the Laundry
+#
+192.168.2.83:
+  name: Bedroom Light
+  transition: 1000

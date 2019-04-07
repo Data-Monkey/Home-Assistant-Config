@@ -1,0 +1,6 @@
+---
+# Yeelight in the Wardrobe
+#
+192.168.2.81:
+  name: Wardrobe Light
+  transition: 1000

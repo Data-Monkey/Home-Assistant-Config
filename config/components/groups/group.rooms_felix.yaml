@@ -1,5 +1,5 @@
 ---
-# Group defined as VIEW
+# Group for Felix's Room
 #
 
 RoomsFelix:
@@ -7,4 +7,5 @@ RoomsFelix:
   view: false
   entities:
     - light.felix_light
+    - binary_sensor.switch_button_f
     - sensor.device_google_home_felix
