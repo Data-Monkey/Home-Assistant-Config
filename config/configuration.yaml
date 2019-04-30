@@ -26,13 +26,3 @@ homeassistant:
 #        - 127.0.0.1
 #        - 192.168.2.0/24
 #
-# workaround until merge is fixed
-person:
-  - name: Roland
-    id: person_roland
-    device_trackers:
-      - device_tracker.roland
-  - name: Helen
-    id: person_helen
-    device_trackers:
-      - device_tracker.helen

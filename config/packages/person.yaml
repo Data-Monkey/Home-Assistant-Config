@@ -1,0 +1,9 @@
+---
+# Persons
+# are being included from the persons folder
+# one person per file!
+#
+# https://www.home-assistant.io/components/person
+#
+
+person: !include_dir_list ../components/persons

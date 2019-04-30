@@ -1,0 +1,9 @@
+---
+# the Person component reads the person from here
+#
+#
+
+name: Helen
+id: person_helen
+device_trackers:
+  - device_tracker.helen
