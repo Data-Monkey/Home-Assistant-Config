@@ -1,4 +1,5 @@
 ---
-# Enables custom updated
+# Enables custom updates
+# https://github.com/custom-components/custom_updater
 #
 custom_updater:

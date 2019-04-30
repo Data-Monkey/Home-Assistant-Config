@@ -12,7 +12,7 @@ condition:
   condition: template
   value_template: '{{ states.sensor.time_of_day.state != "night" }}'
 action:
-  service: tts.google_say
+  service: tts.google_translate_say
   data_template:
     entity_id: media_player.master_bedroom_speaker
     message: >

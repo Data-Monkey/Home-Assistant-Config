@@ -6,10 +6,10 @@
 
 logger:
   default: warn
-  logs:
-    homeassistant.custom_components.google_assistant: debug
-    homeassistant.components.xiaomi_aqara: debug
-    homeassistant.components.sensor.xiaomi_aqara: debug
-    homeassistant.components.binary_sensor.xiaomi_aqara: debug
-    homeassistant.components.light.xiaomi_aqara: debug
-    homeassistant.components.switch.xiaomi_aqara: debug
+  #logs:
+  #  homeassistant.custom_components.google_assistant: debug
+  #  homeassistant.components.xiaomi_aqara: debug
+  #  homeassistant.components.sensor.xiaomi_aqara: debug
+  #  homeassistant.components.binary_sensor.xiaomi_aqara: debug
+  #  homeassistant.components.light.xiaomi_aqara: debug
+  #  homeassistant.components.switch.xiaomi_aqara: debug

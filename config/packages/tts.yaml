@@ -1,6 +1,7 @@
 ---
 # Text to speech
+# Please check the docs at https://home-assistant.io/components/tts/
 #
 
 tts:
-  platform: google
+  platform: google_translate
