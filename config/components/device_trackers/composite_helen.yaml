@@ -5,9 +5,6 @@
 #
 # install:
 #
-# yamllint disable-line rule:line-length
-# wget https://raw.githubusercontent.com/pnbruckner/homeassistant-config/master/custom_components/device_tracker/composite.py
-#
 
 platform: composite
 name: Helen

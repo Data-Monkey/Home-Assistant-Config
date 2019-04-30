@@ -26,12 +26,9 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.event import track_state_change
 import homeassistant.util.dt as dt_util
 
-
-__version__ = '1.7.0'
-
 _LOGGER = logging.getLogger(__name__)
 
-REQUIREMENTS = ['timezonefinderL==2.*']
+REQUIREMENTS = ['timezonefinderL==2.0.1']
 
 CONF_TIME_AS = 'time_as'
 
