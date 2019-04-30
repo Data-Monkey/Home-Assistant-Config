@@ -3,11 +3,11 @@ extends: default
 
 ignore: |
   /config/packages/community_packages/
+  /config/custom_components/
   /config/includes/
   /config/currently_disabled
   /config/ui-lovelace.yaml
   /config/floorplan.yaml
-
 
 rules:
   # 80 chars should be enough, but don't fail if a line is longer
