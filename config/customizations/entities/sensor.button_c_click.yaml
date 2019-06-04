@@ -1,0 +1,7 @@
+---
+# Xiaomi Button Ceiling 
+# this is the Z2M version
+#
+
+sensor.button_c_click:
+  icon: mdi:checkbox-multiple-blank-circle-outline

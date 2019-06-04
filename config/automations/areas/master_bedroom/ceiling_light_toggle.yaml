@@ -26,6 +26,10 @@ trigger:
     event_data:
       entity_id: binary_sensor.switch_button_h
       click_type: long_click_press
+  # Switch C (this is via z2m)
+  - platform: state
+    entity_id: sensor.button_c_click
+    to: 'single'
 action:
   service: homeassistant.toggle
   entity_id: light.bedroom_light

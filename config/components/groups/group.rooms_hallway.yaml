@@ -9,5 +9,6 @@ RoomsHallway:
     - sensor.device_xiaomi_gateway
     - light.gateway_light_hallway
     - sensor.illumination_hallway
+    - binary_sensor.motion_hallway
     - sensor.humidity_hallway
     - sensor.temperature_hallway
