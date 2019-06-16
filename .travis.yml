@@ -7,10 +7,12 @@ python: "3.6.4"
 
 before_install:
   - mv config/travis_secrets.yaml config/secrets.yaml
+  # remove HACS as it does not work on travis ...
   - rm config/packages/hacs.yaml
 
 install:
-  - pip3 install homeassistant
+  # force the currently installed HA version
+  - pip3 install homeassistant==`cat config/.HA_VERSION`
   - pip install yamllint
 
 script:
