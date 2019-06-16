@@ -2,13 +2,14 @@
 # Automation running in the Master Bedroom
 #
 # All OFF from any of the buttons
+
 alias: All Bedroom Lights OFF
 initial_state: 'on'
 trigger:
   # Button L
   - platform: state
     entity_id: sensor.button_l_click
-    to: 'double'    
+    to: 'double'
   # Switch R
   - platform: event
     event_type: xiaomi_aqara.click
@@ -24,7 +25,7 @@ trigger:
   # Button C - Ceiling (z2m)
   - platform: state
     entity_id: sensor.button_c_click
-    to: 'double'     
+    to: 'double'
 action:
   service: homeassistant.turn_off
   entity_id: group.BedroomLights
