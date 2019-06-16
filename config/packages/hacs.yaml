@@ -1,2 +1,6 @@
+---
+# Home Assistant Community Store
+# https://custom-components.github.io/hacs/
+
 hacs:
   token: !secret HACS_TOKEN
