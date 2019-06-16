@@ -32,4 +32,4 @@ gitupdate.sh
 #enable 
 !/.gitignore
 !/.yamllint
-!/.HA_VERSION
+!/config/.HA_VERSION
