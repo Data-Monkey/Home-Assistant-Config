@@ -12,4 +12,3 @@ views:
   - !include lovelace/views/home.yaml
   - !include lovelace/views/rooms.yaml
   - !include lovelace/views/floorplan.yaml
-  - !include lovelace/views/maintenance.yaml
