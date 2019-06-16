@@ -6,8 +6,8 @@ BedroomLights:
   name: Bedroom Lights
   view: false
   entities:
-    # Office Light
-    - switch.plug_desk_light
+    # Desk Light
+    - switch.plug_l_switch
     # Rolands Light
     - switch.plug_rolands_light
     # Helens Light

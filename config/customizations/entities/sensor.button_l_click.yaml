@@ -1,7 +1,7 @@
 ---
-# Xiaomi Button Ceiling
+# Xiaomi Button L (Desk Lamp)
 # this is the Z2M version
 #
 
-sensor.button_c_click:
+sensor.button_l_click:
   icon: mdi:checkbox-multiple-blank-circle-outline

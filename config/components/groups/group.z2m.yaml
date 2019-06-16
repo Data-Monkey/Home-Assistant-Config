@@ -1,0 +1,18 @@
+---
+# Group of all mqtt devices
+#
+
+Z2M:
+  name: Z2M Managed Entities
+  view: false
+  entities:
+    - sensor.button_c_click
+    - sensor.button_l_click
+    - sensor.plug_christmastree_power
+    - sensor.plug_l_power
+    - sensor.plug_hallway_power
+    - binary_sensor.motion_hallway
+    - binary_sensor.motion_kitchen_occupancy
+    - binary_sensor.motion_ensuite_occupancy
+    - switch.plug_christmastree_switch
+    - switch.plug_hallway_switch

@@ -1,6 +1,6 @@
 ---
 # hide all link quality sensors
-# 
+#
 
 "sensor.*_linkquality":
   hidden: true

@@ -7,7 +7,7 @@ RoomsBedroom:
   view: false
   entities:
     # Office Light
-    - switch.plug_desk_light
+    - switch.plug_l_switch
     # Rolands Light
     - switch.plug_rolands_light
     # Helens Light

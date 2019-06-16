@@ -33,7 +33,7 @@ google_assistant:
       room: Master Bedroom
       expose: true
 
-    switch.plug_desk_light:
+    switch.plug_l_switch:
       name: 'Desk Light'
       room: Master Bedroom
       expose: true

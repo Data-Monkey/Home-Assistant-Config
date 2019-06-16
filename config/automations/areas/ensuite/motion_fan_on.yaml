@@ -9,7 +9,7 @@ alias: Ensuite Fan by motion ON
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_ensuite
+    entity_id: binary_sensor.motion_ensuite_occupancy
     to: 'on'
     for:
       minutes: 1

@@ -5,12 +5,10 @@
 alias: All Bedroom Lights OFF
 initial_state: 'on'
 trigger:
-  # Switch L
-  - platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_button_l
-      click_type: double
+  # Button L
+  - platform: state
+    entity_id: sensor.button_l_click
+    to: 'double'    
   # Switch R
   - platform: event
     event_type: xiaomi_aqara.click
@@ -23,6 +21,10 @@ trigger:
     event_data:
       entity_id: binary_sensor.switch_button_h
       click_type: double
+  # Button C - Ceiling (z2m)
+  - platform: state
+    entity_id: sensor.button_c_click
+    to: 'double'     
 action:
   service: homeassistant.turn_off
   entity_id: group.BedroomLights
