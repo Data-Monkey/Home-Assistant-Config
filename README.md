@@ -187,3 +187,20 @@ Some of my hardware has been retired for various reasons:
 
 - Roku2  (replaced with RasPlex as PLEX was not updated on ROKU)
 
+<h2>Naming Standards</h2>
+I am writing this down mostly for myself, as I seem to change the standard every time I sit down to change something!
+
+every entity should follow this convention
+entity_type.where_what_extra
+entity_type is given, nothing I can change here. But if it already says sensor, I don't need to repeat that in the name.
+where is the location or the device name
+what is what it is doing, measuring, sensing ....
+extra is just in case I need to make it unique
+So the temperature sensor in the hallway should be:
+sensor.hallway_temperature
+and the battery data for that sensor would be 
+sensor.enviro_hallway_battery 
+
+some more examples
+Xiaomi Button: sensor.button_x_click , sensor.button_x_battery
+

@@ -6,9 +6,11 @@ RoomsHallway:
   name: Hallway
   view: false
   entities:
+    - binary_sensor.main_door_contact
     - sensor.device_xiaomi_gateway
+    - switch.plug_hallway_switch
     - light.gateway_light_hallway
     - sensor.illumination_hallway
-    - binary_sensor.motion_hallway
+    - binary_sensor.hallway_motion
     - sensor.humidity_hallway
     - sensor.temperature_hallway

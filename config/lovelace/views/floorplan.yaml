@@ -43,7 +43,7 @@ cards:
           top: 52%
           left: 28%
       - type: state-icon
-        entity: binary_sensor.motion_ensuite
+        entity: binary_sensor.ensuite_motion
         style:
           top: 52.5%
           left: 35%

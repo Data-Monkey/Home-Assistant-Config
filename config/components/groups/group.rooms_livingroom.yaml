@@ -6,5 +6,5 @@ RoomsLivingroom:
   name: Livingroom
   view: false
   entities:
-    - binary_sensor.motion_livingroom
+    - binary_sensor.livingroom_motion
     - switch.plug_xmas_tree

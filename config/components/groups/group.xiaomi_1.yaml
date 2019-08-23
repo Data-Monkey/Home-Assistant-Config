@@ -9,7 +9,7 @@ Xiaomi1:
     - sensor.device_xiaomi_gateway
     - light.gateway_light_hallway
     - sensor.illumination_hallway
-    - binary_sensor.motion_hallway
+    - binary_sensor.hallway_motion
     - binary_sensor.door_appartment_door
     - sensor.front_door
     - sensor.humidity_hallway
@@ -19,6 +19,5 @@ Xiaomi1:
     - sensor.humidity_ensuite
     - sensor.temperature_ensuite
     - binary_sensor.motion_kitchen
-    - binary_sensor.motion_livingroom
     - binary_sensor.motion_bathroom
     - binary_sensor.switch_button_f

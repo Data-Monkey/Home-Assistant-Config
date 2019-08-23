@@ -8,7 +8,7 @@ RoomsEnsuite:
   entities:
     - light.ensuite_light
     - sensor.motion_ensuite_illuminance
-    - binary_sensor.motion_ensuite_occupancy
+    - binary_sensor.ensuite_motion
     - switch.ensuite_fan
     - sensor.humidity_ensuite
     - sensor.temperature_ensuite

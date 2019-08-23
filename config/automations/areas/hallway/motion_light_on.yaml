@@ -12,7 +12,7 @@ condition:
     state: 'below_horizon'
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_hallway
+    entity_id: binary_sensor.hallway_motion
     to: 'on'
 action:
   service: homeassistant.turn_on

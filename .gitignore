@@ -28,6 +28,7 @@ html5_push_registrations.conf
 ip_bans.yaml
 /icloud/*
 gitupdate.sh
+/config/custom_components/hacs
 
 #enable 
 !/.gitignore

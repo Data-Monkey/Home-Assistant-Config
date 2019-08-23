@@ -8,6 +8,6 @@ platform: template
 sensors:
   humidity_delta:
     value_template: '{{ states("sensor.humidity_ensuite")|int -
-                        states("sensor.humidity_hallway")|int}}'
+                        states("sensor.hallway_humidity")|int}}'
     unit_of_measurement: '%'
     friendly_name: Humidity compared to Hallway

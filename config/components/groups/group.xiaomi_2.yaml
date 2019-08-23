@@ -9,9 +9,6 @@ Xiaomi2:
     - sensor.device_xiaomi_gateway2
     - light.gateway_light_gateway2
     - sensor.illumination_gateway2
-    # Office Light
-    - binary_sensor.switch_button_l
-    - switch.plug_desk_light
     # Rolands Light
     - binary_sensor.switch_button_r
     - switch.plug_rolands_light

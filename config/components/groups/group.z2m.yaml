@@ -11,8 +11,9 @@ Z2M:
     - sensor.plug_christmastree_power
     - sensor.plug_l_power
     - sensor.plug_hallway_power
-    - binary_sensor.motion_hallway
-    - binary_sensor.motion_kitchen_occupancy
-    - binary_sensor.motion_ensuite_occupancy
+    - binary_sensor.hallway_motion
+    - binary_sensor.kitchen_motion
+    - binary_sensor.ensuite_motion
+    - binary_sensor.livingroom_motion    
     - switch.plug_christmastree_switch
     - switch.plug_hallway_switch
