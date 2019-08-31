@@ -2,7 +2,7 @@
 # zigbee2mqtt networking package
 
 zigbee2mqtt_networkmap:
-  # topic: your topic (optional, default zigbee2mqtt)
+# topic: your topic (optional, default zigbee2mqtt)
 
 panel_iframe:
   networkmap:

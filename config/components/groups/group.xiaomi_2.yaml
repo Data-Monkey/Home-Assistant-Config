@@ -10,8 +10,8 @@ Xiaomi2:
     - light.gateway_light_gateway2
     - sensor.illumination_gateway2
     # Rolands Light
-    - binary_sensor.switch_button_r
-    - switch.plug_rolands_light
+    - sensor.button_r_click
+    - switch.plug_r
     # Helens Light
     - binary_sensor.switch_button_h
     - switch.plug_helens_light

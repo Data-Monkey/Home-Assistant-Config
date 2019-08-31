@@ -11,11 +11,9 @@ trigger:
     entity_id: sensor.button_l_click
     to: 'double'
   # Switch R
-  - platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_button_r
-      click_type: double
+  - platform: state
+    entity_id: sensor.button_r_click
+    to: 'double'
   # Switch H
   - platform: event
     event_type: xiaomi_aqara.click

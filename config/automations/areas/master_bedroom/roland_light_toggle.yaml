@@ -6,12 +6,10 @@
 alias: Toggle Rolands Light
 initial_state: 'on'
 trigger:
-  platform: event
-  event_type: xiaomi_aqara.click
-  event_data:
-    entity_id: binary_sensor.switch_button_r
-    click_type: single
+  - platform: state
+    entity_id: sensor.button_r_click
+    to: 'single'
 action:
   service: homeassistant.toggle
   data:
-    entity_id: switch.plug_rolands_light
+    entity_id: switch.plug_r

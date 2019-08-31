@@ -21,7 +21,7 @@ cards:
           top: 17%
           left: 43%
       - type: state-icon
-        entity: switch.plug_rolands_light
+        entity: switch.plug_r
         style:
           top: 86%
           left: 48%

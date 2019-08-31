@@ -23,7 +23,7 @@ google_assistant:
       room: Master Bedroom
       expose: true
 
-    switch.plug_rolands_light:
+    switch.plug_r:
       name: 'Roand''s Light'
       room: Master Bedroom
       expose: true

@@ -12,5 +12,5 @@ RoomsHallway:
     - light.gateway_light_hallway
     - sensor.illumination_hallway
     - binary_sensor.hallway_motion
-    - sensor.humidity_hallway
-    - sensor.temperature_hallway
+    - sensor.hallway_humidity
+    - sensor.hallway_temperature

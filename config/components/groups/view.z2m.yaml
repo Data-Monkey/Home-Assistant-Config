@@ -1,0 +1,10 @@
+---
+# Group defined as VIEW
+#
+
+z2m:
+  view: true
+  name: Z2M
+  entities:
+    - group.zigbee_group
+    - group.Z2M_managed
