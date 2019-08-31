@@ -19,12 +19,6 @@ homeassistant:
 
   packages:
     !include_dir_named packages
-hacs:
-  token: !secret HACS_TOKEN
-
-#  auth_providers:
-#    - type: trusted_networks
-#      trusted_networks:
-#        - 127.0.0.1
-#        - 192.168.2.0/24
-#
+  
+#hacs:
+#  token: !secret HACS_TOKEN
