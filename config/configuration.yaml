@@ -19,6 +19,3 @@ homeassistant:
 
   packages:
     !include_dir_named packages
-  
-#hacs:
-#  token: !secret HACS_TOKEN
