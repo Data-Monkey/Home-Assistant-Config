@@ -17,12 +17,10 @@ trigger:
     entity_id: sensor.button_r_click
     to: 'long'
   # Switch H
-  - platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_button_h
-      click_type: long_click_press
-  # Switch C (this is via z2m)
+  - platform: state
+    entity_id: sensor.button_h_click
+    to: 'long'
+  # Switch C 
   - platform: state
     entity_id: sensor.button_c_click
     to: 'single'

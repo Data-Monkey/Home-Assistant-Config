@@ -19,5 +19,4 @@ Xiaomi1:
     - sensor.humidity_ensuite
     - sensor.temperature_ensuite
     - binary_sensor.motion_kitchen
-    - binary_sensor.motion_bathroom
     - binary_sensor.switch_button_f

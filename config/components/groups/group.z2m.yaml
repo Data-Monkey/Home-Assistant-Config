@@ -19,3 +19,6 @@ Z2M_managed:
     - binary_sensor.livingroom_motion
     - switch.plug_christmastree_switch
     - switch.plug_hallway_switch
+    - switch.plug_h
+    - switch.plug_r
+    - switch.plug_c

@@ -12,9 +12,6 @@ Xiaomi2:
     # Rolands Light
     - sensor.button_r_click
     - switch.plug_r
-    # Helens Light
-    - binary_sensor.switch_button_h
-    - switch.plug_helens_light
     # bedroom
     - binary_sensor.motion_wardrobe
     - light.bedroom_light

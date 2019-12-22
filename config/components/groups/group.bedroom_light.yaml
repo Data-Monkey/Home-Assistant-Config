@@ -11,7 +11,7 @@ BedroomLights:
     # Rolands Light
     - switch.plug_r
     # Helens Light
-    - switch.plug_helens_light
+    - switch.plug_h
     # Ceiling Light
     - light.bedroom_light
     # Wardrobe Light

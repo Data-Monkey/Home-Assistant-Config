@@ -6,12 +6,10 @@
 alias: Toggle Helens Light
 initial_state: 'on'
 trigger:
-  platform: event
-  event_type: xiaomi_aqara.click
-  event_data:
-    entity_id: binary_sensor.switch_button_h
-    click_type: single
+  - platform: state
+    entity_id: sensor.button_h_click
+    to: 'single'
 action:
   service: homeassistant.toggle
   data:
-    entity_id: switch.plug_helens_light
+    entity_id: switch.plug_h

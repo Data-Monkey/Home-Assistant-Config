@@ -7,5 +7,5 @@ RoomsBathroom:
   view: false
   entities:
     - light.bathroom_light
-    - binary_sensor.motion_bathroom
+    - binary_sensor.bathroom_motion
     - sensor.illumination_bathroom

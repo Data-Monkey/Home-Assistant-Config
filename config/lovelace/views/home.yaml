@@ -8,7 +8,7 @@ cards:
         image: /local/home-assistant-icon.png
         tap_action:
           action: navigate
-          navigation_path: /states
+          navigation_path: /states/group.rooms
 
       - type: entity-filter
         entities:

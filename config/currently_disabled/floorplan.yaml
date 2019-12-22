@@ -80,10 +80,10 @@
           entities:
             - binary_sensor.hallway_motion # Hallway
             - binary_sensor.livingroom_motion # LivingRoom
-            - binary_sensor.motion_kitchen # Kitchen
-            - binary_sensor.motion_bathroom # Bathroom
-            - binary_sensor.motion_wardrobe # Wardrobe
-            - binary_sensor.motion_laundry # Laundry
+            - binary_sensor.kitchen_motion # Kitchen
+            - binary_sensor.bathroom_motion # Bathroom
+            - binary_sensor.wardrobe_motion # Wardrobe
+            - binary_sensor.laundry_motion # Laundry
             - binary_sensor.ensuite_motion # Ensuite
 
           states:

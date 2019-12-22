@@ -28,7 +28,7 @@ google_assistant:
       room: Master Bedroom
       expose: true
 
-    switch.plug_helens_light:
+    switch.plug_h:
       name: 'Helen''s Light'
       room: Master Bedroom
       expose: true

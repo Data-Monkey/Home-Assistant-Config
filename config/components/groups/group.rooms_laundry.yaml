@@ -8,5 +8,5 @@ RoomsLaundry:
   entities:
     - binary_sensor.water_leak_sensor_laundry
     - light.laundry_light
-    - binary_sensor.motion_laundry
+    - binary_sensor.laundry_motion
     - sensor.illumination_laundry

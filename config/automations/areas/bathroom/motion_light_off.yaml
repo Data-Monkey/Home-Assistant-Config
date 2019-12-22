@@ -6,7 +6,7 @@ alias: Bathroom Light by motion OFF
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_bathroom
+    entity_id: binary_sensor.bathroom_motion
     to: 'off'
     for:
       minutes: 3

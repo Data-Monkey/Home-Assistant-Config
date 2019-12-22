@@ -1,9 +1,7 @@
 ---
 # custom component Composite Device Tracker
 #
-# https://github.com/pnbruckner/homeassistant-config/blob/master/docs/composite.md
-#
-# install:
+# https://github.com/pnbruckner/ha-composite-tracker
 #
 
 platform: composite
