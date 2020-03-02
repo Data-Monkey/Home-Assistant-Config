@@ -1,0 +1,12 @@
+---
+# Google Assistant Configuration
+# https://www.home-assistant.io/integrations/google_assistant/
+#
+
+google_assistant:
+  project_id: !secret GOOGLE_ASSISTANT_PROJECT_ID
+  #api_key: !secret GOOGLE_ASSISTANT_API_KEY
+  service_account: !include ../ga_service_account.json
+  expose_by_default: false
+
+  entity_config: !include_dir_merge_named ../assistants/google

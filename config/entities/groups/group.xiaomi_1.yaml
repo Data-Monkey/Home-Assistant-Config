@@ -1,0 +1,20 @@
+---
+# Group defined as VIEW
+#
+
+Xiaomi1:
+  name: Gateway 1
+  entities:
+    - sensor.device_xiaomi_gateway
+    - light.gateway_light_hallway
+    - sensor.illumination_hallway
+    - binary_sensor.hallway_motion
+    - binary_sensor.door_appartment_door
+    - sensor.front_door
+    - sensor.humidity_hallway
+    - sensor.temperature_hallway
+    - sensor.humidity_balcony
+    - sensor.temperature_balcony
+    - sensor.humidity_ensuite
+    - sensor.temperature_ensuite
+    - binary_sensor.motion_kitchen

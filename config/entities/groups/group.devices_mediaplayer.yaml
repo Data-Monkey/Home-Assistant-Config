@@ -1,0 +1,11 @@
+---
+# Group defined as VIEW
+#
+
+Devices_MediaPlayer:
+  name: Media Player
+  entities:
+    - sensor.device_chromecast
+    - sensor.device_audiocast
+    - sensor.device_fetch
+    - sensor.device_sonos_playbar

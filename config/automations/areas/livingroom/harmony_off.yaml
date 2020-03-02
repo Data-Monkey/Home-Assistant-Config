@@ -4,7 +4,7 @@
 #
 
 alias: Harmony Off
-hide_entity: true
+#hide_entity: true
 trigger:
   platform: state
   entity_id: input_select.harmony_control

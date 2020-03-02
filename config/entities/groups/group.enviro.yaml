@@ -1,0 +1,8 @@
+---
+# Group defined as VIEW
+#
+
+Enviro:
+  entities:
+    - sensor.time_of_day
+    - sensor.light_of_day

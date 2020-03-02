@@ -1,0 +1,12 @@
+---
+# Group defined as VIEW
+#
+
+hwt:
+  name: HWT Inputs
+  entities:
+    - binary_sensor.business_day
+    - input_boolean.school_holiday
+    - input_boolean.school_day
+    - sensor.trello_count
+    - input_boolean.tv_restriction

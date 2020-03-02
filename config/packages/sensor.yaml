@@ -1,6 +1,0 @@
----
-# Sensors
-# are being included from the sensors folder
-# one sensor per file!
-#
-sensor: !include_dir_list ../components/sensors

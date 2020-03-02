@@ -1,5 +1,0 @@
----
-# Device Trackers
-#
-
-device_tracker: !include_dir_list ../components/device_trackers

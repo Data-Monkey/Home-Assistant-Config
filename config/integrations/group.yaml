@@ -1,0 +1,5 @@
+---
+# import all groups defined in folder
+#
+
+group: !include_dir_merge_named ../entities/groups

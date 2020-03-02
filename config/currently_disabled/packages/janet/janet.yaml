@@ -1,7 +1,7 @@
 group:
   janet_settings:
     name: Settings
-    view: yes
+    #view: yes
     icon: mdi:tune
     entities:
       - group.janet_notification_modes

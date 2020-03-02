@@ -1,0 +1,9 @@
+---
+# Group defined as VIEW
+#
+
+HomeworkTracker:
+  name: HWT
+  entities:
+    - group.hwt
+    - group.activity

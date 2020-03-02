@@ -1,0 +1,9 @@
+---
+# Group defined as VIEW
+#
+
+Activity:
+  entities:
+    - sensor.harmony_current_activity
+    - input_select.harmony_control
+    - remote.harmonyhub

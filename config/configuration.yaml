@@ -18,4 +18,4 @@ homeassistant:
   elevation: 178
 
   packages:
-    !include_dir_named packages
+    !include_dir_named integrations

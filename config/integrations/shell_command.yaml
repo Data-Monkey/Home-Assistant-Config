@@ -1,0 +1,7 @@
+---
+# Shell Comands
+# are being included from the shell_command folder
+# one command per file!
+#
+
+shell_command: !include_dir_list ../entities/shell_commands

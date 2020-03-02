@@ -1,0 +1,12 @@
+---
+# Group defined as VIEW
+#
+
+Devices_Computer:
+  name: Computer
+  entities:
+    - sensor.device_blue_laptop
+    - sensor.device_obelix
+    - sensor.device_blue_laptop
+    - sensor.device_purple_laptop
+    - sensor.device_hp_tablet

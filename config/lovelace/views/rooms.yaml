@@ -1,3 +1,65 @@
 ---
-id: rooms
+path: rooms
 title: Rooms
+icon: mdi:sofa
+
+cards:
+  - type: horizontal-stack
+    cards:  
+    - type: vertical-stack
+      cards:
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Bedroom
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomsbedroom      
+
+#2nd column                   
+  - type: horizontal-stack
+    cards:  
+    - type: vertical-stack
+      cards:
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Ensuite
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomsensuite   
+
+
+# 3rd column
+  - type: horizontal-stack
+    cards:  
+    - type: vertical-stack
+      cards:
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Felix's Room
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomsfelix   
+
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Xenia's Room
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomsxenia
+
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Bathroom
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomsbathroom       

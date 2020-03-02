@@ -1,0 +1,7 @@
+---
+# Group defined as VIEW
+#
+
+Harmony:
+  entities:
+    - group.activity

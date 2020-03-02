@@ -1,0 +1,9 @@
+---
+# Group to hold the custom component trackers
+#
+
+trackers:
+  entities:
+    - sensor.custom_component_tracker
+    - sensor.custom_python_script_tracker
+    - sensor.custom_card_tracker

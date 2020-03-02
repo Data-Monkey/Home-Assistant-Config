@@ -6,7 +6,7 @@
 #
 
 alias: Set School Day
-hide_entity: false
+#hide_entity: false
 initial_state: 'on'
 trigger:
   platform: state

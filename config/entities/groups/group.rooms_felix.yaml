@@ -1,0 +1,10 @@
+---
+# Group for Felix's Room
+#
+
+RoomsFelix:
+  name: Felix's Room
+  entities:
+    - light.felix_light
+    - sensor.button_f_click
+    - sensor.device_google_home_felix

@@ -1,0 +1,8 @@
+---
+# Group defined as VIEW
+#
+
+RoomsXenia:
+  name: Xenia's Room
+  entities:
+    - sensor.device_google_home_xenia

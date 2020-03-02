@@ -1,0 +1,9 @@
+---
+# Group defined as VIEW
+#
+
+Xioami_View:
+  name: Xiaomi
+  entities:
+    - group.xiaomi1
+    - group.xiaomi2

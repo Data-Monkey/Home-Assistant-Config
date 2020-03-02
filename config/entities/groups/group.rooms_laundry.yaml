@@ -1,0 +1,11 @@
+---
+# Group defined as VIEW
+#
+
+RoomsLaundry:
+  name: Laundry
+  entities:
+    - binary_sensor.water_leak_sensor_laundry
+    - light.laundry_light
+    - binary_sensor.laundry_motion
+    - sensor.illumination_laundry

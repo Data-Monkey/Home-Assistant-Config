@@ -1,0 +1,16 @@
+---
+# Group defined as VIEW
+#
+
+Rooms:
+  name: Rooms
+  entities:
+    - group.RoomsBedroom
+    - group.RoomsBathroom
+    - group.RoomsLaundry
+    - group.RoomsHallway
+    - group.RoomsKitchen
+    - group.RoomsEnsuite
+    - group.RoomsLivingroom
+    - group.RoomsFelix
+    - group.RoomsXenia

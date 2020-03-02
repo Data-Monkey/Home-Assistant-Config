@@ -1,0 +1,16 @@
+---
+# Group defined as VIEW
+#
+
+Devices_Gadgets:
+  name: Gadgets
+  entities:
+    - sensor.device_efergy_hub
+    - sensor.device_xiaomi_gateway
+    - sensor.device_xiaomi_gateway2
+    - sensor.device_iconia_tab
+    - sensor.device_nest_protect
+    - sensor.device_google_home
+    - sensor.device_google_home_bedroom
+    - sensor.device_google_home_felix
+    - sensor.device_google_home_xenia

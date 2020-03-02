@@ -1,0 +1,5 @@
+---
+# Device Trackers
+#
+
+device_tracker: !include_dir_list ../entities/device_trackers

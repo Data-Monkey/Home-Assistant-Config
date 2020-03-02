@@ -1,8 +1,0 @@
----
-# Device Sensors
-# are being included from the folder
-#
-
-sensor:
-  - platform: template
-    sensors: !include_dir_merge_named ../components/device_sensors

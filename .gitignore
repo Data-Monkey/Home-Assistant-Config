@@ -30,6 +30,8 @@ ip_bans.yaml
 gitupdate.sh
 /config/custom_components/hacs
 
+ga_service_account.json
+
 #enable 
 !/.gitignore
 !/.yamllint
