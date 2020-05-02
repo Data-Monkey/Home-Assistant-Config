@@ -5,8 +5,6 @@
 # all files are in their respective folders again
 
 # views are called out individually to guarnatee order
-
-resources: !include_dir_list lovelace/resources
   
 views:
   - !include lovelace/views/home.yaml
@@ -14,3 +12,5 @@ views:
   - !include lovelace/views/floorplan.yaml
   - !include lovelace/views/z2m.yaml
   - !include lovelace/views/battery.yaml
+  - !include lovelace/views/stuff.yaml
+  - !include lovelace/views/zigbee2mqtt-networkmap.yaml

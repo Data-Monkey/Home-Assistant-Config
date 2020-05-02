@@ -1,7 +1,7 @@
 ---
-id: home
-title: home
-
+path: stuff
+title: stuff
+#icon: mdi:sofa
 
 cards:
   - type: horizontal-stack
@@ -11,25 +11,13 @@ cards:
         - type: custom:auto-entities
           card:
             type: entities
-            title: Media
+            title: Automations
             show_header_toggle: false
           filter:
             include:
-              - domain: media_player   
-                state: playing
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Lights are ON
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: light
-                state: 'on'
-              - domain: switch
-                name: "* Light *"
-                state: 'on'
+              - domain: automation    
 
+#2nd column                   
   - type: horizontal-stack
     cards:  
     - type: vertical-stack
@@ -37,11 +25,24 @@ cards:
         - type: custom:auto-entities
           card:
             type: entities
-            title: Gone Offline
+            title: Lights
             show_header_toggle: false
           filter:
             include:
-              - state: unknown
-              - state: Offline  
-            exclude:
-              - domain: group
+              - domain: light   
+
+
+# 3rd column
+  - type: horizontal-stack
+    cards:  
+    - type: vertical-stack
+      cards:
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: devices
+            show_header_toggle: false
+          filter:
+            include:
+              - domain: sensor
+                entity_id: "sensor.device*"

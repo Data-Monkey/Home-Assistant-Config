@@ -4,4 +4,4 @@
 # one command per file!
 #
 
-shell_command: !include_dir_list ../entities/shell_commands
+shell_command: !include_dir_merge_named ../entities/shell_commands

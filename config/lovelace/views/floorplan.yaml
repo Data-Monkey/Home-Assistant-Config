@@ -66,3 +66,24 @@ cards:
         style:
           top: 25%
           left: 59%
+
+      # ---- Felix          
+      - type: state-icon
+        entity: light.felix_light
+        style:
+          top: 25%
+          left: 25%
+
+      # ---- Living Room 
+      - type: state-icon
+        entity: binary_sensor.livingroom_motion
+        style:
+          top: 65%
+          left: 72%          
+
+      # ---- Kitchen 
+      - type: state-icon
+        entity: binary_sensor.kitchen_motion
+        style:
+          top: 18%
+          left: 80%              

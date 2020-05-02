@@ -13,8 +13,6 @@ Xiaomi1:
     - sensor.front_door
     - sensor.humidity_hallway
     - sensor.temperature_hallway
-    - sensor.humidity_balcony
-    - sensor.temperature_balcony
     - sensor.humidity_ensuite
     - sensor.temperature_ensuite
     - binary_sensor.motion_kitchen

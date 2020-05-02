@@ -31,6 +31,14 @@ cards:
             include:
               - group: group.roomsensuite   
 
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Bathroom
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomsbathroom
 
 # 3rd column
   - type: horizontal-stack
@@ -55,11 +63,21 @@ cards:
             include:
               - group: group.roomsxenia
 
+
         - type: custom:auto-entities
           card:
             type: entities
-            title: Bathroom
+            title: Laundry
             show_header_toggle: false
           filter:
             include:
-              - group: group.roomsbathroom       
+              - group: group.roomslaundry                   
+
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Hallway
+            show_header_toggle: false
+          filter:
+            include:
+              - group: group.roomshallway

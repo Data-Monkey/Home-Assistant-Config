@@ -7,7 +7,7 @@ mqtt:
   broker: !secret MQTT_IP
   port: !secret MQTT_PORT
   client_id: home-assistant
-  keepalive: 60
+  keepalive: 50
   username: !secret MQTT_USER
   password: !secret MQTT_PWD
   discovery: true

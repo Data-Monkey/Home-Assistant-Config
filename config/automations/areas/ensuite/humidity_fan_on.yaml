@@ -8,7 +8,7 @@
 #
 
 alias: Ensuite Fan by Humidity
-initial_state: 'off'
+initial_state: 'on'
 trigger:
   # when the fan switches off
   - platform: state

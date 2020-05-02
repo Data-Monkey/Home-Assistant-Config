@@ -11,6 +11,5 @@ Devices_Mobiles:
     - sensor.device_nmap_rolands_nokia
     - sensor.rolands_work_phone_battery_state
     - sensor.rolands_work_phone_battery_level
-    # - sensor.device_nmap_rolands_nexus
-    # - sensor.zan_nexus_battery
-    - sensor.device_galaxy_tab
+
+

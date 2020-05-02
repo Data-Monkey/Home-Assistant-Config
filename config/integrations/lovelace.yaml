@@ -12,3 +12,8 @@
 #
 lovelace:
   mode: yaml
+
+  resources: !include_dir_list ../lovelace/resources
+  #resources:
+ #   - url: /local/community/lovelace-auto-entities/auto-entities.js
+ #     type: module

@@ -1,0 +1,13 @@
+---
+# Automation to tell mqtt HA has restarted
+# first send offline to then online to trigger z2m to resend config
+#
+
+alias: z2m_restart_on_ha_restart
+trigger:
+  - platform: homeassistant
+    event: start
+action:
+  - delay: 0:00:20
+  - service: shell_command.restart_z2m
+

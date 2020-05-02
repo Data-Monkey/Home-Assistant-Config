@@ -2,9 +2,4 @@
 # restart the Zigbee2mqtt service 
 #
 
-restart_z2m: echo "hello world"
-
-# ssh -oStrictHostKeyChecking=no pi@192.168.2.15
-# accept key
-# password
-# sudo systemctl restart zigbee2mqtt
+restart_z2m: ssh -oStrictHostKeyChecking=no -i /config/.ssh/id_rsa pi@192.168.2.15 'sudo systemctl restart zigbee2mqtt'
