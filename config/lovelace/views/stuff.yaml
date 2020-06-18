@@ -30,7 +30,18 @@ cards:
           filter:
             include:
               - domain: light   
-
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Switch
+            show_header_toggle: false
+          filter:
+            include:
+              - domain: input_boolean
+        - type: entities
+          name: kids
+          entities: 
+            - input_boolean.pihole_fun_blocked
 
 # 3rd column
   - type: horizontal-stack

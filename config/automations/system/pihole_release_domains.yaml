@@ -1,0 +1,14 @@
+---
+# block or release domains in PiHole
+#
+
+alias: Pihole Release Domains
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: input_boolean.pihole_fun_blocked
+  from: 'on'
+  to: 'off'
+action:
+  service: shell_command.pihole_release_domains
+

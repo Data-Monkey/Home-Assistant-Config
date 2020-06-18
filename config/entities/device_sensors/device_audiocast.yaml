@@ -6,9 +6,9 @@
 device_audiocast:
   entity_id: device_tracker.audiocast
   value_template: '{% if is_state("device_tracker.audiocast", "home") %}
-                     Online
-                   {% else %}
-                     Offline
-                   {% endif %}'
+    Online
+    {% else %}
+    Offline
+    {% endif %}'
   icon_template: mdi:music-box-outline
   friendly_name: Audio Cast

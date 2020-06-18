@@ -11,6 +11,6 @@
 # Network devices (Modem, Google Wifi)
 platform: nmap_tracker
 track_new_devices: true
-hosts: -Pn 192.168.2.200-255
+hosts: --top-port 1 -Pn 192.168.2.200-255
 interval_seconds: 300
 home_interval: 60

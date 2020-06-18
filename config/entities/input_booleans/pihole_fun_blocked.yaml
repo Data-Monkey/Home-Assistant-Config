@@ -1,0 +1,6 @@
+---
+# used to switch on/off the internet block
+#
+pihole_fun_blocked:
+  name: Fun Blocked
+  initial: 'off'
