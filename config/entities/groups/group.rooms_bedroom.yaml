@@ -17,4 +17,4 @@ RoomsBedroom:
     - light.wardrobe_light
     - binary_sensor.motion_wardrobe
     - sensor.illumination_wardrobe
-    - group.RoomsEnsuite
+    # - group.RoomsEnsuite

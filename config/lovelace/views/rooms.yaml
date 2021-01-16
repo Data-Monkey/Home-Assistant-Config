@@ -8,14 +8,28 @@ cards:
     cards:
       - type: vertical-stack
         cards:
-          - type: custom:auto-entities
-            card:
-              type: entities
-              title: Bedroom
-              show_header_toggle: false
-            filter:
-              include:
-                - group: group.roomsbedroom
+          - type: vertical-stack
+            title: Master Bedroom
+            cards:
+            - type: custom:auto-entities
+              card:
+                type: entities
+                title: Bedroom
+                show_header_toggle: false
+              filter:
+                include:
+                  - group: group.roomsbedroom
+            - type: entities
+              entities: 
+                - media_player.master_bedroom_speaker            
+            - type: custom:auto-entities
+              card:
+                type: entities
+                title: Ensuite
+                show_header_toggle: false
+              filter:
+                include:
+                  - group: group.roomsensuite                  
 
 # 2nd column
   - type: horizontal-stack
@@ -25,44 +39,11 @@ cards:
           - type: custom:auto-entities
             card:
               type: entities
-              title: Ensuite
-              show_header_toggle: false
-            filter:
-              include:
-                - group: group.roomsensuite
-
-          - type: custom:auto-entities
-            card:
-              type: entities
               title: Bathroom
               show_header_toggle: false
             filter:
               include:
                 - group: group.roomsbathroom
-
-# 3rd column
-  - type: horizontal-stack
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: custom:auto-entities
-            card:
-              type: entities
-              title: Felix's Room
-              show_header_toggle: false
-            filter:
-              include:
-                - group: group.roomsfelix
-
-          - type: custom:auto-entities
-            card:
-              type: entities
-              title: Xenia's Room
-              show_header_toggle: false
-            filter:
-              include:
-                - group: group.roomsxenia
-
 
           - type: custom:auto-entities
             card:
@@ -81,3 +62,41 @@ cards:
             filter:
               include:
                 - group: group.roomshallway
+
+
+# 3rd column
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: vertical-stack
+            title: Felix's Room
+            cards:
+            - type: custom:auto-entities
+              card:
+                type: entities
+                title: Devices
+                show_header_toggle: false
+              filter:
+                include:
+                  - group: group.roomsfelix
+            - type: entities
+              entities: 
+                - media_player.felix_s_speaker  
+          - type: vertical-stack
+            title: Xenia's Room
+            cards:
+            - type: custom:auto-entities
+              card:
+                type: entities
+                title: Devices
+                show_header_toggle: false
+              filter:
+                include:
+                  - group: group.roomsxenia
+            - type: entities
+              entities: 
+                - media_player.xenia_s_speaker  
+
+
+
