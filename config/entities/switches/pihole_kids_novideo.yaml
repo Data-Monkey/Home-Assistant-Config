@@ -1,0 +1,14 @@
+---
+# Pihole 5 
+# enable disable group to block/unblock all domains for all clients in the group
+# inspiration from here: https://discourse.pi-hole.net/t/activate-group-with-cron/32660/8
+
+
+platform: command_line
+switches:
+  pihole_kids_novideo:
+    command_on: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Kids-NoVideos enable'
+    command_off: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Kids-NoVideos disable'
+    command_state: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Kids-NoVideos status'
+    value_template: '{{ value == "1" }}'
+    friendly_name: Block Video

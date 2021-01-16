@@ -9,13 +9,6 @@
 #
 
 homeassistant:
-  # some basic information on where we are ...
-  name: Home
-  latitude: !secret HOME_LATITUDE
-  longitude: !secret HOME_LONGITUDE
-  unit_system: metric
-  time_zone: Australia/Sydney
-  elevation: 178
 
   packages:
     !include_dir_named integrations

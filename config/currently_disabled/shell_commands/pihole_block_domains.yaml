@@ -1,0 +1,10 @@
+---
+# restart the Zigbee2mqtt service 
+#
+
+
+# docker exec pihole-Kids pihole -b -d --wild `cat no-fun.list`
+
+
+#pihole_block_domains: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole-Kids pihole -b -d --wild `cat no-fun.list`'
+pihole_block_domains: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole-Kids bash /etc/pihole/manage_blocklist.sh block'

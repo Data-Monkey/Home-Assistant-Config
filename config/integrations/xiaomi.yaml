@@ -5,17 +5,19 @@
 # https://www.home-assistant.io/components/xiaomi_aqara/
 #
 
-xiaomi_aqara:
+#xiaomi_aqara:  ~
+
+# no longer required, configured via GUI Integration now.
 
   # Number of times that Home Assistant should try to reconnect to the gateway.
-  discovery_retry: 10
+  # discovery_retry: 10
 
   # The list of Gateways to connect to.
-  gateways:
+  #gateways:
     # hallway gateway
-    - mac: !secret XIAOMI_MAC_1
-      key: !secret XIAOMI_KEY_1
-      host: !secret XIAOMI_HOST_1
+  #  - mac: !secret XIAOMI_MAC_1
+  #    key: !secret XIAOMI_KEY_1
+  #    host: !secret XIAOMI_HOST_1
     # bedroom gateway
     #- mac: !secret XIAOMI_MAC_2
     #  key: !secret XIAOMI_KEY_2

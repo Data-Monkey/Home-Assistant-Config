@@ -62,7 +62,9 @@ cards:
         - type: entities
           title: Kids Stuff
           entities: 
-            - input_boolean.pihole_fun_blocked
+          #  - input_boolean.pihole_fun_blocked
+            - switch.pihole_kids_novideo
+            - switch.pihole_kids_nogames
   - type: horizontal-stack
     cards:  
     - type: vertical-stack

@@ -28,7 +28,7 @@ condition:
     value_template: '{{ states.sensor.time_of_day.state != "night" }}'
   - condition: numeric_state
     entity_id: sensor.humidity_delta
-    above: 10
+    above: 15
 action:
   service: homeassistant.turn_on
   entity_id: switch.ensuite_fan
