@@ -46,26 +46,26 @@ cards:
 
   - type: horizontal-stack
     cards:
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Lights are ON
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: light
-                state: 'on'
-              - domain: switch
-                name: "* Light *"
-                state: 'on'
-        - type: entities
-          title: Kids Stuff
-          entities:
-          #  - input_boolean.pihole_fun_blocked
-            - switch.pihole_kids_novideo
-            - switch.pihole_kids_nogames
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Lights are ON
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: light
+                  state: 'on'
+                - domain: switch
+                  name: "* Light *"
+                  state: 'on'
+          - type: entities
+            title: Kids Stuff
+            entities:
+            #  - input_boolean.pihole_fun_blocked
+              - switch.pihole_kids_novideo
+              - switch.pihole_kids_nogames
   - type: horizontal-stack
     cards:
       - type: vertical-stack

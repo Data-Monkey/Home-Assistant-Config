@@ -3,12 +3,12 @@
 
 language: python
 
-python: "3.6.4"
+python: "3.8.7"
 
 before_install:
   - mv config/travis_secrets.yaml config/secrets.yaml
-  # remove HACS as it does not work on travis ...
-  #- rm config/packages/hacs.yaml
+  - mv config/travis_ga_service_account.json config/ga_service_account.json
+
 
 install:
   # force the currently installed HA version
