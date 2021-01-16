@@ -34,5 +34,6 @@ ga_service_account.json
 
 #enable 
 !/.gitignore
+!/.gitattributes
 !/.yamllint
 !/config/.HA_VERSION
