@@ -7,43 +7,42 @@ title: home
 cards:
   - type: horizontal-stack
     cards:
-    - type: vertical-stack
-      cards:
+      - type: vertical-stack
+        cards:
 
-        - type: gauge
-          name: Energy Usage
-          unit: 'W'
-          entity: sensor.efergy_591994
-          min: 0
-          max: 4000
-          severity:
-            green: 100
-            yellow: 2000
-            red: 3000
+          - type: gauge
+            name: Energy Usage
+            unit: 'W'
+            entity: sensor.efergy_591994
+            min: 0
+            max: 4000
+            severity:
+              green: 100
+              yellow: 2000
+              red: 3000
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Media
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: media_player
-                state: playing
-              - entity_id: sensor.harmony_current_activity
-            exclude:
-              - entity_id: sensor.harmony_current_activity
-                state: 'PowerOff'
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Media
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: media_player
+                  state: playing
+                - entity_id: sensor.harmony_current_activity
+              exclude:
+                - entity_id: sensor.harmony_current_activity
+                  state: 'PowerOff'
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: People
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: person
-
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: People
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: person
 
   - type: horizontal-stack
     cards:
@@ -69,16 +68,16 @@ cards:
             - switch.pihole_kids_nogames
   - type: horizontal-stack
     cards:
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Gone Offline
-            show_header_toggle: false
-          filter:
-            include:
-              - state: unknown
-              - state: Offline
-            exclude:
-              - domain: group
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Gone Offline
+              show_header_toggle: false
+            filter:
+              include:
+                - state: unknown
+                - state: Offline
+              exclude:
+                - domain: group

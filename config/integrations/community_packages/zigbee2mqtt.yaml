@@ -97,12 +97,12 @@ automation:
 
   - id: disable_zigbee_join
     alias: Disable Zigbee joining
-    #hide_entity: true
+    # hide_entity: true
     trigger:
       - entity_id: input_boolean.zigbee_permit_join
         platform: state
         to: 'off'
-      action:
+    action:
       - data:
           payload: 'false'
           topic: zigbee2mqtt/bridge/config/permit_join
