@@ -3,7 +3,6 @@
 # enable disable group to block/unblock all domains for all clients in the group
 # inspiration from here: https://discourse.pi-hole.net/t/activate-group-with-cron/32660/8
 
-
 platform: command_line
 switches:
   pihole_kids_novideo:
