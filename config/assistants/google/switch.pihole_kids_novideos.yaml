@@ -9,4 +9,5 @@
 
 switch.pihole_kids_novideos:
   name: 'Block Kids Videos'
+  room: 'Livingroom'  
   expose: true
