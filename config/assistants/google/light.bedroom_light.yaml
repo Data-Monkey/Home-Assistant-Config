@@ -11,5 +11,4 @@ light.bedroom_light:
   room: 'Master Bedroom'
   expose: true
   aliases:
-      - 'Bedroom Light'
- 
+    - 'Bedroom Light'
