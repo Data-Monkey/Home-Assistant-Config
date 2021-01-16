@@ -13,4 +13,4 @@ views:
   - !include lovelace/views/z2m.yaml
   - !include lovelace/views/battery.yaml
   - !include lovelace/views/stuff.yaml
-  - !include lovelace/views/zigbee2mqtt-networkmap.yaml
+ # - !include lovelace/views/zigbee2mqtt-networkmap.yaml
