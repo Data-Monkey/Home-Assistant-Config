@@ -5,79 +5,79 @@ icon: mdi:sofa
 
 cards:
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Bedroom
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomsbedroom      
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Bedroom
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomsbedroom
 
-#2nd column                   
+# 2nd column
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Ensuite
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomsensuite   
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Ensuite
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomsensuite
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Bathroom
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomsbathroom
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Bathroom
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomsbathroom
 
 # 3rd column
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Felix's Room
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomsfelix   
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Felix's Room
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomsfelix
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Xenia's Room
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomsxenia
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Xenia's Room
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomsxenia
 
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Laundry
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomslaundry                   
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Laundry
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomslaundry
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Hallway
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.roomshallway
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Hallway
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomshallway

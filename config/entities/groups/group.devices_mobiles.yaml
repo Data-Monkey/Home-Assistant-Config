@@ -11,5 +11,3 @@ Devices_Mobiles:
     - sensor.device_nmap_rolands_nokia
     - sensor.rolands_work_phone_battery_state
     - sensor.rolands_work_phone_battery_level
-
-

@@ -5,26 +5,26 @@ icon: mdi:battery-alert
 
 cards:
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Battery Status
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.battery_status  
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Battery Status
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.battery_status
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Battery Alert
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.battery_alert                 
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Battery Alert
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.battery_alert

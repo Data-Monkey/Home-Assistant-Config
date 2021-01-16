@@ -20,10 +20,10 @@ input_select:
   zigbee2mqtt_log_level:
     name: Zigbee2mqtt Log Level
     options:
-     - debug
-     - info
-     - warn
-     - error
+      - debug
+      - info
+      - warn
+      - error
     initial: info
     icon: mdi:format-list-bulleted
 
@@ -87,43 +87,43 @@ automation:
       entity_id: input_boolean.zigbee_permit_join
       to: 'on'
     action:
-    - service: mqtt.publish
-      data:
-        topic: zigbee2mqtt/bridge/config/permit_join
-        payload: 'true'
-    - service: timer.start
-      data:
-        entity_id: timer.zigbee_permit_join
+      - service: mqtt.publish
+        data:
+          topic: zigbee2mqtt/bridge/config/permit_join
+          payload: 'true'
+      - service: timer.start
+        data:
+          entity_id: timer.zigbee_permit_join
 
   - id: disable_zigbee_join
     alias: Disable Zigbee joining
     #hide_entity: true
     trigger:
-    - entity_id: input_boolean.zigbee_permit_join
-      platform: state
-      to: 'off'
-    action:
-    - data:
-        payload: 'false'
-        topic: zigbee2mqtt/bridge/config/permit_join
-      service: mqtt.publish
-    - data:
-        entity_id: timer.zigbee_permit_join
-      service: timer.cancel
+      - entity_id: input_boolean.zigbee_permit_join
+        platform: state
+        to: 'off'
+      action:
+      - data:
+          payload: 'false'
+          topic: zigbee2mqtt/bridge/config/permit_join
+        service: mqtt.publish
+      - data:
+          entity_id: timer.zigbee_permit_join
+        service: timer.cancel
 
   - id: disable_zigbee_join_timer
     alias: Disable Zigbee joining by timer
     #hide_entity: true
     trigger:
-    - platform: event
-      event_type: timer.finished
-      event_data:
-        entity_id: timer.zigbee_permit_join
+      - platform: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.zigbee_permit_join
     action:
-    - service: mqtt.publish
-      data:
-        topic: zigbee2mqtt/bridge/config/permit_join
-        payload: 'false'
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.zigbee_permit_join
+      - service: mqtt.publish
+        data:
+          topic: zigbee2mqtt/bridge/config/permit_join
+          payload: 'false'
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.zigbee_permit_join

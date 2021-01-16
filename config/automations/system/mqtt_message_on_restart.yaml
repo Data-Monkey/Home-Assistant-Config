@@ -16,4 +16,4 @@ action:
   - service: mqtt.publish
     data:
       topic: 'hass/status'
-      payload: 'online'      
+      payload: 'online'

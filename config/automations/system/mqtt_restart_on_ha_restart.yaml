@@ -10,4 +10,3 @@ trigger:
 action:
   - delay: 0:00:20
   - service: shell_command.restart_z2m
-

@@ -9,5 +9,5 @@
 
 switch.pihole_kids_nogames:
   name: 'Block Kids Games'
-  room: 'Livingroom'  
+  room: 'Livingroom'
   expose: true

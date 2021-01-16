@@ -20,7 +20,7 @@ trigger:
   - platform: state
     entity_id: sensor.button_h_click
     to: 'long'
-  # Switch C 
+  # Switch C
   - platform: state
     entity_id: sensor.button_c_click
     to: 'single'

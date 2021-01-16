@@ -5,26 +5,26 @@ title: Z2M
 
 cards:
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: zigbee
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.zigbee_group  
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: zigbee
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.zigbee_group
   - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
-      cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Z2M Managed
-            show_header_toggle: false
-          filter:
-            include:
-              - group: group.z2m_managed                 
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Z2M Managed
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.z2m_managed

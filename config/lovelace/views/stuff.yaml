@@ -1,59 +1,61 @@
 ---
+# stuff
+
 path: stuff
 title: stuff
 #icon: mdi:sofa
 
 cards:
-  - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
+    - type: horizontal-stack
       cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Automations
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: automation    
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Automations
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: automation
 
-#2nd column                   
-  - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
+#2nd column
+    - type: horizontal-stack
       cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Lights
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: light   
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Switch
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: input_boolean
-        - type: entities
-          name: kids
-          entities: 
-            - input_boolean.pihole_fun_blocked
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Lights
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: light
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: Switch
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: input_boolean
+          - type: entities
+            name: kids
+            entities:
+              - input_boolean.pihole_fun_blocked
 
 # 3rd column
-  - type: horizontal-stack
-    cards:  
-    - type: vertical-stack
+    - type: horizontal-stack
       cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: devices
-            show_header_toggle: false
-          filter:
-            include:
-              - domain: sensor
-                entity_id: "sensor.device*"
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            card:
+              type: entities
+              title: devices
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: sensor
+                  entity_id: "sensor.device*"

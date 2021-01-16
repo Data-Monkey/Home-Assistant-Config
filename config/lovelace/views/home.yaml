@@ -1,10 +1,12 @@
 ---
+# home view
+
 id: home
 title: home
 
 cards:
   - type: horizontal-stack
-    cards:  
+    cards:
     - type: vertical-stack
       cards:
 
@@ -26,7 +28,7 @@ cards:
             show_header_toggle: false
           filter:
             include:
-              - domain: media_player   
+              - domain: media_player
                 state: playing
               - entity_id: sensor.harmony_current_activity
             exclude:
@@ -40,11 +42,11 @@ cards:
             show_header_toggle: false
           filter:
             include:
-              - domain: person   
+              - domain: person
 
 
   - type: horizontal-stack
-    cards:  
+    cards:
     - type: vertical-stack
       cards:
         - type: custom:auto-entities
@@ -61,12 +63,12 @@ cards:
                 state: 'on'
         - type: entities
           title: Kids Stuff
-          entities: 
+          entities:
           #  - input_boolean.pihole_fun_blocked
             - switch.pihole_kids_novideo
             - switch.pihole_kids_nogames
   - type: horizontal-stack
-    cards:  
+    cards:
     - type: vertical-stack
       cards:
         - type: custom:auto-entities
@@ -77,8 +79,6 @@ cards:
           filter:
             include:
               - state: unknown
-              - state: Offline  
+              - state: Offline
             exclude:
               - domain: group
-  
- 
