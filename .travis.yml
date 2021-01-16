@@ -8,7 +8,7 @@ python: "3.6.4"
 before_install:
   - mv config/travis_secrets.yaml config/secrets.yaml
   # remove HACS as it does not work on travis ...
-  - rm config/packages/hacs.yaml
+  #- rm config/packages/hacs.yaml
 
 install:
   # force the currently installed HA version
