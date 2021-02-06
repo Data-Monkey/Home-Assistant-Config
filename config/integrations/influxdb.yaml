@@ -7,8 +7,20 @@ influxdb:
   host: !secret INFLUX_HOST_IP
   username: !secret INFLUX_USER
   password: !secret INFLUX_PWD
+  #measurement_attr: domain__device_class
+  default_measurement: state
   include:
     domains:
       - binary_sensor
       - sensor
       - switch
+
+  component_config_glob:
+    sensor.*humi*:
+      override_measurement: humidity
+    sensor.*temp*:
+      override_measurement: temperature
+    sensor.*illumi*:
+      override_measurement: illuminance
+    sensor.*batt*:
+      override_measurement: battery      

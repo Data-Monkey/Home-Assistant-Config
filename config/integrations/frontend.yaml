@@ -3,4 +3,4 @@
 #
 
 frontend:
-  javascript_version: latest
+#  javascript_version: latest # no longer supported (2021.2.1)
