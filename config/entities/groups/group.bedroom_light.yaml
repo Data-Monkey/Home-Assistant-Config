@@ -8,9 +8,9 @@ BedroomLights:
     # Desk Light
     - switch.plug_l_switch
     # Rolands Light
-    - switch.plug_r
+    - switch.rolands_light
     # Helens Light
-    - switch.plug_h
+    - switch.helens_light
     # Ceiling Light
     - light.bedroom_light
     # Wardrobe Light

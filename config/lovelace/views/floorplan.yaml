@@ -21,12 +21,12 @@ cards:
           top: 17%
           left: 43%
       - type: state-icon
-        entity: switch.plug_r
+        entity: switch.rolands_light
         style:
           top: 86%
           left: 48%
       - type: state-icon
-        entity: switch.plug_h
+        entity: switch.helens_light
         style:
           top: 72%
           left: 48%

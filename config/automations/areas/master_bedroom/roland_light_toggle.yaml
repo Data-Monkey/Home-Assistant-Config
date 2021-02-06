@@ -12,4 +12,4 @@ trigger:
 action:
   service: homeassistant.toggle
   data:
-    entity_id: switch.plug_r
+    entity_id: switch.rolands_light

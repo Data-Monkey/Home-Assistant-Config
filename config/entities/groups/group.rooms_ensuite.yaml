@@ -9,6 +9,6 @@ RoomsEnsuite:
     - sensor.motion_ensuite_illuminance
     - binary_sensor.ensuite_motion
     - switch.ensuite_fan
-    - sensor.humidity_ensuite
-    - sensor.temperature_ensuite
+    - sensor.ensuite_envirosensor_humidity
+    - sensor.ensuite_envirosensor_temperature
     - sensor.humidity_delta
