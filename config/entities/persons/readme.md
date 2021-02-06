@@ -1,0 +1,1 @@
+person integration moved to UI configuration
