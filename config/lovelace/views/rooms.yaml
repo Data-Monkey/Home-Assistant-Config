@@ -72,28 +72,28 @@ cards:
           - type: vertical-stack
             title: Felix's Room
             cards:
-            - type: custom:auto-entities
-              card:
-                type: entities
-                title: Devices
-                show_header_toggle: false
-              filter:
-                include:
-                  - group: group.roomsfelix
-            - type: entities
-              entities:
-                - media_player.felix_s_speaker
+              - type: custom:auto-entities
+                card:
+                  type: entities
+                  title: Devices
+                  show_header_toggle: false
+                filter:
+                  include:
+                    - group: group.roomsfelix
+              - type: entities
+                entities:
+                  - media_player.felix_s_speaker
           - type: vertical-stack
             title: Xenia's Room
             cards:
-            - type: custom:auto-entities
-              card:
-                type: entities
-                title: Devices
-                show_header_toggle: false
-              filter:
-                include:
-                  - group: group.roomsxenia
-            - type: entities
-              entities:
-                - media_player.xenia_s_speaker
+              - type: custom:auto-entities
+                card:
+                  type: entities
+                  title: Devices
+                  show_header_toggle: false
+                filter:
+                  include:
+                    - group: group.roomsxenia
+              - type: entities
+                entities:
+                  - media_player.xenia_s_speaker
