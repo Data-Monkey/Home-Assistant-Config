@@ -66,6 +66,10 @@ cards:
             #  - input_boolean.pihole_fun_blocked
               - switch.pihole_kids_novideo
               - switch.pihole_kids_nogames
+              - switch.pihole_xenia_novideo
+              - switch.pihole_felix_novideo
+              - switch.pihole_xenia_nogames
+              - switch.pihole_felix_nogames
   - type: horizontal-stack
     cards:
       - type: vertical-stack

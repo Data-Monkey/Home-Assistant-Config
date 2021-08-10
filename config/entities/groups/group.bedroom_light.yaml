@@ -17,3 +17,5 @@ BedroomLights:
     - light.wardrobe_light
     # Ensuite Light
     - light.ensuite_light
+    # Backlight
+    - light.screenbacklight

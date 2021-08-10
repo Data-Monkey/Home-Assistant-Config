@@ -1,0 +1,13 @@
+---
+# Pihole 5
+# enable disable group to block/unblock all domains for all clients in the group
+# inspiration from here: https://discourse.pi-hole.net/t/activate-group-with-cron/32660/8
+
+platform: command_line
+switches:
+  pihole_felix_nogames:
+    command_on: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames enable'
+    command_off: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames disable'
+    command_state: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames status'
+    value_template: '{{ value == "1" }}'
+    friendly_name: Felix Block Video

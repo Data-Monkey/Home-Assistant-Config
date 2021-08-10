@@ -4,9 +4,19 @@
 # defining what to log
 
 influxdb:
+  api_version: 2
+  ssl: false
   host: !secret INFLUX_HOST_IP
-  username: !secret INFLUX_USER
-  password: !secret INFLUX_PWD
+  port: 8086
+  token: !secret INFLUX_TOKEN
+  organization: !secret INFLUX_ORG
+
+  bucket: home_assistant
+  #tags:
+  #  source: HA
+  tags_attributes:
+    - friendly_name
+
   #measurement_attr: domain__device_class
   default_measurement: state
   include:

@@ -8,7 +8,9 @@ http:
 
   # used due to the proxy setup I am using
   use_x_forwarded_for: true
-  trusted_proxies: !secret PROXY_IP
+  trusted_proxies: 
+    - !secret PROXY_IP
+    - 172.17.0.0/24
 
 
   # make it a bit more secure

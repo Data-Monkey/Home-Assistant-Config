@@ -7,7 +7,7 @@ platform: template
 sensors:
   light_of_day:
     friendly_name: 'Light of Day'
-    entity_id: sensor.time
+    # entity_id: sensor.time
     value_template: >-
       {% if   now().strftime("%H:%M") < "06:00" %} dark
       {% elif now().strftime("%H:%M") < "07:00" %} twilight

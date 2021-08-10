@@ -7,3 +7,8 @@ utc_offset: 600
 monitored_variables:
     # - type: instant_readings
     - type: current_values
+    - type: instant_readings
+    - type: amount
+      period: day
+    - type: amount
+      period: month

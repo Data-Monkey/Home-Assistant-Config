@@ -7,6 +7,7 @@ RoomsBedroom:
   entities:
     # Office Light
     - switch.plug_l_switch
+    - light.screenbacklight
     # Rolands Light
     - switch.rolands_light
     # Helens Light
