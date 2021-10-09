@@ -8,19 +8,19 @@ initial_state: 'on'
 trigger:
   # Button L
   - platform: state
-    entity_id: sensor.button_l_click
+    entity_id: sensor.button_l_action
     to: 'double'
   # Switch R
   - platform: state
-    entity_id: sensor.button_r_click
+    entity_id: sensor.button_r_action
     to: 'double'
   # Switch H
   - platform: state
-    entity_id: sensor.button_h_click
+    entity_id: sensor.button_h_action
     to: 'double'
   # Button C - Ceiling
   - platform: state
-    entity_id: sensor.button_c_click
+    entity_id: sensor.button_c_action
     to: 'double'
 action:
   service: homeassistant.turn_off

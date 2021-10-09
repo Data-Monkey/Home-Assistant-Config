@@ -6,5 +6,5 @@ RoomsFelix:
   name: Felix's Room
   entities:
     - light.felix_light
-    - sensor.button_f_click
+    - sensor.button_f_action
     - sensor.device_google_home_felix

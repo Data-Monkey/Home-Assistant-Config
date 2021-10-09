@@ -5,9 +5,9 @@
 Z2M_managed:
   name: Z2M Managed Entities
   entities:
-    - sensor.button_c_click
-    - sensor.button_l_click
-    - sensor.button_r_click
+    - sensor.button_c_action
+    - sensor.button_l_action
+    - sensor.button_r_action
     - sensor.plug_christmastree_power
     - sensor.plug_l_power
     - sensor.plug_hallway_power

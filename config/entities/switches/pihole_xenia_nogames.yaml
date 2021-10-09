@@ -10,4 +10,4 @@ switches:
     command_off: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Xenia-NoGames disable'
     command_state: ssh -oStrictHostKeyChecking=no root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Xenia-NoGames status'
     value_template: '{{ value == "1" }}'
-    friendly_name: Xenia Block Video
+    friendly_name: Xenia Block Games

@@ -2,5 +2,5 @@
 # Xiaomi Button Helen
 #
 
-sensor.button_h_click:
+sensor.button_h_action:
   icon: mdi:checkbox-multiple-blank-circle-outline

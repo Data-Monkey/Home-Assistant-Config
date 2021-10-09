@@ -3,5 +3,5 @@
 # this is the Z2M version
 #
 
-sensor.button_c_click:
+sensor.button_c_action:
   icon: mdi:checkbox-multiple-blank-circle-outline

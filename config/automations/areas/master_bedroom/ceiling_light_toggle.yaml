@@ -10,19 +10,19 @@ initial_state: 'on'
 trigger:
   # Switch L
   - platform: state
-    entity_id: sensor.button_l_click
-    to: 'long'
+    entity_id: sensor.button_l_action
+    to: 'hold'
   # Switch R
   - platform: state
-    entity_id: sensor.button_r_click
-    to: 'long'
+    entity_id: sensor.button_r_action
+    to: 'hold'
   # Switch H
   - platform: state
-    entity_id: sensor.button_h_click
-    to: 'long'
+    entity_id: sensor.button_h_action
+    to: 'hold'
   # Switch C
   - platform: state
-    entity_id: sensor.button_c_click
+    entity_id: sensor.button_c_action
     to: 'single'
 
 action:

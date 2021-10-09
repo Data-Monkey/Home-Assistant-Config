@@ -7,7 +7,7 @@ alias: Toggle Light Plug
 initial_state: 'on'
 trigger:
   platform: state
-  entity_id: sensor.button_l_click
+  entity_id: sensor.button_l_action
   to: 'single'
 action:
   service: homeassistant.toggle

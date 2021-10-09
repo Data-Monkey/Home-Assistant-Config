@@ -2,5 +2,5 @@
 # Xiaomi Button Roland
 #
 
-sensor.button_r_click:
+sensor.button_r_action:
   icon: mdi:checkbox-multiple-blank-circle-outline

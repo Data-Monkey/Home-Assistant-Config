@@ -1,0 +1,9 @@
+
+
+platform: template
+sensors:
+  amber_price:
+    unit_of_measurement: '$/kWh'
+    value_template: >-
+      {{ float(states.sensor.amber_general_usage_price.state) / 100 }}
+

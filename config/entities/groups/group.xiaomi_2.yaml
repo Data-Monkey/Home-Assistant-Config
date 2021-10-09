@@ -9,7 +9,7 @@ Xiaomi2:
     - light.gateway_light_gateway2
     - sensor.illumination_gateway2
     # Rolands Light
-    - sensor.button_r_click
+    - sensor.button_r_action
     - switch.plug_r
     # bedroom
     - binary_sensor.motion_wardrobe

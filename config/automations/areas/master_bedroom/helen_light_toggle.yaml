@@ -7,7 +7,7 @@ alias: Toggle Helens Light
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: sensor.button_h_click
+    entity_id: sensor.button_h_action
     to: 'single'
 action:
   service: homeassistant.toggle
