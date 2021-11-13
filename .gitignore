@@ -29,6 +29,7 @@ ip_bans.yaml
 /icloud/*
 gitupdate.sh
 /config/custom_components/hacs
+/config/.ssh
 
 ga_service_account.json
 
