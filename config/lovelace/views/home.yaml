@@ -13,7 +13,7 @@ cards:
           - type: gauge
             name: Energy Usage
             unit: 'W'
-            entity: sensor.efergy_591994
+            entity: sensor.power_usage
             min: 0
             max: 4000
             severity:

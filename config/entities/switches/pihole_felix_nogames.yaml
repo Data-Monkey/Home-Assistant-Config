@@ -6,8 +6,8 @@
 platform: command_line
 switches:
   pihole_felix_nogames:
-    command_on:    ssh -i /config/ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames enable'
-    command_off:   ssh -i /config/ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames disable'
-    command_state: ssh -i /config/ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames status'
+    command_on:    ssh -i /config/ssh_keys/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames enable'
+    command_off:   ssh -i /config/ssh_keys/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames disable'
+    command_state: ssh -i /config/ssh_keys/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoGames status'
     value_template: '{{ value == "1" }}'
     friendly_name: Felix Block Games
