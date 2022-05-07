@@ -3,18 +3,21 @@
 # the mqtt broker is another docker on the unRAID server
 #
 
-mqtt:
-  broker: !secret MQTT_IP
-  port: !secret MQTT_PORT
-  client_id: home-assistant
-  keepalive: 50
-  username: !secret MQTT_USER
-  password: !secret MQTT_PWD
-  discovery: true
-  # discovery_prefix: homeassistant
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
+# MQTT is now configured via Frontend!
+# This is no longer used
+
+#mqtt:
+#  broker: !secret MQTT_IP
+#  port: !secret MQTT_PORT
+#  client_id: home-assistant
+#  keepalive: 50
+#  username: !secret MQTT_USER
+#  password: !secret MQTT_PWD
+#  discovery: true
+#  # discovery_prefix: homeassistant
+#  birth_message:
+#    topic: 'hass/status'
+#    payload: 'online'
+#  will_message:
+#    topic: 'hass/status'
+#    payload: 'offline'

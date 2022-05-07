@@ -6,3 +6,4 @@ RoomsXenia:
   name: Xenia's Room
   entities:
     - sensor.device_google_home_xenia
+    - switch.xenias_reading_light

@@ -6,8 +6,8 @@
 platform: command_line
 switches:
   pihole_felix_novideo:
-    command_on:    ssh -i /config/ssh_keys/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoVideos enable'
-    command_off:   ssh -i /config/ssh_keys/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoVideos disable'
-    command_state: ssh -i /config/ssh_keys/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoVideos status'
+    command_on:    ssh -o "StrictHostKeyChecking no" -i /config/ssh_keys/tower/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoVideos enable'
+    command_off:   ssh -o "StrictHostKeyChecking no" -i /config/ssh_keys/tower/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoVideos disable'
+    command_state: ssh -o "StrictHostKeyChecking no" -i /config/ssh_keys/tower/.ssh/id_rsa root@192.168.2.130 'docker exec pihole5 bash /etc/pihole/setGroupStatus.sh Felix-NoVideos status'
     value_template: '{{ value == "1" }}'
     friendly_name: Felix Block Video

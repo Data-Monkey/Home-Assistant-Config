@@ -39,6 +39,14 @@ cards:
           - type: custom:auto-entities
             card:
               type: entities
+              title: Living Room
+              show_header_toggle: false
+            filter:
+              include:
+                - group: group.roomslivingroom
+          - type: custom:auto-entities
+            card:
+              type: entities
               title: Bathroom
               show_header_toggle: false
             filter:

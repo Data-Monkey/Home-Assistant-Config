@@ -1,0 +1,101 @@
+---
+# Automation running in the laundry
+#
+#
+#  Amber Light update
+
+alias: update amber light
+id: update_amber_light
+initial_state: 'off'
+
+variables: 
+  forecast: "{{state_attr('sensor.homeambermeter_general_forecast', 'forecasts') | map(attribute='descriptor')|list}}"
+
+  color_map: {'spike': 'purple', 
+              'high': 'red', 
+              'neutral': 'darkorange',
+              'low': 'orange',
+              'very_low': 'green',
+              'extremely_low': 'cyan'}
+
+  lightsegments: [
+     'light.amberlight',
+     'light.amberlight_segment_1',
+     'light.amberlight_segment_2',
+     'light.amberlight_segment_3',
+     'light.amberlight_segment_4',
+     'light.amberlight_segment_5',
+     'light.amberlight_segment_6',
+     'light.amberlight_segment_7',
+     'light.amberlight_segment_8',
+     'light.amberlight_segment_9',
+     'light.amberlight_segment_10',
+     'light.amberlight_segment_11'
+     ]
+
+trigger:
+  - platform: state
+    entity_id: binary_sensor.laundry_motion
+    to: 'on'
+action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: light.amberlight_master
+      brightness: 64
+
+  #set individual segments
+  # CAN THIS BE DONE IN A LOOP ???    
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[0]}}"  
+      color_name: "{{ color_map[ forecast[0] ] }}" 
+
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[1]}}"  
+      color_name: "{{ color_map[forecast[1]] }}"
+
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[2]}}"  
+      color_name: "{{ color_map[forecast[2]] }}"
+
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[3]}}"  
+      color_name: "{{ color_map[ forecast[3] ] }}"
+
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[4]}}"  
+      color_name: "{{ color_map[ forecast[4] ] }}"
+
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[5]}}"  
+      color_name: "{{ color_map[ forecast[5] ] }}"
+
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[6]}}"  
+      color_name: "{{ color_map[ forecast[6] ] }}"
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[7]}}"  
+      color_name: "{{ color_map[ forecast[7] ] }}"
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[8]}}"  
+      color_name: "{{ color_map[ forecast[8] ] }}"
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[9]}}"  
+      color_name: "{{ color_map[ forecast[9] ] }}"
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[10]}}"  
+      color_name: "{{ color_map[ forecast[10] ] }}"
+  - service:  homeassistant.turn_on
+    data:
+      entity_id: "{{lightsegments[11]}}"  
+      color_name: "{{ color_map[ forecast[11] ] }}"
